@@ -1,6 +1,8 @@
-using namespace std;
 #include<vector>
 #include<iostream>
+
+using namespace std;
+
 int SmallestNonConstructibleValue(vector<int> A) {
     sort(A.begin(), A.end());
     int max_constructible_value = 0;
@@ -20,6 +22,13 @@ int main()
     vector<int> vec(n,0);
     for(int i = 0; i < n; i++)
         cin >> vec[i];
-    cout << "Smallest Non-Constructible Value is " << SmallestNonConstructibleValue(vec);
+    cout << "Smallest Non-Constructible Value is " << SmallestNonConstructibleValue(vec) << endl;
     return 1;
 }
+
+/* Unit-Testing
+   Test-Case 1:
+   Enter the Number of Elements:6
+   4 5 2 1 9 12
+   Smallest Non-Constructible Value is 34  
+*/ 
