@@ -3,7 +3,7 @@
 #include<string>
 using namespace std;
 
-void Rotate_Array_Clockwise(vector<int> &vec, int shift)
+void Rotate_Array_Counter_Clockwise(vector<int> &vec, int shift)
 {
     int size = vec.size();
     shift = shift % size;
@@ -14,7 +14,7 @@ void Rotate_Array_Clockwise(vector<int> &vec, int shift)
         int prev = vec[curr];
         do
         {
-            curr = (shift + curr) % size;
+            curr = (size - shift + curr) % size;
             int temp = prev;
             prev = vec[curr];
             vec[curr] = temp;
@@ -44,7 +44,7 @@ int main()
         cin >> vec[i];
     cout << "Enter the shifting size:" ;
     cin >> k;
-    Rotate_Array_Clockwise(vec, k);
+    Rotate_Array_Counter_Clockwise(vec, k);
     cout << "Array after shifting by " << k << " is " << print_vector_int(vec) << endl;
     return 1;
 }
