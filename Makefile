@@ -56,5 +56,6 @@ $(GLOBAL_PROBLEM_SET): $(OBJ_FILES) $(ALGO_INDEX_OBJ_FILES) $(DATASTRUCT_INDEX_O
 
 clean:
 	rm -f $(OBJ)
+	rm $(GLOBAL_PROBLEM_SET)
 	find . -name "*.o" -delete
 	

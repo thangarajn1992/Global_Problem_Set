@@ -8,5 +8,4 @@
 #include<algorithm>
 
 /* Our Utility Library */
-#include "array_util.h"
 #endif

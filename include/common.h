@@ -3,9 +3,6 @@
 
 #include "all_lib.h"
 
-#define DS_PROBLEM_MAX 500
-#define ALGO_PROBLEM_MAX 500
-
 typedef enum operatingMode{
     OPMODE_DATASTRUCT = 0,
     OPMODE_ALGORITHM
