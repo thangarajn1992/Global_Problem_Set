@@ -11,6 +11,7 @@ public:
     void add_algoProblem(algorithmType_t algo_type, std::string problemName);
     std::string get_algoProblem(algorithmType_t algo_type, unsigned int problemNum);
     unsigned get_algoProblemCount(algorithmType_t algo_type);
+    
 };
 
 void addAlgoProblems();
