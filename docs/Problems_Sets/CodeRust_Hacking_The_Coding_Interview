@@ -1,0 +1,135 @@
+/*
+Educative.io
+*/
+
+1. Arrays:
+    1. Implement Binary Search on a Sorted Array
+    2. Rotate an Array by N Elements
+    3. Search a Rotated Array
+    4. Find the Smallest Common Number
+    5. Find Low/High Index of a Key in Sorted Array
+    6. Move All Zeroes to the Beginning of the Array
+    7. Stock Buy Sell to Maximize Profit.
+    8. Merge an Array with Overlapping Intervals
+    9. Find Pair with given sum in an Array
+    10. Squares of a Sorted Array
+    11. Container with Most Water
+    12. Sort an Array using Quicksort Algorithm
+    13. Sort Colors
+    14. Arrange the Largest Number
+    15. Shuffle an Array
+    16. First Missing Positive Integer
+    17. Minimum Size Subarray Sum
+    18. Next Element Greater than Subset
+    19. Product of All Array Elements Except Self.
+
+2. Linked Lists:
+    1. Implementation of Linked List
+    2. Reverse a Singly Linked List
+    3. Remove Duplicates from a Linked List
+    4. Delete All Occurences of a Given Key in a Linked List
+    5. Sort Linked List Using Insertion Sort
+    6. Intersection Point of Two Lists
+    7. Find n'th Node from the End of a Linked List
+    8. Swap Nth Node with Head
+    9. Merge Two Sorted Linked Lists.
+    10. Sort a Linked List using Merge Sort
+    11. Reverse Even Nodes in a Linked List
+    12. Rotate a Linked List
+    13. Reverse Alternate K Nodes in a Singly Linked List
+    14. Fold List on itself.
+    15. Add Two Integers Represented by Linked Lists.
+    16. Copy Linked List with Arbitrary Pointer.
+
+3. Math & Stats
+    1. Find kth Permutation
+    2. Integer Division Without Using * or /
+    3. Pythagorean Triplets
+    4. All Possible Combinations for a Given Sum
+    5. Find Missing Number
+    6. Print All Permutations of a String
+    7. Find All Subsets of a Set
+    8. Is String a Valid Number?
+    9. Calculate Power of a Number
+    10. Calculate Square Root of a Number
+    11. Check if Rectanges Overlap
+
+4. Strings
+    1. Reverse Words in a Sentence.
+    2. Remove Duplicates from a String
+    3. Remove White Spaces from a String
+    4. Longest Valid Parentheses
+    5. Word Break Problem
+    6. Verify an Alien Dictionary
+    7. XML to Tree
+    8. Find all Palindrome Substrings
+    9. Longest Palindromic Substring
+    10. Regular Expression Matching in String
+    11. Add Two Strings
+    12. Add Two Binary Strings
+    13. Roman Numerals to Integers
+    14. Express a Number in English Words
+
+5. Trees
+    1. Implementation of Binary Tree.
+    2. Check if Two Binary Trees are identical
+    3. Iterative In-order Traversal of Binary Tree
+    4. Write an In-order Iterator for a Binary Tree.
+    5. In-order Successor of Binary Search Tree
+    6. In-order Successor Binary Search Tree With Parent Pointers
+    7. Level Order Traversal of Binary Tree
+    8. Is a Binary Search Tree Valid?
+    9. Convert Binary Tree to Double Linked List
+    10. Print Tree Perimeter
+    11. Connect Same Level Siblings of a Binary Tree
+    12. Connect All Siblings of a Binary Tree
+    13. Serialize/Deserialize Binary Tree
+    14. Nth Highest Number in Binary Search Tree
+    15. Mirror Binary Tree Nodes.
+    16. Delete Zero Sum Sub-trees.
+    17. Convert N-ary Tree to Binary Tree
+    18. Find Lowest Common Ancestor in a Binary Tree
+    19. Binary Tree Maximum Path Sum
+
+6. Stacks and Queues
+    1. Implement Stack Using Queues
+    2. Implement Queue Using Stacks
+    3. Evaluate Reverse Polish Notation
+    4. Evaluate Arithmetic Expressions
+    5. Find Maximum in Sliding Window
+    6. Minimum Remove to Make Valid Parentheses
+    7. Exclusive Execution Time of Functions
+
+7. Graphs
+    1. Clone a Directed Graph
+    2. Minimum Spanning Tree
+    3. Word Chaining
+
+8. Back Tracking
+    1. Boggle
+    2. Generate all Combinations of Balanced Parentheses
+    3. Solve N-Queens Problem
+    4. Find K-Sum Subsets.
+
+9. Dynamic Programming
+    1. Fibonacci Numbers
+    2. Nth Tribonacci Number
+    3. Largest Sum Subarray
+    4. MaxSum Subsequence - Nonadjacent Elements
+    5. Count Square Submatrices
+    6. Unique Paths to Goal
+    7. Find Combinations for Game Scoring
+    8. Coin Changing Problem
+    9. Levenshtein Distance
+
+10. Miscellaneous
+    1. Sum of Three Values
+    2. Make Columns and Rows Zeroes
+    3. Search in a Matrix
+    4. Check Validity of Tic-Tac-Toe Board
+    5. Implement LRU Cache
+    6. Determine Host Byte Order (Endianness)
+    7. Closest Meeting Point
+    8. Find Perimeter of Island
+    9. Design Your Own HashMap
+    10. Kth Largest Element in a Stream

@@ -1,0 +1,8 @@
+
+=========================
+Nth Catalan Numbers
+=========================
+Catalan numbers satisfy the following recursive formula. 
+
+C0 = 1  and  Cn+1 = sum_{i=0}^{n}C_iC_{n-i} \ for \ n\geq 0 
+

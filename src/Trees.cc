@@ -45,9 +45,18 @@ Tree Traversals:
     ZigZag using Two Stacks
     Spiral using Deque (double ended Queue)
     Spiral using Two Stacks
+    Diagonal using Queue
+    Boundary Traversal
 
 Tree Properties:
     Is Symmetric Tree (Mirror Image)
+    Find Height, Size and Density of Binary Tree
+
+Tree Transformations:
+    Convert to its sumTree
+    Convert to its Mirror Image - Recursive
+    Convert to its Mirror Image - Iterative
+    Right Flip 
 */
 
 class BinarySearchTreeNode
@@ -139,6 +148,11 @@ public:
         return root;
     }
 
+    void setRoot(BinaryTreeNode* node)
+    {
+        root = node;
+    }
+
     /* Tree Operations */
     void Insert(int value)
     {
@@ -213,31 +227,31 @@ public:
         postorder.push_back(node->data);
     }
 
-    void PostPreInOrderInOneFlowRecursive(BinaryTreeNode* root,
+    void PostPreInOrderInOneFlowRecursive(BinaryTreeNode* node,
                                           vector<int>& preorder,
                                           vector<int>& postorder,
                                           vector<int>& inorder)
     {
         // Return if root is NULL
-        if (root == NULL)
+        if (node == NULL)
             return;
     
         // Pushes the root data into the pre order vector
-        preorder.push_back(root->data);
+        preorder.push_back(node->data);
     
         // Recursively calls for the left node
         PostPreInOrderInOneFlowRecursive(
-            root->left, preorder, postorder, inorder);
+            node->left, preorder, postorder, inorder);
     
         // Pushes node data into the inorder vector
-        inorder.push_back(root->data);
+        inorder.push_back(node->data);
     
         // Recursively calls for the right node
         PostPreInOrderInOneFlowRecursive(
-            root->right, preorder, postorder, inorder);
+            node->right, preorder, postorder, inorder);
     
         // Pushes the node data into the Post Order vector
-        postorder.push_back(root->data);
+        postorder.push_back(node->data);
     }
 
     /* Tree Traversals - Iterative*/
@@ -689,9 +703,141 @@ public:
         return spiral;
     }
 
+    /* Diagonal Traversal using Queue 
+       Time Complexity: O(N)
+       Space Complexity : O(N)
+    */
+    vector<int> diagonalQueue()
+    {
+        queue<BinaryTreeNode*> BTNodeQueue;
+        vector<int> diagonal;
+        
+        if(root == nullptr)
+        {
+            return diagonal;
+        }
+
+        BTNodeQueue.push(root);
+
+        while(BTNodeQueue.empty() == false)
+        {
+            int queueSize = BTNodeQueue.size();
+
+            while(queueSize > 0)
+            {
+                BinaryTreeNode *curr = BTNodeQueue.front();
+                BTNodeQueue.pop();
+                queueSize--;
+
+                while(curr)
+                {
+                    diagonal.push_back(curr->data);
+                    if(curr->left != nullptr)
+                    {
+                        BTNodeQueue.push(curr->left);
+                    }
+                    curr = curr->right;
+                }
+            }
+        }
+        return diagonal;
+    }
+
+    /* Boundary Traversal */
+    /*  
+        1. Print all the left side Boundary in top-down
+        2. Print all leaves from left-subtree in left-right
+        3. Print all leaves from right-subtree in left-right
+        4. Print all the right side boundary in bottom-up
+        Time Complexity: O(N)
+        Space Complexity: O(N)
+    */
+    void boundaryTraversal(vector<int> &boundary)
+    {
+        if(root == nullptr)
+            return;
+
+        boundary.push_back(root->data);
+
+        /* Left Boundary without leaves */
+        leftBoundary(root->left, boundary);
+
+        /* Leaves of left sub-tree */
+        leaves(root->left, boundary);
+        /* Leaves of right sub-tree */
+        leaves(root->right, boundary);
+
+        /* Right Boundary without leaves */
+        rightBoundary(root->right, boundary);
+    }
+
+    void leftBoundary(BinaryTreeNode *node, vector<int> &boundary)
+    {
+        if(node == nullptr)
+            return;
+        
+        if(node->left != nullptr)
+        {
+            boundary.push_back(node->data);
+            leftBoundary(node->left, boundary);
+        }
+        else if(node->right != nullptr)
+        {
+            boundary.push_back(node->data);
+            leftBoundary(node->right, boundary);
+        }
+        else{ 
+            /* Skip leaf nodes */
+        }
+    }
+
+    void rightBoundary(BinaryTreeNode *node, vector<int> &boundary)
+    {
+        if(node == nullptr)
+            return;
+        
+        if(node->right != nullptr)
+        {
+            rightBoundary(node->right, boundary);
+            boundary.push_back(node->data);
+        }
+        else if(node->left != nullptr)
+        {
+            rightBoundary(node->left, boundary);
+            boundary.push_back(node->data);
+        }
+        else{
+            /* skip the leaf nodes */
+        }
+    }
+
+    void leaves(BinaryTreeNode *node, vector<int> &boundary)
+    {
+        if(node->left == nullptr && node->right == nullptr)
+        {
+            boundary.push_back(node->data);
+            return;
+        }
+
+        if(node->left != nullptr)
+        {
+            leaves(node->left, boundary);
+        }
+
+        if(node->right != nullptr)
+        {
+            leaves(node->right, boundary);
+        }
+    }
 
     /* Tree Properties or Conditions */
 
+    
+    bool isSymmetric()
+    {
+        return isMirror(root, root);   
+    }    
+    
     bool isMirror(BinaryTreeNode *node1, BinaryTreeNode *node2)
     {
         if(node1 == nullptr && node2 == nullptr)                
@@ -704,10 +850,124 @@ public:
             
         return false;
     }
-    
-    bool isSymmetric()
+
+    /*  
+        Find density of Binary Tree
+        Density: Size/Height
+    */
+    float density()
     {
-        return isMirror(root, root);   
+        if(root == nullptr)
+            return 0;
+        
+        int size = 0;
+        int height = findHeightAndSize(root, size);
+
+        return (float)size/height;
+    }
+
+    int findHeightAndSize(BinaryTreeNode *node, int &size)
+    {
+        if(node == nullptr)
+            return 0;
+        
+        size++;
+
+        return max(findHeightAndSize(node->left, size), 
+                   findHeightAndSize(node->right, size)) + 1;
+    }
+
+
+    /* Tree Transformations */
+    
+    /* 
+        Convert to its SumTree 
+        Each node will contain sum of its left and right sub-tree
+    */
+
+    int toSumTree(BinaryTreeNode *node)
+    {
+        if(node == nullptr)
+            return 0;
+        
+        int old_value = node->data;
+
+        node->data = toSumTree(node->left) + toSumTree(node->right);
+
+        return node->data + old_value;
+    }
+
+    /* Convert to its Mirror Image - Recursive */
+    void toMirrorRecursive(BinaryTreeNode *node)
+    {
+        if(node == nullptr)
+        {
+            return;
+        }
+        else
+        {
+            toMirrorRecursive(node->left);
+            toMirrorRecursive(node->right);
+
+            BinaryTreeNode *swapper = node->left;
+            node->left = node->right;
+            node->right = swapper;
+        }
+    }
+
+    void toMirrorIterative()
+    {
+        if(root == nullptr)
+            return;
+        
+        queue<BinaryTreeNode*> BTNodeQueue;
+        BTNodeQueue.push(root);
+
+        while(BTNodeQueue.empty() == false)
+        {
+            int queueSize = BTNodeQueue.size();
+            while(queueSize > 0)
+            {
+                BinaryTreeNode *curr = BTNodeQueue.front();
+                BTNodeQueue.pop();
+                queueSize--;
+
+                if(curr->left != nullptr)
+                    BTNodeQueue.push(curr->left);
+                if(curr->right != nullptr)
+                    BTNodeQueue.push(curr->right);
+
+                BinaryTreeNode *swapper = curr->left;
+                curr->left = curr->right;
+                curr->right = swapper;
+            }
+        }
+    }
+
+    /* 
+        Right Flip Binary Tree
+        1. Leftmost node becomes Root
+        2. Its parent becomes its right child
+        3. Its right sibling becomes its left child
+        4. Same should be repeated for all left most nodes recursively
+    */
+    BinaryTreeNode* toRightFlip(BinaryTreeNode *node)
+    {
+        if(node == nullptr)
+            return node;
+        if(node->left == nullptr && node->right == nullptr)
+            return node;
+        
+        BinaryTreeNode* flippedRoot = toRightFlip(node->left);
+
+        node->left->left = node->right;
+        node->left->right = node;
+        node->left = nullptr;
+        node->right = nullptr;
+        
+        return flippedRoot;
+
+
     }
 };
 
@@ -733,6 +993,15 @@ int main()
     BTSymmetric.Insert(945);
     BTSymmetric.Insert(24);
 
+    BinaryTree BTSumTree;
+    BTSumTree.Insert(10);
+    BTSumTree.Insert(-3);
+    BTSumTree.Insert(5);
+    BTSumTree.Insert(14);
+    BTSumTree.Insert(-4);
+    BTSumTree.Insert(8);
+    BTSumTree.Insert(-9);  
+
     BinarySearchTree BST;
     BST.Insert(100);
     BST.Insert(50);
@@ -757,6 +1026,7 @@ int main()
 
     pre.clear(); post.clear(); in.clear();
     BT.PostPreInOrderInOneFlowRecursive(BT.getRoot(), pre, post, in);
+    cout << "All Three Traversal in Single Recursive Function:" << endl;
     cout << "Preorder: " << pre << "Inorder: " << in << "Postorder: " << post;
 
     cout << "Preorder Iterative : " << BT.preorderIterative();
@@ -776,10 +1046,31 @@ int main()
     cout << "Spiral Deque: " << BT.spiralDeque();
     cout << "Spiral Two Stacks: " << BT.spiralTwoStacks();
 
-    /* Tree Properties or Conditions */
+    cout << "Diagonal Queue: " << BT.diagonalQueue();
 
-    cout << " Symmetric Tree: " << BT.isSymmetric();
-    cout << " Symmetric Tree: " << BTSymmetric.isSymmetric();
+    vector<int> boundary;
+    BT.boundaryTraversal(boundary);
+    cout << "Boundary Traversal : " << boundary;
+
+    /* Tree Properties or Conditions */
+    cout << " Symmetric Tree: " << BT.isSymmetric() << endl;
+    cout << " Symmetric Tree: " << BTSymmetric.isSymmetric() << endl;
+
+    cout << " Density of Binary Tree: " << BT.density() << endl;
+
+    /* Tree Transformations */
+    cout << " Original Tree: " << BTSumTree.preorderIterative();
+    cout << " Total Sum of BT Nodes: "  << BTSumTree.toSumTree(BTSumTree.getRoot()) << endl;
+    cout << " Sum Tree: " << BTSumTree.preorderIterative();
+
+    BTSumTree.toMirrorRecursive(BTSumTree.getRoot());
+    cout << " Mirror Tree - Recurisve: " << BTSumTree.preorderIterative();
+
+    BTSumTree.toMirrorIterative();
+    cout << " Mirror Tree - Iterative: " << BTSumTree.preorderIterative(); 
+
+    BTSumTree.setRoot(BTSumTree.toRightFlip(BTSumTree.getRoot()));
+    cout << " Right Flipped : " << BTSumTree.preorderIterative();
 
     return 0;
 }
