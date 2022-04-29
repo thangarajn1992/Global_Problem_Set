@@ -1,8 +1,3 @@
-
-
-
-
-
 #include<iostream>
 #include<stack>
 #include<queue>
@@ -25,11 +20,18 @@ std::ostream & operator << (std::ostream & os, const std::vector<T> & vec)
 
 /*
 ============================================================================
-Binary Search Tree:
+Binary Tree:
 ============================================================================
-BSTNode class declaration
-Methods to manipulate BST:
-    Insert method to insert node into BST
+
+Binary Tree Operations:
+    Insert New node into Binary Tree
+    Delete Node with value in Binary Tree
+    Create Binary Tree from Parent Array Representation
+
+Binary Search Tree Operations:
+    Insert New node into Binary Search Tree
+
+
 Tree Traversals:
     Preorder Recursive
     Inorder Recursive
@@ -124,6 +126,13 @@ public:
             }
         }
     }  
+
+    /* Number of Binary Search Trees Possible with N keys */
+    int NumberOfBSTsForNkeys(int n)
+    {
+        return 0;
+    }
+
 };
 
 
@@ -154,6 +163,10 @@ public:
     }
 
     /* Tree Operations */
+    /*  
+    Insert in Binary Tree:
+        Find the first free space available and insert new node 
+    */
     void Insert(int value)
     {
         BinaryTreeNode *temp = nullptr;
@@ -190,6 +203,105 @@ public:
                 return;
             }
         }
+    }
+
+    /* 
+    Delete in Binary Tree:
+       Replace the deleted node with the last node
+       So the tree shrinks from the bottom
+       Run a BFS to find node to be deleted, deepest node
+       and parent of deepest node.
+    */
+    void Delete(int value)
+    {
+        if(root == nullptr)
+            return;
+        
+        if(root->left == nullptr && root->right == nullptr)
+        {
+            if(root->data == value)
+            {
+                delete(root);
+                root == nullptr;
+            }
+            return;
+        }
+
+        BinaryTreeNode *toDelete = nullptr;
+        BinaryTreeNode *deepestNode = nullptr;
+        BinaryTreeNode *parentOfDeepestNode = nullptr;
+
+        queue<BinaryTreeNode*> BTNodeQueue;
+        BTNodeQueue.push(root);
+
+        while(BTNodeQueue.empty() == false)
+        {
+            deepestNode = BTNodeQueue.front();
+            BTNodeQueue.pop();
+
+            if(deepestNode->data == value)
+                toDelete = deepestNode;
+            
+            if(deepestNode->left != nullptr)
+            {
+                parentOfDeepestNode = deepestNode;
+                BTNodeQueue.push(deepestNode->left);
+            }
+            if(deepestNode->right != nullptr)
+            {
+                parentOfDeepestNode = deepestNode;
+                BTNodeQueue.push(deepestNode->right);
+            }
+        }
+        if(toDelete != nullptr)
+        {
+            toDelete->data = deepestNode->data;
+            if(parentOfDeepestNode->right == deepestNode)
+            {
+                parentOfDeepestNode->right = nullptr;
+            }
+            else
+            {
+                parentOfDeepestNode->left = nullptr;
+            }
+            delete(deepestNode);
+        }
+    }
+
+    /* Create Binary Tree from Parent Array Representation */
+    void createBTFromParentArray(vector<int> &parentArray)
+    {
+        int totalNodes = parentArray.size();
+        vector<BinaryTreeNode*> createdNodes(totalNodes, nullptr);
+
+        for(int i = 0; i < totalNodes; i++)
+        {
+            createNode(i, createdNodes, parentArray);
+        }
+    }
+
+    void createNode(int nodeNum, vector<BinaryTreeNode*> &createdNodes, vector<int> &parentArray)
+    {
+        if(createdNodes[nodeNum] != nullptr)
+            return;
+        
+        createdNodes[nodeNum] = new BinaryTreeNode(nodeNum);
+
+        if(parentArray[nodeNum] == -1)
+        {
+            root = createdNodes[nodeNum];
+            return;
+        }
+
+        if(createdNodes[parentArray[nodeNum]] == nullptr)
+        {
+            createNode(parentArray[nodeNum], createdNodes, parentArray);
+        }
+
+        if(createdNodes[parentArray[nodeNum]]->left == nullptr)
+            createdNodes[parentArray[nodeNum]]->left = createdNodes[nodeNum];
+        else
+            createdNodes[parentArray[nodeNum]]->right = createdNodes[nodeNum];
     }
 
     /* Tree Traversals - Recursive */
@@ -966,14 +1078,27 @@ public:
         node->right = nullptr;
         
         return flippedRoot;
+    }
 
+    /* Tree Combinations */
+    
+    /* Number of Unlabelled Binary Trees with N Nodes */
+    int NumberOfUnlabelledBinaryTreesWithNNodes(int n)
+    {
+        return 0;
+    }
 
+    /* Number of Full Binary Trees with N+1 leaves */
+    int NumberOfFullBinaryTreeWithNPlus1Leaves(int n)
+    {
+        return 0;
     }
 };
 
 int main()
 {
     BinaryTree BT;
+    /* BT Operations */
     BT.Insert(100);
     BT.Insert(50);
     BT.Insert(150);
@@ -983,6 +1108,18 @@ int main()
     BT.Insert(125);
     BT.Insert(10);
     BT.Insert(87);
+
+    cout << BT.preorderIterative() << endl;
+
+    cout << "Deleting Node 150.." << endl;
+    BT.Delete(150);
+    cout << BT.preorderIterative() << endl;
+
+    vector<int> parentArray = {-1, 0, 0, 1, 1, 3, 5};
+    cout << "Creating BT from Parent Array: " << parentArray << endl;
+    BinaryTree BTParentArray;
+    BTParentArray.createBTFromParentArray(parentArray);
+    cout << BTParentArray.preorderIterative() << endl;
 
     BinaryTree BTSymmetric;
     BTSymmetric.Insert(100);
