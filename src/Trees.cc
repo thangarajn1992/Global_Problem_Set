@@ -145,6 +145,45 @@ public:
     BinaryTreeNode(int value) : data{value}, left(nullptr), right(nullptr) {}
 };
 
+class BinaryTreeArray {
+private:
+    vector<int> BinaryTree;
+
+public:
+    BinaryTreeArray(int size, int rootVal) {
+        BinaryTree.resize(size, -1);
+        BinaryTree[0] = rootVal;
+    }
+
+    vector<int> getArray()
+    {
+        return BinaryTree;
+    }
+    void addLeftNode(int parentIndex, int value)
+    {
+        if(BinaryTree[parentIndex] == -1)
+        {
+            cout << "Invalid Parent Node.." << endl;
+        }
+        else
+        {
+            BinaryTree[(parentIndex*2) + 1] = value;  
+        }
+    }
+
+    void addRightNode(int parentIndex, int value)
+    {
+        if(BinaryTree[parentIndex] == -1)
+        {
+            cout << "Invalid Parent Node.." << endl;
+        }
+        else
+        {
+            BinaryTree[(parentIndex*2) + 2] = value;
+        }
+    }
+};
+
 class BinaryTree {
 private:
     BinaryTreeNode *root;
@@ -1097,6 +1136,19 @@ public:
 
 int main()
 {
+    /* Binary Tree Array Representation */
+
+    cout << "Creating Binary Tree with Array Representation: " << endl;
+    BinaryTreeArray BTArray(6,10);
+
+    BTArray.addLeftNode(0, 4);
+    BTArray.addLeftNode(1, 2);
+    BTArray.addRightNode(0, 12);
+    BTArray.addRightNode(1, 6);
+
+    cout << BTArray.getArray() << endl;
+    
+    cout << "Creating Binary Tree with Linked List Representation: " << endl;
     BinaryTree BT;
     /* BT Operations */
     BT.Insert(100);
