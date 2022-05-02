@@ -2,6 +2,8 @@
 #include<stack>
 #include<queue>
 #include<unordered_map>
+#include<climits>
+
 using namespace std;
  
 /* Overloading cout to print vector of any type */
@@ -130,11 +132,104 @@ public:
         }
     }  
 
+    /* Basic Recursive Traversal: To print BSTs */
+        /* Preorder Traversal - Recursive */
+    void preorderRecurisve(BinarySearchTreeNode *node, vector<int> &preorder)
+    {
+        if(node == nullptr)
+            return;
+
+        preorder.push_back(node->data);
+        preorderRecurisve(node->left, preorder);
+        preorderRecurisve(node->right, preorder);
+    }
+
+    /* Inorder Traversal - Recursive */
+    void inorderRecursive(BinarySearchTreeNode *node, vector<int> &inorder)
+    {
+        if(node == nullptr)
+            return;
+
+        inorderRecursive(node->left, inorder);
+        inorder.push_back(node->data);
+        inorderRecursive(node->right, inorder);
+    }
+
+    /* Postorder Traversal - Recursive */
+    void postorderRecursive(BinarySearchTreeNode *node, vector<int> &postorder)
+    {
+        if(node == nullptr)
+            return;
+
+        postorderRecursive(node->left, postorder);
+        postorderRecursive(node->right, postorder);
+        postorder.push_back(node->data);
+    }
+
+    /* Binary Search Tree Construction */
+    void constructBSTFromPreorderRecursive(vector<int> pre)
+    {
+        int preIndex = 0;
+        root = BSTFromPreUtil(pre, preIndex, INT_MIN, INT_MAX);
+    }
+
+    BinarySearchTreeNode *BSTFromPreUtil(vector<int> &pre, int &preIndex,
+                                         int start, int end)
+    {
+        if(preIndex >= pre.size())
+            return nullptr;
+
+        int key = pre[preIndex]; 
+        if(key > start && key < end)
+        {
+            BinarySearchTreeNode *node = new BinarySearchTreeNode(key);
+            preIndex++;
+            
+            node->left = BSTFromPreUtil(pre, preIndex, start, key);
+            node->right = BSTFromPreUtil(pre, preIndex, key, end);
+
+            return node;
+        }
+        return nullptr;
+    }
+    
+    void constructBSTFromPreorderIterative(vector<int> pre)
+    {
+        stack<BinarySearchTreeNode*> BSTNodeStack;
+
+        root = new BinarySearchTreeNode(pre[0]);
+        BSTNodeStack.push(root);
+
+        for(int num = 1; num < pre.size(); num++)
+        {
+            BinarySearchTreeNode *curr = nullptr;
+
+            /* Pop all lesser elements from stack and put this node as right node */
+            while(BSTNodeStack.empty() == false &&
+                  pre[num] > BSTNodeStack.top()->data)
+            {
+                curr = BSTNodeStack.top();
+                BSTNodeStack.pop();
+            }
+            if(curr != nullptr)
+            {
+                curr->right = new BinarySearchTreeNode(pre[num]);
+                BSTNodeStack.push(curr->right);
+            }
+            else /* If no element from the stack is lesser, then this is left node */
+            {
+                BSTNodeStack.top()->left = new BinarySearchTreeNode(pre[num]);
+                BSTNodeStack.push(BSTNodeStack.top()->left);
+            }
+        }
+    }
+
     /* Number of Binary Search Trees Possible with N keys */
     int NumberOfBSTsForNkeys(int n)
     {
         return 0;
     }
+
 
 };
 
@@ -1312,6 +1407,33 @@ int main()
 
     BTSumTree.setRoot(BTSumTree.toRightFlip(BTSumTree.getRoot()));
     cout << " Right Flipped : " << BTSumTree.preorderIterative();
+
+
+
+    /* Binary Search Tree Constructions */
+    cout << "**********************************" << endl;
+    cout << " Binary Search Tree Constructions " << endl;
+    cout << "**********************************" << endl;
+    cout << endl;
+    
+    pre.clear(); in.clear();
+    BST.preorderRecurisve(BST.getRoot(), pre);
+    cout << "Preorder Recursive: " << pre;
+
+    BinarySearchTree BSTGeneratedRecursive;
+    cout << "Generating BST from preorder (Recursive): " << endl;
+    BSTGeneratedRecursive.constructBSTFromPreorderRecursive(pre);
+    BSTGeneratedRecursive.inorderRecursive(BSTGeneratedRecursive.getRoot(), in);
+    cout << "Inorder of generated BST: " << in << endl;
+    cout << endl;
+
+    BinarySearchTree BSTGeneratedIterative;
+    cout << "Generating BST from preorder (Iterative): " << endl;
+    BSTGeneratedIterative.constructBSTFromPreorderIterative(pre);
+    in.clear();
+    BSTGeneratedIterative.inorderRecursive(BSTGeneratedIterative.getRoot(), in);
+    cout << "Inorder of generated BST: " << in << endl;
+    cout << endl;
 
     return 0;
 }
