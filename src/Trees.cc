@@ -1,6 +1,7 @@
 #include<iostream>
 #include<stack>
 #include<queue>
+#include<unordered_map>
 using namespace std;
  
 /* Overloading cout to print vector of any type */
@@ -49,6 +50,8 @@ Tree Traversals:
     Spiral using Two Stacks
     Diagonal using Queue
     Boundary Traversal
+
+    Postorder from Preorder and Inorder
 
 Tree Properties:
     Is Symmetric Tree (Mirror Image)
@@ -981,6 +984,50 @@ public:
         }
     }
 
+
+    /*  Postorder Traversal from given Preorder and Inorder Traversal
+        Algorithm:
+        Root is always first element in preorder
+        Search for root in inorder and all indexes before them are left-subtree
+        and all indexes after them are right-subtree
+        Reduce the inorder index range accordingly and print left and right 
+        and then root to get the postorder
+    */
+    vector<int> getPostfromPreAndIn(vector<int> &pre, vector<int> &in)
+    {
+        unordered_map<int,int> nodeIndexInorder;
+        vector<int> postorder;
+        unsigned int preIndex = 0;
+
+        for(int inNum = 0; inNum < in.size(); inNum++)
+            nodeIndexInorder[in[inNum]] = inNum;
+
+        getPostfromPreAndInUtil(pre, in, preIndex, 0, in.size()-1, nodeIndexInorder, 
+                                postorder);
+
+        return postorder;
+    }
+
+    void getPostfromPreAndInUtil(vector<int> &pre, vector<int> &in,
+                                 unsigned int &preIndex,
+                                 int InStart, int InEnd,
+                                 unordered_map<int,int> &indexMap,
+                                 vector<int> &post)
+    {
+        if(InStart > InEnd)
+            return;
+        
+        int rootIndex = indexMap[pre[preIndex++]];
+
+        // Complete the left sub-tree
+        getPostfromPreAndInUtil(pre, in, preIndex, InStart, rootIndex-1, indexMap, post);
+
+        // Complete the right sub-tree
+        getPostfromPreAndInUtil(pre, in, preIndex, rootIndex+1, InEnd, indexMap, post);
+        
+        post.push_back(in[rootIndex]);
+    }
+
     /* Tree Properties or Conditions */
 
     
@@ -1031,11 +1078,9 @@ public:
 
     /* Tree Transformations */
     
-    /* 
-        Convert to its SumTree 
+    /*  Convert to its SumTree 
         Each node will contain sum of its left and right sub-tree
     */
-
     int toSumTree(BinaryTreeNode *node)
     {
         if(node == nullptr)
@@ -1240,6 +1285,13 @@ int main()
     vector<int> boundary;
     BT.boundaryTraversal(boundary);
     cout << "Boundary Traversal : " << boundary;
+
+    cout << "Get Postorder from Pre and In order: " << endl;
+    pre = BT.preorderIterative();
+    in = BT.inorderIterativeStack();
+    cout << "Preorder: " << pre << endl;
+    cout << "Inorder: " << in << endl;
+    cout << "Postorder: " << BT.getPostfromPreAndIn(pre, in) << endl;
 
     /* Tree Properties or Conditions */
     cout << " Symmetric Tree: " << BT.isSymmetric() << endl;
