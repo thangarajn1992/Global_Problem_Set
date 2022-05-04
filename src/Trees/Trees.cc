@@ -1,0 +1,233 @@
+#include "Trees.h"
+#include "Binary_Tree.h"
+#include "Binary_Search_Tree.h"
+
+using namespace std;
+
+typedef enum treeType{
+    BINARY_TREE = 1,
+    BINARY_SEARCH_TREE = 2
+}treeType_t;
+
+int main()
+{
+    unsigned int type;
+    vector<int> pre, post, in;
+    cout << "Enter Type of Tree: \n" << endl;
+    cout << "1. Binary Tree\n" << endl;
+    cout << "2. Binary Search Tree\n" << endl;
+    cin >> type;
+    
+    switch(static_cast<treeType_t>(type))
+    {
+        case BINARY_TREE:
+        {
+            /* Binary Tree Array Representation */
+            cout << "Creating Binary Tree with Array Representation: " << endl;
+            BinaryTreeArray BTArray(6,10);
+
+            BTArray.addLeftNode(0, 4);
+            BTArray.addLeftNode(1, 2);
+            BTArray.addRightNode(0, 12);
+            BTArray.addRightNode(1, 6);
+
+            cout << BTArray.getArray() << endl;
+
+            cout << "Creating Binary Tree with Linked List Representation: " << endl;
+            BinaryTree BT;
+            /* BT Operations */
+            BT.Insert(100);
+            BT.Insert(50);
+            BT.Insert(150);
+            BT.Insert(25);
+            BT.Insert(175);
+            BT.Insert(75);
+            BT.Insert(125);
+            BT.Insert(10);
+            BT.Insert(87);
+
+
+            cout << BT.getPreOrder(true) << endl;
+
+            cout << "Deleting Node 150.." << endl;
+            BT.Delete(150);
+            cout << BT.getPreOrder(true) << endl;
+
+            vector<int> parentArray = {-1, 0, 0, 1, 1, 3, 5};
+            cout << "Creating BT from Parent Array: " << parentArray << endl;
+            BinaryTree BTParentArray;
+            BTParentArray.createBTFromParentArray(parentArray);
+            cout << BTParentArray.getPreOrder(true) << endl;
+
+            BinaryTree BTSymmetric;
+            BTSymmetric.Insert(100);
+            BTSymmetric.Insert(50);
+            BTSymmetric.Insert(50);
+            BTSymmetric.Insert(24);
+            BTSymmetric.Insert(945);
+            BTSymmetric.Insert(945);
+            BTSymmetric.Insert(24);
+
+            BinaryTree BTSumTree;
+            BTSumTree.Insert(10);
+            BTSumTree.Insert(-3);
+            BTSumTree.Insert(5);
+            BTSumTree.Insert(14);
+            BTSumTree.Insert(-4);
+            BTSumTree.Insert(8);
+            BTSumTree.Insert(-9);  
+
+            /* Tree Traversals */
+            BT.clearPreorder();
+            BT.preorderRecurisve(BT.getRoot());
+            cout << "Preorder Recursive: " << BT.getPreOrder();
+            cout << endl;
+
+            BT.clearInorder();
+            BT.inorderRecursive(BT.getRoot());
+            cout << "Inorder Recursive: " << BT.getInorder();
+            cout << endl;
+
+            BT.clearPostorder();
+            BT.postorderRecursive(BT.getRoot());
+            cout << "Postorder Recursive: " << BT.getPostOrder();
+            cout << endl;
+
+            BT.clearAllTraversals();
+            BT.PostPreInOrderInOneFlowRecursive(BT.getRoot());
+            cout << "All Three Traversal in Single Recursive Function:" << endl;
+            cout << "Preorder: " << BT.getPreOrder();
+            cout << "Inorder: " << BT.getInorder();
+            cout << "Postorder: " << BT.getPostOrder();
+            cout << endl;
+
+
+            BT.preorderIterative(BT.getRoot());
+            cout << "Preorder Iterative : " << BT.getPreOrder();
+            cout << endl;
+
+            BT.inorderIterativeStack(BT.getRoot());
+            cout << "Inorder Iterative : " << BT.getInorder();
+            BT.inorderIterativeMorris(); 
+            cout << "Inorder Iterative Morris: " << BT.getInorder();
+            cout << endl;
+
+            BT.postorderIterativeTwoStacks();
+            cout << "Postorder Iterative two Stacks: " << BT.getPostOrder();
+            BT.postorderIterativeStack(BT.getRoot());
+            cout << "Postorder Iterative Stack: " << BT.getPostOrder();
+            cout << endl;
+    
+            BT.levelorderQueue(BT.getRoot());
+            cout << "Levelorder Queue: " << BT.getLevelOrder();
+            cout << endl;
+
+            BT.zigzagQueue(); 
+            cout << "ZigZag Queue: " << BT.getZigzag();
+            BT.zigzagDeque(BT.getRoot());
+            cout << "ZigZag Deque: " << BT.getZigzag();
+            BT.zigzagTwoStacks();
+            cout << "ZigZag Two Stacks: " << BT.getZigzag();
+            cout << endl;
+
+            BT.spiralDeque(BT.getRoot()); 
+            cout << "Spiral Deque: " << BT.getSpiral();
+            BT.spiralTwoStacks();
+            cout << "Spiral Two Stacks: " << BT.getSpiral();
+            cout << endl;
+
+            BT.diagonalQueue(BT.getRoot());
+            cout << "Diagonal Queue: " << BT.getDiagonal();
+            cout << endl;
+
+            BT.boundaryTraversal();
+            cout << "Boundary Traversal : " << BT.getBounary();
+            cout << endl;
+
+            cout << "Get Postorder from Pre and In order: " << endl;
+            BT.preorderIterative(BT.getRoot());
+            BT.inorderIterativeStack(BT.getRoot());
+            pre = BT.getPreOrder();
+            in = BT.getInorder();
+            cout << "Preorder: " << pre;
+            cout << "Inorder: " << in;
+            cout << "Postorder: " << BT.getPostfromPreAndIn(pre, in) << endl;
+
+            /* Tree Properties or Conditions */
+
+            /* Is Symmetric Tree ? */
+            cout << "Symmetric Tree: " << BT.isSymmetric() << endl;
+            cout << "Symmetric Tree: " << BTSymmetric.isSymmetric() << endl;
+            cout << endl;
+
+            /* Density of Binary Tree */
+            cout << "Density of Binary Tree: " << BT.density() << endl;
+            cout << endl;
+
+            /* Tree Transformations */
+
+            /* Convert to Sum Tree */
+            cout << "Original Tree: " << BTSumTree.getPreOrder();
+            cout << "Total Sum of BT Nodes: "  << BTSumTree.toSumTree(BTSumTree.getRoot()) << endl;
+            cout << "Sum Tree: " << BTSumTree.getPreOrder(true);
+            cout << endl;
+
+            /* Convert to Mirror Tree */
+            BTSumTree.toMirrorRecursive(BTSumTree.getRoot());
+            cout << "Mirror Tree - Recurisve: " << BTSumTree.getPreOrder(true);
+            BTSumTree.toMirrorIterative();
+            cout << "Mirror Tree - Iterative: " << BTSumTree.getPreOrder(true); 
+            cout << endl;
+
+            /* Right Flip the Binary Tree */
+            BTSumTree.setRoot(BTSumTree.toRightFlip(BTSumTree.getRoot()));
+            cout << "Right Flipped : " << BTSumTree.getPreOrder(true);
+            break;
+        }
+        case BINARY_SEARCH_TREE:
+        {
+            BinarySearchTree BST;
+            BST.Insert(100);
+            BST.Insert(50);
+            BST.Insert(150);
+            BST.Insert(25);
+            BST.Insert(175);
+            BST.Insert(75);
+            BST.Insert(125);
+            BST.Insert(10);
+            BST.Insert(87);
+
+               /* Binary Search Tree Constructions */
+            cout << "**********************************" << endl;
+            cout << " Binary Search Tree Constructions " << endl;
+            cout << "**********************************" << endl;
+            cout << endl;
+
+            BST.preorderRecurisve(BST.getRoot(), pre);
+            cout << "Preorder Recursive: " << pre;
+
+            BinarySearchTree BSTGeneratedRecursive;
+            cout << "Generating BST from preorder (Recursive): " << endl;
+            BSTGeneratedRecursive.constructBSTFromPreorderRecursive(pre);
+            BSTGeneratedRecursive.inorderRecursive(BSTGeneratedRecursive.getRoot(), in);
+            cout << "Inorder of generated BST: " << in << endl;
+            cout << endl;
+
+            BinarySearchTree BSTGeneratedIterative;
+            cout << "Generating BST from preorder (Iterative): " << endl;
+            BSTGeneratedIterative.constructBSTFromPreorderIterative(pre);
+            in.clear();
+            BSTGeneratedIterative.inorderRecursive(BSTGeneratedIterative.getRoot(), in);
+            cout << "Inorder of generated BST: " << in << endl;
+            cout << endl;
+
+            cout << "Generating BST Postorder from Preorder: " << endl;
+            post.clear();
+            post = BST.BSTPostorderFromPreorder(pre);
+            cout << "Postorder : " << post << endl;
+            cout << endl;
+            break;
+        }
+    }
+    return 0;
+}
