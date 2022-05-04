@@ -44,6 +44,10 @@ Tree Transformations:
     Convert to its Mirror Image - Recursive
     Convert to its Mirror Image - Iterative
     Right Flip 
+
+Tree Generation/Combination:
+    Generate all possible Binary Trees for given Inorder
+    
 */
 
 class BinaryTreeNode{
@@ -232,7 +236,6 @@ public:
                                  unordered_map<int,int> &indexMap,
                                  vector<int> &post);
     
-    
     /* Tree Properties or Conditions */
     bool isSymmetric();
     bool isMirror(BinaryTreeNode *node1, 
@@ -249,7 +252,8 @@ public:
     /* Tree Combinations */
     int NumberOfUnlabelledBinaryTreesWithNNodes(int n);
     int NumberOfFullBinaryTreeWithNPlus1Leaves(int n);
-    int AllPossibleBinaryTreeForInorder(vector<int> &in);
+    void AllPossibleBinaryTreeForInorder(vector<int> &in);
+    vector<BinaryTreeNode*> GenerateBTForInorderUtil(vector<int> &in, int start, int end);
 };
 
 #endif

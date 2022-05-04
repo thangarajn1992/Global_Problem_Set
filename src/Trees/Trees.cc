@@ -153,6 +153,14 @@ int main()
             cout << "Inorder: " << in;
             cout << "Postorder: " << BT.getPostfromPreAndIn(pre, in) << endl;
 
+            /* Tree Combinations */
+            in = BT.getInorder();
+            cout << "All possible BTs from given Inorder: " << endl;
+            BT.AllPossibleBinaryTreeForInorder(in);
+            BT.printAllBTsForInorder();
+            cout << endl;
+
+
             /* Tree Properties or Conditions */
 
             /* Is Symmetric Tree ? */
@@ -182,6 +190,7 @@ int main()
             /* Right Flip the Binary Tree */
             BTSumTree.setRoot(BTSumTree.toRightFlip(BTSumTree.getRoot()));
             cout << "Right Flipped : " << BTSumTree.getPreOrder(true);
+
             break;
         }
         case BINARY_SEARCH_TREE:

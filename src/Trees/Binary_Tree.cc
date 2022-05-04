@@ -28,6 +28,8 @@ BinaryTreeArray::addRightNode(int parentIndex, int value)
     }
 }
 
+
+/* Binary Tree Methods */
 void 
 BinaryTree::printAllBTsForInorder()
 {
@@ -826,7 +828,6 @@ BinaryTree::leaves(BinaryTreeNode *node)
     }
 }
 
-
 /*  Postorder Traversal from given Preorder and Inorder Traversal
     Algorithm:
     Root is always first element in preorder
@@ -873,7 +874,6 @@ BinaryTree::getPostfromPreAndInUtil(vector<int> &pre, vector<int> &in,
 }
 
 /* Tree Properties or Conditions */
-
 
 bool 
 BinaryTree::isSymmetric()
@@ -1032,8 +1032,37 @@ BinaryTree::NumberOfFullBinaryTreeWithNPlus1Leaves(int n)
     return 0;
 }
 
-int 
+void 
 BinaryTree::AllPossibleBinaryTreeForInorder(vector<int> &in)
 {
-    return 0;
+    allBTsForInorder = GenerateBTForInorderUtil(in, 0, in.size()-1);
+}
+
+vector<BinaryTreeNode*>
+BinaryTree::GenerateBTForInorderUtil(vector<int> &in, int start, int end)
+{
+    vector<BinaryTreeNode *> btrees;
+    if(start > end)
+    {
+        btrees.push_back(nullptr);
+        return btrees;
+    }
+
+    for(int i = start; i <= end; i++)
+    {
+        vector<BinaryTreeNode*> leftSubTrees = GenerateBTForInorderUtil(in, start, i-1);
+        vector<BinaryTreeNode*> rightSubTrees = GenerateBTForInorderUtil(in, i+1, end);
+
+        for(BinaryTreeNode* left : leftSubTrees)
+        {
+            for(BinaryTreeNode *right : rightSubTrees)
+            {
+                BinaryTreeNode *node = new BinaryTreeNode(in[i]);
+                node->left = left;
+                node->right = right;
+                btrees.push_back(node);
+            }
+        }
+    }
+    return btrees;
 }
