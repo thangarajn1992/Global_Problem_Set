@@ -198,12 +198,12 @@ public:
     }
 
     void printAllBTsForInorder();
-    void printInorderUsingInorderSucessorPtr();
+    void printInorderUsingInorderSuccessorPtr();
 
     /* Tree Operations */
     void Insert(int value);
     void Delete(int value);
-    void Search(int value);
+    BinaryTreeNode* Search(int value);
 
     void createBTFromParentArray(vector<int> &parentArray);
     void createNode(int nodeNum, 
@@ -261,8 +261,8 @@ public:
                                             BinaryTreeNode* &previous,
                                             int &prevVal);
     void populateInorderSuccessor(BinaryTreeNode *node);
-    BinaryTreeNode* getInorderSucessor(BinaryTreeNode *node);
-    void getInorderSucessorUtil(BinaryTreeNode *root,
+    BinaryTreeNode* getInorderSuccessor(BinaryTreeNode *node);
+    void getInorderSuccessorUtil(BinaryTreeNode *root,
                                 BinaryTreeNode* node,
                                 BinaryTreeNode* &successor);
     

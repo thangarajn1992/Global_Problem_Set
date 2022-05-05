@@ -218,16 +218,20 @@ int main()
             BT.populateInorderSuccessor(BT.getRoot());
             cout << "Inorder Traversal: " << BT.getInorder(true);
             cout << "Inorder Using Sucessor Pointer: ";
-            BT.printInorderUsingInorderSucessorPtr();
+            BT.printInorderUsingInorderSuccessorPtr();
             cout << endl;
 
             /* Find Inorder Successor for given node in Binary Tree */
-            BinaryTreeNode* InorderSuccessor50 = BT.getInorderSucessor(BT.Search(50));
-            if(InorderSuccessor50 != nullptr)
-                cout << "Inorder Sucessor for 50 is " << InorderSuccessor50 << " " << InorderSuccessor50->data << endl;
-            else
-                cout << "Inorder Sucessor for 50 is nullptr" << endl;
-            cout << endl;
+            BinaryTreeNode* node50 = BT.Search(50);
+            if(node50 != nullptr)
+            {
+                BinaryTreeNode* InorderSuccessor50 = BT.getInorderSuccessor(node50);
+                if(InorderSuccessor50 != nullptr)
+                    cout << "Inorder Sucessor for 50 is " << InorderSuccessor50 << " " << InorderSuccessor50->data << endl;
+                else
+                    cout << "Inorder Sucessor for 50 is nullptr" << endl;
+                cout << endl;
+            }
 
             break;
         }

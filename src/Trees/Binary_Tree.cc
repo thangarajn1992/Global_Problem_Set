@@ -42,7 +42,7 @@ BinaryTree::printAllBTsForInorder()
 }
 
 void
-BinaryTree::printInorderUsingInorderSucessorPtr()
+BinaryTree::printInorderUsingInorderSuccessorPtr()
 {
     BinaryTreeNode *node = root;
     /* Left most node is the first element in Inorder */
@@ -176,7 +176,7 @@ BinaryTree::Search(int value)
 
     while(nodeQueue.empty() == false)
     {
-        BianryTreeNode* curr = nodeQueue.front();
+        BinaryTreeNode* curr = nodeQueue.front();
         nodeQueue.pop();
 
         if(curr->data == value)
@@ -1115,31 +1115,34 @@ BinaryTree::populateInorderSuccessor(BinaryTreeNode *node)
 
 /* Get Inorder Successor for given node in Binary Tree */
 BinaryTreeNode*
-BinaryTree::getInorderSucessor(BinaryTreeNode *node)
+BinaryTree::getInorderSuccessor(BinaryTreeNode *node)
 {
     BinaryTreeNode *successor = nullptr;
-    getInorderSucessorUtil(root, node, successor);
+    getInorderSuccessorUtil(root, node, successor);
     return successor;
 }
 
 void 
-BinaryTree::getInorderSucessorUtil(BinaryTreeNode *root,
+BinaryTree::getInorderSuccessorUtil(BinaryTreeNode *root,
                                    BinaryTreeNode* node,
                                    BinaryTreeNode* &successor)
 {
     static BinaryTreeNode *next = nullptr;
 
-    if(successor != nullptr) // already found
+    if(root == nullptr)
         return;
-    
-    getInorderSuccessorUtil(root->right, node, successor);
+        
+    if(successor == nullptr) // If not found
+    {
+        getInorderSuccessorUtil(root->right, node, successor);
 
-    if(root->data == node->data)
-        successor = next;
+        if(root->data == node->data)
+            successor = next;
 
-    next = root;
+        next = root;
 
-    getInorderSuccessorUtil(root->left, node, successor);
+        getInorderSuccessorUtil(root->left, node, successor);
+    }
 }
 
 /* Number of Full Binary Trees with N+1 leaves */
