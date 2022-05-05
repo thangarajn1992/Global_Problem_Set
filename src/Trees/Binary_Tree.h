@@ -55,8 +55,9 @@ public:
     int data;
     BinaryTreeNode *left;
     BinaryTreeNode *right;
+    BinaryTreeNode *inorderSucessor;
 
-    BinaryTreeNode(int value) : data{value}, left(nullptr), right(nullptr) {}
+    BinaryTreeNode(int value) : data{value}, left(nullptr), right(nullptr), inorderSucessor(nullptr) {}
 };
 
 class BinaryTreeArray {
@@ -194,6 +195,7 @@ public:
     }
 
     void printAllBTsForInorder();
+    void printInorderUsingInorderSucessorPtr();
 
     /* Tree Operations */
     void Insert(int value);
@@ -253,6 +255,7 @@ public:
     void toInorderPredecessorSuccessorUtil(BinaryTreeNode *node,
                                             BinaryTreeNode* &previous,
                                             int &prevVal);
+    void populateInorderSuccessor(BinaryTreeNode *node);
     
     /* Tree Combinations */
     int NumberOfUnlabelledBinaryTreesWithNNodes(int n);

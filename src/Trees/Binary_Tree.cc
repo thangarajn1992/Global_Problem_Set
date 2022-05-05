@@ -41,6 +41,22 @@ BinaryTree::printAllBTsForInorder()
     }
 }
 
+void
+BinaryTree::printInorderUsingInorderSucessorPtr()
+{
+    BinaryTreeNode *node = root;
+    /* Left most node is the first element in Inorder */
+    while(node->left != nullptr)
+        node = node->left;
+
+    cout << "[ ";
+    while(node != nullptr)
+    {
+        cout << node->data << " ";
+        node = node->inorderSucessor;   
+    }
+    cout << "]" << endl;
+}
 /* Tree Operations */
 /*  
 Insert in Binary Tree:
@@ -1051,6 +1067,24 @@ BinaryTree::toInorderPredecessorSuccessorUtil(BinaryTreeNode *node,
     }
 
     toInorderPredecessorSuccessorUtil(node->right, previous, prevVal);
+}
+
+/* Populate inorder sucessor for each node in Binary Tree */
+void 
+BinaryTree::populateInorderSuccessor(BinaryTreeNode *node)
+{
+    static BinaryTreeNode* inorderSucessor = nullptr;
+
+    if(node != nullptr)
+    {
+        populateInorderSuccessor(node->right);
+
+        node->inorderSucessor = inorderSucessor;
+
+        inorderSucessor = node;
+
+        populateInorderSuccessor(node->left);
+    }
 }
 
 /* Tree Combinations */

@@ -190,11 +190,22 @@ int main()
             /* Right Flip the Binary Tree */
             BTSumTree.setRoot(BTSumTree.toRightFlip(BTSumTree.getRoot()));
             cout << "Right Flipped : " << BTSumTree.getPreOrder(true);
+            cout << endl;
 
             /* Update Node's value with Inorder Predecessor and Successor */
             cout << "Tree: " << BTSymmetric.getPreOrder(true);
             BTSymmetric.toInorderPredecessorSuccessor(BTSymmetric.getRoot());
             cout << "Sum of Inorder Predecessor & Sucessor: " << BTSymmetric.getPreOrder(true);
+            cout << endl;
+
+            /* Popualte Inorder Sucessor for all nodes in Binary Tree */
+            BT.populateInorderSuccessor(BT.getRoot());
+            cout << "Inorder Traversal: " << BT.getInorder(true);
+            cout << "Inorder Using Sucessor Pointer: ";
+            BT.printInorderUsingInorderSucessorPtr();
+            cout << endl;
+
+
             break;
         }
         case BINARY_SEARCH_TREE:
