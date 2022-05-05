@@ -20,6 +20,10 @@ Tree Traversals:
     Preorder Recursive
     Inorder Recursive
     Postorder Recursive
+    All three Traversal in single Recursive
+    Nth Inorder Node
+    Nth Postorder Node
+    
     Preorder Iterative
     Inorder Iterative Stack
     Inorder Iterative using Morris Traversal
@@ -215,6 +219,8 @@ public:
     void inorderRecursive(BinaryTreeNode *node);
     void postorderRecursive(BinaryTreeNode *node);
     void PostPreInOrderInOneFlowRecursive(BinaryTreeNode* node);
+    void getNthInorderNode(BinaryTreeNode* node, int N, int &value);
+    void getNthPostorderNode(BinaryTreeNode* node, int N, int &value);
     
     /* Tree Traversals - Iterative*/
     void preorderIterative(BinaryTreeNode *root);

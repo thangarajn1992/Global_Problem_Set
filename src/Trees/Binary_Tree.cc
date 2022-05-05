@@ -292,6 +292,41 @@ BinaryTree::PostPreInOrderInOneFlowRecursive(BinaryTreeNode* node)
     postorder.push_back(node->data);
 }
 
+
+void
+BinaryTree::getNthInorderNode(BinaryTreeNode* node, int N, int &value)
+{
+    static int count = 0;
+    if(node == nullptr)
+        return;
+
+    if(count <= N)
+    {
+        getNthInorderNode(node->left, N, value);
+        count++;
+        if(count == N)
+            value = node->data;
+        getNthInorderNode(node->right, N, value);
+    }
+}
+
+void
+BinaryTree::getNthPostorderNode(BinaryTreeNode* node, int N, int &value)
+{
+    static int count = 0;
+    if(node == nullptr)
+        return;
+
+    if(count <= N)
+    {
+        getNthPostorderNode(node->left, N, value);
+        getNthPostorderNode(node->right, N, value);
+        count++;
+        if(count == N)
+            value = node->data;
+    }
+}
+
 /* Tree Traversals - Iterative*/
 
 /* Pre-order Traversal - Iterative Using Stack */
@@ -1131,7 +1166,7 @@ BinaryTree::getInorderSuccessorUtil(BinaryTreeNode *root,
 
     if(root == nullptr)
         return;
-        
+
     if(successor == nullptr) // If not found
     {
         getInorderSuccessorUtil(root->right, node, successor);
