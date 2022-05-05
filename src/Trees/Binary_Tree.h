@@ -13,6 +13,7 @@ Binary Tree:
 Binary Tree Operations:
     Insert New node into Binary Tree
     Delete Node with value in Binary Tree
+    Search a Node with given value in Binary Tree
     Create Binary Tree from Parent Array Representation
 
 Tree Traversals:
@@ -44,10 +45,12 @@ Tree Transformations:
     Convert to its Mirror Image - Recursive
     Convert to its Mirror Image - Iterative
     Right Flip 
+    Convert All nodes with value of sum of its inorder predecessor and successor
+    Populate all nodes with their inorder successor
+    Get Inorder Successor for a particular node
 
 Tree Generation/Combination:
     Generate all possible Binary Trees for given Inorder
-
 */
 
 class BinaryTreeNode{
@@ -200,6 +203,8 @@ public:
     /* Tree Operations */
     void Insert(int value);
     void Delete(int value);
+    void Search(int value);
+
     void createBTFromParentArray(vector<int> &parentArray);
     void createNode(int nodeNum, 
                     vector<BinaryTreeNode*> &createdNodes, 
@@ -256,6 +261,10 @@ public:
                                             BinaryTreeNode* &previous,
                                             int &prevVal);
     void populateInorderSuccessor(BinaryTreeNode *node);
+    BinaryTreeNode* getInorderSucessor(BinaryTreeNode *node);
+    void getInorderSucessorUtil(BinaryTreeNode *root,
+                                BinaryTreeNode* node,
+                                BinaryTreeNode* &successor);
     
     /* Tree Combinations */
     int NumberOfUnlabelledBinaryTreesWithNNodes(int n);

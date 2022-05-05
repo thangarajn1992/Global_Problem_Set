@@ -165,6 +165,32 @@ BinaryTree::Delete(int value)
     }
 }
 
+BinaryTreeNode*
+BinaryTree::Search(int value)
+{
+    if(root == nullptr)
+        return root;
+
+    queue<BinaryTreeNode*> nodeQueue;
+    nodeQueue.push(root);
+
+    while(nodeQueue.empty() == false)
+    {
+        BianryTreeNode* curr = nodeQueue.front();
+        nodeQueue.pop();
+
+        if(curr->data == value)
+            return curr;
+        
+        if(curr->left != nullptr)
+            nodeQueue.push(curr->left);
+        
+        if(curr->right != nullptr)
+            nodeQueue.push(curr->right);
+    }
+    return nullptr;
+}
+
 /* Create Binary Tree from Parent Array Representation */
 void 
 BinaryTree::createBTFromParentArray(vector<int> &parentArray)
@@ -1069,7 +1095,7 @@ BinaryTree::toInorderPredecessorSuccessorUtil(BinaryTreeNode *node,
     toInorderPredecessorSuccessorUtil(node->right, previous, prevVal);
 }
 
-/* Populate inorder sucessor for each node in Binary Tree */
+/* Populate inorder successor for each node in Binary Tree */
 void 
 BinaryTree::populateInorderSuccessor(BinaryTreeNode *node)
 {
@@ -1087,13 +1113,33 @@ BinaryTree::populateInorderSuccessor(BinaryTreeNode *node)
     }
 }
 
-/* Tree Combinations */
-
-/* Number of Unlabelled Binary Trees with N Nodes */
-int 
-BinaryTree::NumberOfUnlabelledBinaryTreesWithNNodes(int n)
+/* Get Inorder Successor for given node in Binary Tree */
+BinaryTreeNode*
+BinaryTree::getInorderSucessor(BinaryTreeNode *node)
 {
-    return 0;
+    BinaryTreeNode *successor = nullptr;
+    getInorderSucessorUtil(root, node, successor);
+    return successor;
+}
+
+void 
+BinaryTree::getInorderSucessorUtil(BinaryTreeNode *root,
+                                   BinaryTreeNode* node,
+                                   BinaryTreeNode* &successor)
+{
+    static BinaryTreeNode *next = nullptr;
+
+    if(successor != nullptr) // already found
+        return;
+    
+    getInorderSuccessorUtil(root->right, node, successor);
+
+    if(root->data == node->data)
+        successor = next;
+
+    next = root;
+
+    getInorderSuccessorUtil(root->left, node, successor);
 }
 
 /* Number of Full Binary Trees with N+1 leaves */

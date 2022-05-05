@@ -53,6 +53,22 @@ int main()
             BT.Delete(150);
             cout << BT.getPreOrder(true) << endl;
 
+            cout << "Searching Node 125.." << endl;
+            BinaryTreeNode* node125 = BT.Search(125);
+            if(node125 != nullptr)
+                cout << "Found Node with 125: " << node125;
+            else   
+                cout << "Node not Found..";
+            cout << endl;
+        
+            cout << "Searching Node 560.." << endl;
+            BinaryTreeNode* node560 = BT.Search(560);
+            if(node560 != nullptr)
+                cout << "Found Node with 560: " << node560;
+            else   
+                cout << "Node not Found..";
+            cout << endl;
+
             vector<int> parentArray = {-1, 0, 0, 1, 1, 3, 5};
             cout << "Creating BT from Parent Array: " << parentArray << endl;
             BinaryTree BTParentArray;
@@ -203,9 +219,15 @@ int main()
             cout << "Inorder Traversal: " << BT.getInorder(true);
             cout << "Inorder Using Sucessor Pointer: ";
             BT.printInorderUsingInorderSucessorPtr();
-
             cout << endl;
 
+            /* Find Inorder Successor for given node in Binary Tree */
+            BinaryTreeNode* InorderSuccessor50 = BT.getInorderSucessor(BT.Search(50));
+            if(InorderSuccessor50 != nullptr)
+                cout << "Inorder Sucessor for 50 is " << InorderSuccessor50 << " " << InorderSuccessor50->data << endl;
+            else
+                cout << "Inorder Sucessor for 50 is nullptr" << endl;
+            cout << endl;
 
             break;
         }
@@ -255,13 +277,32 @@ int main()
             /* Binary Search Tree Operations */
 
             cout << "Search node with value(125) in BST: ";
-            BinarySearchTreeNode* node = BST.Search(125);
-            cout << node << " " << node->data << endl;
+            BinarySearchTreeNode* node125 = BST.Search(125);
+            if(node125 != nullptr)
+                cout << node125 << " " << node125->data << endl;
+            else
+                cout << "No Entry Found.." << endl;
+            cout << "Search node with value(340) in BST: ";
+            BinarySearchTreeNode* node340 = BST.Search(340);
+            if(node340 != nullptr)
+                cout << node340 << " " << node340->data << endl;
+            else
+                cout << "No Entry Found.." << endl;
+            
             cout << endl;
 
+            cout << "Find Inorder Successor of Given Node(175): ";
+            BinarySearchTreeNode* InorderSuccessor175 = BST.getInorderSucessor(BST.Search(175));
+            if(InorderSuccessor175 != nullptr)
+                cout << InorderSuccessor175 << " " << InorderSuccessor175->data << endl;
+            else
+                cout << "nullptr" << endl;
             cout << "Find Inorder Successor of Given Node(125): ";
-            BinarySearchTreeNode* InorderSuccessor = BST.getInorderSucessor(BST.Search(125));
-            cout << InorderSuccessor << " " << InorderSuccessor->data << endl;
+            BinarySearchTreeNode* InorderSuccessor125 = BST.getInorderSucessor(BST.Search(125));
+            if(InorderSuccessor125 != nullptr)
+                cout << InorderSuccessor125 << " " << InorderSuccessor125->data << endl;
+            else
+                cout << "nullptr" << endl;
             cout << endl; 
             break;
         }
