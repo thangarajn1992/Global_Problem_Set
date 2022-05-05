@@ -164,8 +164,8 @@ int main()
             /* Tree Properties or Conditions */
 
             /* Is Symmetric Tree ? */
-            cout << "Symmetric Tree: " << BT.isSymmetric() << endl;
-            cout << "Symmetric Tree: " << BTSymmetric.isSymmetric() << endl;
+            cout << "Tree: " << BT.getPreOrder(true) << "Symmetric : " << BT.isSymmetric() << endl;
+            cout << "Tree: " << BTSymmetric.getPreOrder(true) << "Symmetric: " << BTSymmetric.isSymmetric() << endl;
             cout << endl;
 
             /* Density of Binary Tree */
@@ -191,6 +191,10 @@ int main()
             BTSumTree.setRoot(BTSumTree.toRightFlip(BTSumTree.getRoot()));
             cout << "Right Flipped : " << BTSumTree.getPreOrder(true);
 
+            /* Update Node's value with Inorder Predecessor and Successor */
+            cout << "Tree: " << BTSymmetric.getPreOrder(true);
+            BTSymmetric.toInorderPredecessorSuccessor(BTSymmetric.getRoot());
+            cout << "Sum of Inorder Predecessor & Sucessor: " << BTSymmetric.getPreOrder(true);
             break;
         }
         case BINARY_SEARCH_TREE:

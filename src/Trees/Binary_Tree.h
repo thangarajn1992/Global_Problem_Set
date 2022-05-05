@@ -47,7 +47,7 @@ Tree Transformations:
 
 Tree Generation/Combination:
     Generate all possible Binary Trees for given Inorder
-    
+
 */
 
 class BinaryTreeNode{
@@ -248,6 +248,11 @@ public:
     void toMirrorRecursive(BinaryTreeNode *node);
     void toMirrorIterative();
     BinaryTreeNode* toRightFlip(BinaryTreeNode *node);
+
+    void toInorderPredecessorSuccessor(BinaryTreeNode *node);
+    void toInorderPredecessorSuccessorUtil(BinaryTreeNode *node,
+                                            BinaryTreeNode* &previous,
+                                            int &prevVal);
     
     /* Tree Combinations */
     int NumberOfUnlabelledBinaryTreesWithNNodes(int n);
