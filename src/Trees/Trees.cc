@@ -147,6 +147,8 @@ int main()
     
             BT.levelorderQueue(BT.getRoot());
             cout << "Levelorder Queue: " << BT.getLevelOrder();
+            BT.levelorderReverseQueue(BT.getRoot());
+            cout << "Levelorder(Reverse) Queue: " << BT.getLevelOrderReverse();
             cout << endl;
 
             BT.zigzagQueue(); 

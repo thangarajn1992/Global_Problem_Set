@@ -23,13 +23,15 @@ Tree Traversals:
     All three Traversal in single Recursive
     Nth Inorder Node
     Nth Postorder Node
-    
+
     Preorder Iterative
     Inorder Iterative Stack
     Inorder Iterative using Morris Traversal
     Postorder Iterative Two Stacks
     Postorder Iterative One Stack
     Levelorder Queue/Bread-First Traversal
+    Reverse Levelorder Traversal Using Queue
+    
     ZigZag using Queue
     Zigzag using Deque (double ended Queue)
     ZigZag using Two Stacks
@@ -92,6 +94,7 @@ private:
     vector<int> inorder;
     vector<int> postorder;
     vector<int> levelorder;
+    vector<int> levelorderReverse;
     vector<int> zigzag;
     vector<int> spiral;
     vector<int> diagonal;
@@ -110,6 +113,7 @@ public:
     void clearInorder() { inorder.clear(); }
     void clearPostorder() { postorder.clear(); }
     void clearLevelorder() { levelorder.clear(); }
+    void clearLevelorderReverse() { levelorderReverse.clear(); }
     void clearZigzag() { zigzag.clear(); }
     void clearSpiral() { spiral.clear(); }
     void clearDiagonal() { diagonal.clear(); }
@@ -120,6 +124,7 @@ public:
         clearInorder();
         clearPostorder();
         clearLevelorder();
+        clearLevelorderReverse();
         clearZigzag();
         clearSpiral();
         clearDiagonal();
@@ -164,6 +169,16 @@ public:
             levelorderQueue(root);
         }
         return levelorder;
+    }
+
+    vector<int> getLevelOrderReverse(bool generate = false)
+    {
+        if(generate == true || (root != nullptr && levelorderReverse.size() == 0))
+        {
+            clearLevelorderReverse();
+            levelorderReverseQueue(root);
+        }
+        return levelorderReverse;
     }
 
     vector<int> getZigzag(bool generate = false)
@@ -229,6 +244,7 @@ public:
     void postorderIterativeTwoStacks();
     void postorderIterativeStack(BinaryTreeNode *root);
     void levelorderQueue(BinaryTreeNode *root);
+    void levelorderReverseQueue(BinaryTreeNode *root);
     void zigzagQueue();
     void zigzagDeque(BinaryTreeNode *root);
     void zigzagTwoStacks();

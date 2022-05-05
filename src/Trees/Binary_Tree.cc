@@ -521,6 +521,40 @@ BinaryTree::levelorderQueue(BinaryTreeNode *root)
     }
 }
 
+/* Reverse LevelOrder Traversal using Queue */
+void
+BinaryTree::levelorderReverseQueue(BinaryTreeNode *root)
+{
+    clearLevelorderReverse();
+    queue<BinaryTreeNode*> nodeQueue;
+    stack<BinaryTreeNode*> nodeStack;
+
+    if(root == nullptr)
+        return;
+    
+    nodeQueue.push(root);
+    while(nodeQueue.empty() == false)
+    {
+        BinaryTreeNode *curr = nodeQueue.front();
+        nodeQueue.pop();
+
+        nodeStack.push(curr);
+
+        /* Push right child first */
+        if(curr->right != nullptr)
+            nodeQueue.push(curr->right);
+        
+        if(curr->left != nullptr)
+            nodeQueue.push(curr->left);
+    }
+
+    while(nodeStack.empty() == false)
+    {
+        levelorderReverse.push_back(nodeStack.top()->data);
+        nodeStack.pop();
+    }
+}
+
 /* ZigZag Traversal using Queue */
 void 
 BinaryTree::zigzagQueue()
