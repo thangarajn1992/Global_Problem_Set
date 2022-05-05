@@ -203,6 +203,7 @@ int main()
             cout << "Inorder Traversal: " << BT.getInorder(true);
             cout << "Inorder Using Sucessor Pointer: ";
             BT.printInorderUsingInorderSucessorPtr();
+
             cout << endl;
 
 
@@ -250,6 +251,18 @@ int main()
             post = BST.BSTPostorderFromPreorder(pre);
             cout << "Postorder : " << post << endl;
             cout << endl;
+
+            /* Binary Search Tree Operations */
+
+            cout << "Search node with value(125) in BST: ";
+            BinarySearchTreeNode* node = BST.Search(125);
+            cout << node << " " << node->data << endl;
+            cout << endl;
+
+            cout << "Find Inorder Successor of Given Node(125): ";
+            BinarySearchTreeNode* InorderSuccessor = BST.getInorderSucessor(BST.Search(125));
+            cout << InorderSuccessor << " " << InorderSuccessor->data << endl;
+            cout << endl; 
             break;
         }
     }
