@@ -7,6 +7,7 @@
 #include<vector>
 #include<unordered_map>
 #include<climits>
+#include<map>
 
 /* Overloading cout to print vector of any type */
 template <typename T>

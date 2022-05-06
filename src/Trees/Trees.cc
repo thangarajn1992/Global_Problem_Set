@@ -118,14 +118,14 @@ int main()
             cout << endl;
 
             BT.clearInorder();
-            int InorderValue4th = -1;
-            BT.getNthInorderNode(BT.getRoot(), 4, InorderValue4th);
+            int InorderValue4th = -1, inorderCount = 0;
+            BT.getNthInorderNode(BT.getRoot(), 4, InorderValue4th, inorderCount);
             cout << "4th Node in Inorder is: " << InorderValue4th << endl;
             cout << endl;
 
             BT.clearPostorder();
-            int PostorderValue5th = -1;
-            BT.getNthPostorderNode(BT.getRoot(), 5, PostorderValue5th);
+            int PostorderValue5th = -1, postorderCount = 0;
+            BT.getNthPostorderNode(BT.getRoot(), 5, PostorderValue5th, postorderCount);
             cout << "5th Node in Postorder is: " << PostorderValue5th << endl;
             cout << endl;
 
@@ -246,6 +246,12 @@ int main()
                 cout << endl;
             }
 
+            /* Reverse Path from Root to given Node in a Binary Tree */
+            cout << "Current Preorder: " << BT.getPreOrder(true);
+            cout << "Reversing Path to Node(10): ";
+            BT.reversePathToNode(10);
+            cout << "Reversed. New Preorder: " << BT.getPreOrder(true);
+            
             break;
         }
         case BINARY_SEARCH_TREE:

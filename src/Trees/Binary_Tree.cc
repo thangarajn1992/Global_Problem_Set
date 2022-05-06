@@ -294,33 +294,31 @@ BinaryTree::PostPreInOrderInOneFlowRecursive(BinaryTreeNode* node)
 
 
 void
-BinaryTree::getNthInorderNode(BinaryTreeNode* node, int N, int &value)
+BinaryTree::getNthInorderNode(BinaryTreeNode* node, int N, int &value, int &count)
 {
-    static int count = 0;
     if(node == nullptr)
         return;
 
     if(count <= N)
     {
-        getNthInorderNode(node->left, N, value);
+        getNthInorderNode(node->left, N, value, count);
         count++;
         if(count == N)
             value = node->data;
-        getNthInorderNode(node->right, N, value);
+        getNthInorderNode(node->right, N, value, count);
     }
 }
 
 void
-BinaryTree::getNthPostorderNode(BinaryTreeNode* node, int N, int &value)
+BinaryTree::getNthPostorderNode(BinaryTreeNode* node, int N, int &value, int &count)
 {
-    static int count = 0;
     if(node == nullptr)
         return;
 
     if(count <= N)
     {
-        getNthPostorderNode(node->left, N, value);
-        getNthPostorderNode(node->right, N, value);
+        getNthPostorderNode(node->left, N, value, count);
+        getNthPostorderNode(node->right, N, value, count);
         count++;
         if(count == N)
             value = node->data;
@@ -1213,6 +1211,43 @@ BinaryTree::getInorderSuccessorUtil(BinaryTreeNode *root,
         getInorderSuccessorUtil(root->left, node, successor);
     }
 }
+
+void 
+BinaryTree::reversePathToNode(int data)
+{
+    map<int,int> levelMap;
+    int nextpos = 0;
+    reversePathToNodeUtil(root, data, levelMap, 0, nextpos);
+}
+
+bool 
+BinaryTree::reversePathToNodeUtil(BinaryTreeNode* node, int data, map<int,int>& levelMap, int level, int &nextpos)
+{
+    if(node == nullptr)
+        return false;
+    
+    levelMap[level] = node->data;
+
+    if(node->data == data)
+    {
+        node->data = levelMap[nextpos++];
+        return true;
+    }
+
+    bool leftFound = false, rightFound = false;
+    leftFound = reversePathToNodeUtil(node->left, data, levelMap, level+1, nextpos);
+    if(leftFound == false)
+        rightFound = reversePathToNodeUtil(node->right, data, levelMap, level+1, nextpos);
+    
+    if(leftFound || rightFound) // This node is in the interested path
+    {
+        node->data = levelMap[nextpos++];
+        return true;
+    }
+    return false;
+        
+}
+
 
 /* Number of Full Binary Trees with N+1 leaves */
 int 

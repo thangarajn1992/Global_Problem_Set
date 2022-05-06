@@ -31,7 +31,7 @@ Tree Traversals:
     Postorder Iterative One Stack
     Levelorder Queue/Bread-First Traversal
     Reverse Levelorder Traversal Using Queue
-    
+
     ZigZag using Queue
     Zigzag using Deque (double ended Queue)
     ZigZag using Two Stacks
@@ -54,6 +54,7 @@ Tree Transformations:
     Convert All nodes with value of sum of its inorder predecessor and successor
     Populate all nodes with their inorder successor
     Get Inorder Successor for a particular node
+    Reverse the Path till the node specified in Binary Tree
 
 Tree Generation/Combination:
     Generate all possible Binary Trees for given Inorder
@@ -234,8 +235,8 @@ public:
     void inorderRecursive(BinaryTreeNode *node);
     void postorderRecursive(BinaryTreeNode *node);
     void PostPreInOrderInOneFlowRecursive(BinaryTreeNode* node);
-    void getNthInorderNode(BinaryTreeNode* node, int N, int &value);
-    void getNthPostorderNode(BinaryTreeNode* node, int N, int &value);
+    void getNthInorderNode(BinaryTreeNode* node, int N, int &value, int &count);
+    void getNthPostorderNode(BinaryTreeNode* node, int N, int &value, int &count);
     
     /* Tree Traversals - Iterative*/
     void preorderIterative(BinaryTreeNode *root);
@@ -283,11 +284,20 @@ public:
                                             BinaryTreeNode* &previous,
                                             int &prevVal);
     void populateInorderSuccessor(BinaryTreeNode *node);
+
     BinaryTreeNode* getInorderSuccessor(BinaryTreeNode *node);
     void getInorderSuccessorUtil(BinaryTreeNode *root,
                                 BinaryTreeNode* node,
                                 BinaryTreeNode* &successor);
-    
+
+    void reversePathToNode(int data);
+    bool reversePathToNodeUtil(BinaryTreeNode* node,
+                               int data, 
+                               map<int,int>& levelMap, 
+                               int level, 
+                               int &nextpos);
+                               
+
     /* Tree Combinations */
     int NumberOfUnlabelledBinaryTreesWithNNodes(int n);
     int NumberOfFullBinaryTreeWithNPlus1Leaves(int n);
