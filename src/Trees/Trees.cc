@@ -294,6 +294,21 @@ int main()
             cout << "Reversing Path to Node(10): ";
             BT.reversePathToNode(10);
             cout << "Reversed. New Preorder: " << BT.getPreOrder(true);
+            cout << endl;
+
+            /*  Reverse nodes in alternate level in a Perfect Binary Tree - Two Inorder Traversal   */
+            cout << "Current Preorder: " << PerfectBinaryTree.getPreOrder(true);
+            cout << "Reversing Nodes in Alternate Levels (Two Inorder Traversal): " << endl;
+            PerfectBinaryTree.reverseNodesInAlternateLevelPerfectBinaryTreeTwoTraversal();
+            cout << "New Preorder: " << PerfectBinaryTree.getPreOrder(true);
+            cout << endl;
+
+            /*  Reverse nodes in alternate level in a Perfect Binary Tree - Single Swap Traversal   */
+            cout << "Current Preorder: " << PerfectBinaryTree.getPreOrder(true);
+            cout << "Reversing Nodes in Alternate Levels (Single Swap Traversal): " << endl;
+            PerfectBinaryTree.reverseNodesInAlternateLevelPerfectBinaryTreeSingleSwapTraversal();
+            cout << "New Preorder: " << PerfectBinaryTree.getPreOrder(true);
+            cout << endl;
 
             break;
         }

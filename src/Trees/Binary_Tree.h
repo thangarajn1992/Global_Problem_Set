@@ -57,6 +57,8 @@ Tree Transformations:
     Populate all nodes with their inorder successor
     Get Inorder Successor for a particular node
     Reverse the Path till the node specified in Binary Tree
+    Reverse nodes in alternate level in a Perfect Binary Tree - Two Inorder Traversal
+    Reverse nodes in alternate level in a Perfect Binary Tree - Single  Swap Traversal
 
 Tree Generation/Combination:
     Generate all possible Binary Trees for given Inorder
@@ -327,6 +329,22 @@ public:
                                map<int,int>& levelMap, 
                                int level, 
                                int &nextpos);
+
+    void reverseNodesInAlternateLevelPerfectBinaryTreeTwoTraversal();
+    void inorderOddLevelFillStack(BinaryTreeNode *node, 
+                                  stack<int> &inorder, 
+                                  int level);
+    void inorderSwapOddLevelFromStack(BinaryTreeNode *node, 
+                                      stack<int> &inorder, 
+                                      int level);
+
+
+    void reverseNodesInAlternateLevelPerfectBinaryTreeSingleSwapTraversal();
+    void reverseAlternateLevelSwapperTraversal(BinaryTreeNode *left, 
+                                               BinaryTreeNode *right, 
+                                               int level);
+
+
 
 
     /* Tree Combinations */
