@@ -355,6 +355,50 @@ BinaryTree::preorderIterative(BinaryTreeNode *root)
     }
 }
 
+/* Pre-order Traversal - Iterative Using Morris */
+void
+BinaryTree::preorderIterativeMorris()
+{
+    clearPreorder();
+    if(root == nullptr)
+        return;
+    
+    BinaryTreeNode *curr = root;
+
+    while(curr != nullptr)
+    {
+        /*  We find inorder predecessor exactly as we do in Morris inorder 
+            Traversal but we update the preorder vector in different manner
+        */
+        
+        if(curr->left == nullptr)
+        {
+            preorder.push_back(curr->data);
+            curr = curr->right;
+        }
+        else
+        {
+            BinaryTreeNode *pre = curr->left;
+            while(pre->right != nullptr && pre->right != curr)
+            {
+                pre = pre->right;
+            }
+
+            if(pre->right == nullptr)
+            {
+                pre->right = curr;
+                preorder.push_back(curr->data);
+                curr = curr->left;
+            }
+            else /* We have already visited this node */
+            {
+                pre->right = nullptr;
+                curr = curr->right;
+            }
+        }
+    }
+}
+
 /* In-order Traversal - Iterative using Stack*/
 void 
 BinaryTree::inorderIterativeStack(BinaryTreeNode *root)
@@ -415,7 +459,7 @@ BinaryTree::inorderIterativeMorris()
                 pre->right = curr;
                 curr = curr->left;
             }
-                else /* We are reaching here for second time, reset the right ptr */ 
+            else /* We are reaching here for second time, reset the right ptr */ 
             {
                 pre->right = nullptr;
                 inorder.push_back(curr->data);

@@ -25,6 +25,7 @@ Tree Traversals:
     Nth Postorder Node
 
     Preorder Iterative
+    Preorder Iterative using Morris Traversal
     Inorder Iterative Stack
     Inorder Iterative using Morris Traversal
     Postorder Iterative Two Stacks
@@ -269,6 +270,7 @@ public:
     
     /* Tree Traversals - Iterative*/
     void preorderIterative(BinaryTreeNode *root);
+    void preorderIterativeMorris();
     void inorderIterativeStack(BinaryTreeNode *root);
     void inorderIterativeMorris();
     void postorderIterativeTwoStacks();

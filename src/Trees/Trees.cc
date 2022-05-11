@@ -166,6 +166,10 @@ int main()
             cout << "Preorder Iterative : " << BT.getPreOrder();
             cout << endl;
 
+            BT.preorderIterativeMorris();
+            cout << "Preorder Iterative Morris: " << BT.getPreOrder();
+            cout << endl;
+
             BT.inorderIterativeStack(BT.getRoot());
             cout << "Inorder Iterative : " << BT.getInorder();
             BT.inorderIterativeMorris(); 
