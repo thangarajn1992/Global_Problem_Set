@@ -231,12 +231,7 @@ int main()
             cout << "Inorder: " << in;
             cout << "Postorder: " << BT.getPostfromPreAndIn(pre, in) << endl;
 
-            /* Tree Combinations */
-            in = BT.getInorder();
-            cout << "All possible BTs from given Inorder: " << endl;
-            BT.AllPossibleBinaryTreeForInorder(in);
-            BT.printAllBTsForInorder();
-            cout << endl;
+
 
 
             /* Tree Properties or Conditions */
@@ -323,7 +318,30 @@ int main()
             cout << "Preorder by printing Right Pointers alone: " << endl;
             BT.printRightPointers();
             cout << endl;
+
+
+            /* Tree Combinations */
+
+            /*  Generating Binary Tree from Inorder and Preorder */
+            cout << "Generating Binary Tree from Inorder and Preorder: " << endl;
+            cout << "Inorder: " << PerfectBinaryTree.getInorder(true);
+            cout << "Preorder: " << PerfectBinaryTree.getPreOrder(true);
+            BinaryTree BTFromInAndPre;
+            BTFromInAndPre.setInorder(PerfectBinaryTree.getInorder());
+            BTFromInAndPre.setPreorder(PerfectBinaryTree.getPreOrder());
+            BTFromInAndPre.createBTFromInandPreorder();
+            cout << "Generated Tree Preorder: " << BTFromInAndPre.getPreOrder(true);
+            cout << endl;
+
+
+            in = BT.getInorder();
+            cout << "All possible BTs from given Inorder: " << endl;
+            BT.AllPossibleBinaryTreeForInorder(in);
+            BT.printAllBTsForInorder();
+            cout << endl;
+
             
+
             break;
         }
         case BINARY_SEARCH_TREE:

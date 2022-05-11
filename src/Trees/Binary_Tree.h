@@ -65,6 +65,7 @@ Tree Transformations:
     Modify Binary Tree such that preorder traversal can be formed using right pointers alone
 
 Tree Generation/Combination:
+    Construct Binary Tree from given inorder and preorder
     Generate all possible Binary Trees for given Inorder
 */
 
@@ -119,6 +120,9 @@ public:
 
     BinaryTreeNode *getRoot() { return root; }
     void setRoot(BinaryTreeNode* node) { root = node; }
+    void setPreorder(vector<int> pre) { preorder = pre; }
+    void setInorder(vector<int> in) { inorder = in; }
+    void setPostorder(vector<int> post) { postorder = post;}
 
     void clearPreorder() { preorder.clear(); }
     void clearInorder() { inorder.clear(); }
@@ -160,6 +164,7 @@ public:
         }
         cout << "]" << endl;
     }
+
     vector<int> getPreOrder(bool generate = false)
     {
         if(generate == true || (root != nullptr && preorder.size() == 0))
@@ -228,7 +233,6 @@ public:
         return levelorderSameLevelAlternateBottomtoTop;
     }
 
-
     vector<int> getZigzag(bool generate = false)
     {
         if(generate == true || (root != nullptr && zigzag.size() == 0))
@@ -255,6 +259,7 @@ public:
         }
         return diagonal;
     }
+
     vector<int> getBounary(bool generate = false)
     {
         if(generate == true || (root != nullptr && boundary.size() == 0))
@@ -271,6 +276,12 @@ public:
     void Insert(int value);
     void Delete(int value);
     BinaryTreeNode* Search(int value);
+    
+    void createBTFromInandPreorder();
+    BinaryTreeNode* createBTFromInandPreorderUtil(unordered_map<int,int> &inorderIndexMap,
+                                                  int inStart,
+                                                  int inEnd,
+                                                  int &preIndex);
 
     void createBTFromParentArray(vector<int> &parentArray);
     void createNode(int nodeNum, 
