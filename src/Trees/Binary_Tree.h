@@ -3,6 +3,7 @@
 
 #include "Trees.h"
 
+
 using namespace std;
  
 /*
@@ -61,6 +62,7 @@ Tree Transformations:
     Reverse the Path till the node specified in Binary Tree
     Reverse nodes in alternate level in a Perfect Binary Tree - Two Inorder Traversal
     Reverse nodes in alternate level in a Perfect Binary Tree - Single  Swap Traversal
+    Modify Binary Tree such that preorder traversal can be formed using right pointers alone
 
 Tree Generation/Combination:
     Generate all possible Binary Trees for given Inorder
@@ -144,6 +146,20 @@ public:
         clearBoundary();
     }
     
+    void printRightPointers()
+    {
+        if(root == nullptr)
+            return;
+        
+        cout << "[ " ;
+        BinaryTreeNode* curr = root;
+        while(curr != nullptr)
+        {
+            cout << curr->data << " ";
+            curr = curr->right;
+        }
+        cout << "]" << endl;
+    }
     vector<int> getPreOrder(bool generate = false)
     {
         if(generate == true || (root != nullptr && preorder.size() == 0))
@@ -348,7 +364,7 @@ public:
                                                BinaryTreeNode *right, 
                                                int level);
 
-
+    void convertTreePreorderThroughRightPointers();
 
 
     /* Tree Combinations */

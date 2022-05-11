@@ -183,7 +183,7 @@ int main()
             BT.postorderIterativeHashMap();
             cout << "Postorder Iterative Hash Map: " << BT.getPostOrder();
             cout << endl;
-            
+
             BT.levelorderQueue(BT.getRoot());
             cout << "Levelorder Queue: " << BT.getLevelOrder();
             BT.levelorderReverseQueue(BT.getRoot());
@@ -316,6 +316,14 @@ int main()
             cout << "New Preorder: " << PerfectBinaryTree.getPreOrder(true);
             cout << endl;
 
+            /* Modify tree such that preorder traversal is achieved through its right pointers */
+            cout << "Modifying Tree to get preorder from right pointers alone: " << endl;
+            cout << "Current Preorder: " << BT.getPreOrder(true);
+            BT.convertTreePreorderThroughRightPointers();
+            cout << "Preorder by printing Right Pointers alone: " << endl;
+            BT.printRightPointers();
+            cout << endl;
+            
             break;
         }
         case BINARY_SEARCH_TREE:
