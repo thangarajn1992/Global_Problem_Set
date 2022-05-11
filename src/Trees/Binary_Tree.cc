@@ -538,6 +538,41 @@ BinaryTree::postorderIterativeStack(BinaryTreeNode *root)
     }
 }
 
+/* Postorder Traversal - Iterative using Hash Map */
+void
+BinaryTree::postorderIterativeHashMap()
+{
+    clearPostorder();
+    
+    if(root == nullptr)
+        return;
+    
+    unordered_map<BinaryTreeNode*, BinaryTreeNode*> parentMap;
+    parentMap[root] = nullptr;
+
+    BinaryTreeNode *curr = root;
+
+    while(curr != nullptr)
+    {
+        /* If left is not procesed, process it */
+        if(curr->left != nullptr && parentMap.find(curr->left) == parentMap.end())
+        {
+            parentMap[curr->left] = curr;
+            curr = curr->left;
+        }
+        else if(curr->right != nullptr && parentMap.find(curr->right) == parentMap.end())
+        {
+            parentMap[curr->right] = curr;
+            curr = curr->right;
+        }
+        else /* Processed left and right, process root */
+        {
+            postorder.push_back(curr->data);
+            curr = parentMap[curr];
+        }
+    }
+}
+
 /* LevelOrder Traversal or Breadth First Traversal using Queue */
 void 
 BinaryTree::levelorderQueue(BinaryTreeNode *root)

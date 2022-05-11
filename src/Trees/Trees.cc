@@ -180,8 +180,10 @@ int main()
             cout << "Postorder Iterative two Stacks: " << BT.getPostOrder();
             BT.postorderIterativeStack(BT.getRoot());
             cout << "Postorder Iterative Stack: " << BT.getPostOrder();
+            BT.postorderIterativeHashMap();
+            cout << "Postorder Iterative Hash Map: " << BT.getPostOrder();
             cout << endl;
-    
+            
             BT.levelorderQueue(BT.getRoot());
             cout << "Levelorder Queue: " << BT.getLevelOrder();
             BT.levelorderReverseQueue(BT.getRoot());

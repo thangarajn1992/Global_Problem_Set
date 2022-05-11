@@ -30,6 +30,7 @@ Tree Traversals:
     Inorder Iterative using Morris Traversal
     Postorder Iterative Two Stacks
     Postorder Iterative One Stack
+    Postorder Iterative HashMap
     Levelorder Queue/Bread-First Traversal
     Reverse Levelorder Traversal Using Queue
     Levelorder Left/Right alternate in same Level for Perfect Binary Tree (top to Bottom level)
@@ -275,6 +276,7 @@ public:
     void inorderIterativeMorris();
     void postorderIterativeTwoStacks();
     void postorderIterativeStack(BinaryTreeNode *root);
+    void postorderIterativeHashMap();
 
     void levelorderQueue(BinaryTreeNode *root);
     void levelorderReverseQueue(BinaryTreeNode *root);
