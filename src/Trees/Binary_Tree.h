@@ -31,6 +31,8 @@ Tree Traversals:
     Postorder Iterative One Stack
     Levelorder Queue/Bread-First Traversal
     Reverse Levelorder Traversal Using Queue
+    Levelorder Left/Right alternate in same Level for Perfect Binary Tree (top to Bottom level)
+    Levelorder Left/Right alternate in same level for Perfect Binary Tree (Bottom to Top level)
 
     ZigZag using Queue
     Zigzag using Deque (double ended Queue)
@@ -96,6 +98,8 @@ private:
     vector<int> postorder;
     vector<int> levelorder;
     vector<int> levelorderReverse;
+    vector<int> levelorderSameLevelAlternateToptoBottom;
+    vector<int> levelorderSameLevelAlternateBottomtoTop;
     vector<int> zigzag;
     vector<int> spiral;
     vector<int> diagonal;
@@ -115,6 +119,8 @@ public:
     void clearPostorder() { postorder.clear(); }
     void clearLevelorder() { levelorder.clear(); }
     void clearLevelorderReverse() { levelorderReverse.clear(); }
+    void clearLevelorderSameLevelAlternateToptoBottom() { levelorderSameLevelAlternateToptoBottom.clear(); }
+    void clearLevelorderSameLevelAlternateBottomtoTop() { levelorderSameLevelAlternateBottomtoTop.clear(); }
     void clearZigzag() { zigzag.clear(); }
     void clearSpiral() { spiral.clear(); }
     void clearDiagonal() { diagonal.clear(); }
@@ -126,6 +132,8 @@ public:
         clearPostorder();
         clearLevelorder();
         clearLevelorderReverse();
+        clearLevelorderSameLevelAlternateToptoBottom();
+        clearLevelorderSameLevelAlternateBottomtoTop();
         clearZigzag();
         clearSpiral();
         clearDiagonal();
@@ -181,6 +189,25 @@ public:
         }
         return levelorderReverse;
     }
+
+    vector<int> getLevelOrderSameLevelAlternateToptoBottom(bool generate = false)
+    {
+        if(generate == true || (root != nullptr && levelorderSameLevelAlternateToptoBottom.size() == 0))
+        {
+            levelorderSameLevelAlternateToptoBottomLevelQueue(root);
+        }
+        return levelorderSameLevelAlternateToptoBottom;
+    }
+
+    vector<int> getLevelOrderSameLevelAlternateBottomtoTop(bool generate = false)
+    {
+        if(generate == true || (root != nullptr && levelorderSameLevelAlternateBottomtoTop.size() == 0))
+        {
+            levelorderSameLevelAlternateBottomtoTopLevelQueue(root);
+        }
+        return levelorderSameLevelAlternateBottomtoTop;
+    }
+
 
     vector<int> getZigzag(bool generate = false)
     {
@@ -244,8 +271,12 @@ public:
     void inorderIterativeMorris();
     void postorderIterativeTwoStacks();
     void postorderIterativeStack(BinaryTreeNode *root);
+
     void levelorderQueue(BinaryTreeNode *root);
     void levelorderReverseQueue(BinaryTreeNode *root);
+    void levelorderSameLevelAlternateToptoBottomLevelQueue(BinaryTreeNode *root);
+    void levelorderSameLevelAlternateBottomtoTopLevelQueue(BinaryTreeNode *root);
+
     void zigzagQueue();
     void zigzagDeque(BinaryTreeNode *root);
     void zigzagTwoStacks();
@@ -296,7 +327,7 @@ public:
                                map<int,int>& levelMap, 
                                int level, 
                                int &nextpos);
-                               
+
 
     /* Tree Combinations */
     int NumberOfUnlabelledBinaryTreesWithNNodes(int n);

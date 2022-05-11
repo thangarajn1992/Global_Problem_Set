@@ -91,7 +91,40 @@ int main()
             BTSumTree.Insert(14);
             BTSumTree.Insert(-4);
             BTSumTree.Insert(8);
-            BTSumTree.Insert(-9);  
+            BTSumTree.Insert(-9); 
+
+            BinaryTree PerfectBinaryTree;
+            PerfectBinaryTree.Insert(1); 
+            PerfectBinaryTree.Insert(2);
+            PerfectBinaryTree.Insert(3);
+            PerfectBinaryTree.Insert(4);
+            PerfectBinaryTree.Insert(5);
+            PerfectBinaryTree.Insert(6);
+            PerfectBinaryTree.Insert(7);
+            PerfectBinaryTree.Insert(8);
+            PerfectBinaryTree.Insert(9);
+            PerfectBinaryTree.Insert(10);
+            PerfectBinaryTree.Insert(11);
+            PerfectBinaryTree.Insert(12);
+            PerfectBinaryTree.Insert(13);
+            PerfectBinaryTree.Insert(14);
+            PerfectBinaryTree.Insert(15);
+            PerfectBinaryTree.Insert(16);
+            PerfectBinaryTree.Insert(17);
+            PerfectBinaryTree.Insert(18);
+            PerfectBinaryTree.Insert(19);
+            PerfectBinaryTree.Insert(20);
+            PerfectBinaryTree.Insert(21);
+            PerfectBinaryTree.Insert(22);
+            PerfectBinaryTree.Insert(23);
+            PerfectBinaryTree.Insert(24);
+            PerfectBinaryTree.Insert(25);
+            PerfectBinaryTree.Insert(26);
+            PerfectBinaryTree.Insert(27);
+            PerfectBinaryTree.Insert(28);
+            PerfectBinaryTree.Insert(29);
+            PerfectBinaryTree.Insert(30);
+            PerfectBinaryTree.Insert(31);
 
             /* Tree Traversals */
             BT.clearPreorder();
@@ -151,6 +184,16 @@ int main()
             cout << "Levelorder(Reverse) Queue: " << BT.getLevelOrderReverse();
             cout << endl;
 
+            PerfectBinaryTree.levelorderSameLevelAlternateToptoBottomLevelQueue(PerfectBinaryTree.getRoot());
+            cout << "Perfect Binary Tree Levelorder Same Level Alternate, Top to Bottom Order: " << endl;
+            cout << PerfectBinaryTree.getLevelOrderSameLevelAlternateToptoBottom();
+            cout << endl;
+            
+            PerfectBinaryTree.levelorderSameLevelAlternateBottomtoTopLevelQueue(PerfectBinaryTree.getRoot());
+            cout << "Perfect Binary Tree Levelorder Same Level Alternate, Bottom to Top Order: " << endl;
+            cout << PerfectBinaryTree.getLevelOrderSameLevelAlternateBottomtoTop();
+            cout << endl;
+            
             BT.zigzagQueue(); 
             cout << "ZigZag Queue: " << BT.getZigzag();
             BT.zigzagDeque(BT.getRoot());
@@ -251,7 +294,7 @@ int main()
             cout << "Reversing Path to Node(10): ";
             BT.reversePathToNode(10);
             cout << "Reversed. New Preorder: " << BT.getPreOrder(true);
-            
+
             break;
         }
         case BINARY_SEARCH_TREE:
