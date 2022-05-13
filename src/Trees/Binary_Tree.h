@@ -66,6 +66,7 @@ Tree Transformations:
 
 Tree Generation/Combination:
     Construct Binary Tree from given inorder and preorder
+    Construct Binary Tree from given inorder and Levelorder
     Generate all possible Binary Trees for given Inorder
 */
 
@@ -122,7 +123,8 @@ public:
     void setRoot(BinaryTreeNode* node) { root = node; }
     void setPreorder(vector<int> pre) { preorder = pre; }
     void setInorder(vector<int> in) { inorder = in; }
-    void setPostorder(vector<int> post) { postorder = post;}
+    void setPostorder(vector<int> post) { postorder = post; }
+    void setLevelorder(vector<int> level) { levelorder = level; }
 
     void clearPreorder() { preorder.clear(); }
     void clearInorder() { inorder.clear(); }
@@ -282,6 +284,11 @@ public:
                                                   int inStart,
                                                   int inEnd,
                                                   int &preIndex);
+
+    void createBTFromInandLevelorder();
+    BinaryTreeNode* createBTFromInandLevelorderUtil(unordered_map<int,int> &levelIndex, 
+                                                    int inStart,
+                                                    int inEnd);
 
     void createBTFromParentArray(vector<int> &parentArray);
     void createNode(int nodeNum, 

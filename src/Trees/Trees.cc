@@ -333,6 +333,17 @@ int main()
             cout << "Generated Tree Preorder: " << BTFromInAndPre.getPreOrder(true);
             cout << endl;
 
+            /* Generating Binary Tree from Inorder and Levelorder */
+            cout << "Generating Binary Tree from Inorder and Levelorder: " << endl;
+            cout << "Inorder: " << PerfectBinaryTree.getInorder(true);
+            cout << "Levelorder: " << PerfectBinaryTree.getLevelOrder(true);
+            BinaryTree BTFromInandLevel;
+            BTFromInandLevel.setLevelorder(PerfectBinaryTree.getLevelOrder());
+            BTFromInandLevel.setInorder(PerfectBinaryTree.getInorder());
+            BTFromInandLevel.createBTFromInandLevelorder();
+            cout << "Generated Tree Preorder: " << BTFromInandLevel.getPreOrder(true);
+            cout << endl; 
+
 
             in = BT.getInorder();
             cout << "All possible BTs from given Inorder: " << endl;
