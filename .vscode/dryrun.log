@@ -1,0 +1,6 @@
+make.exe --dry-run --keep-going --print-directory
+make: Entering directory '/cygdrive/c/Users/thang/Github/Global_Problem_Set'
+echo "===== Building Global Problem Set Binary"
+g++ ./src/main.o ./src/AlgoProbIndex.o ./src/DataStructProbIndex.o ./src/utils/dumps.o ./src/algorithm_problem_index/back_tracking_problem_index.o ./src/algorithm_problem_index/binary_search_problem_index.o ./src/algorithm_problem_index/dynamic_programming_problem_index.o ./src/algorithm_problem_index/greedy_problem_index.o ./src/data_struct_problem_index/array_problem_index.o ./src/data_struct_problem_index/bit_manipulation_problem_index.o ./src/data_struct_problem_index/graph_problem_index.o ./src/data_struct_problem_index/linked_list_problem_index.o ./src/data_struct_problem_index/mathematics_problem_index.o ./src/data_struct_problem_index/ndarray_problem_index.o ./src/data_struct_problem_index/queue_problem_index.o ./src/data_struct_problem_index/stack_problem_index.o ./src/data_struct_problem_index/string_problem_index.o ./src/data_struct_problem_index/tree_problem_index.o ./src/Linked_List/Linked_List.o ./src/Linked_List/Singly_Linked_List.o ./src/Trees/Trees.o ./src/Trees/Binary_Tree.o ./src/Trees/Binary_Search_Tree.o -o global_problem_set
+make: Leaving directory '/cygdrive/c/Users/thang/Github/Global_Problem_Set'
+ 

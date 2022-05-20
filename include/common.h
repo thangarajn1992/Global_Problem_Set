@@ -1,15 +1,15 @@
 #ifndef COMMON_H
 #define COMMON_H
 
-#include "all_lib.h"
+#include "Stls.h"
 
 typedef enum operatingMode{
-    OPMODE_DATASTRUCT = 0,
+    OPMODE_DATASTRUCT = 1,
     OPMODE_ALGORITHM
 }operatingMode_t;
 
 typedef enum dataStructType{
-    DSTYPE_ARRAY = 0,
+    DSTYPE_ARRAY = 1,
     DSTYPE_ND_ARRAY,
     DSTYPE_BIT_MANIPULATION,
     DSTYPE_GRAPH,

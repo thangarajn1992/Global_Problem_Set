@@ -1,6 +1,4 @@
-#include "Trees.h"
-#include "Binary_Tree.h"
-#include "Binary_Search_Tree.h"
+#include "All_Tree.h"
 
 using namespace std;
 
@@ -9,7 +7,7 @@ typedef enum treeType{
     BINARY_SEARCH_TREE = 2
 }treeType_t;
 
-int main()
+void treesMain()
 {
     unsigned int type;
     vector<int> pre, post, in;
@@ -34,6 +32,13 @@ int main()
             cout << BTArray.getArray() << endl;
 
             cout << "Creating Binary Tree with Linked List Representation: " << endl;
+            SinglyLinkedList SLL;
+            SLL.Insert(10); SLL.Insert(20); SLL.Insert(30); SLL.Insert(40); SLL.Insert(50);
+            SLL.Insert(60); SLL.Insert(70); SLL.Insert(80); SLL.Insert(90);  
+            BinaryTree BTList(SLL);
+            cout << "Preorder : " << BTList.getPreOrder(true);
+            cout << endl;
+
             BinaryTree BT;
             /* BT Operations */
             BT.Insert(100);
@@ -46,14 +51,13 @@ int main()
             BT.Insert(10);
             BT.Insert(87);
 
-
-            cout << BT.getPreOrder(true) << endl;
-
+            cout << "Preorder: " << BT.getPreOrder(true);
             cout << "Deleting Node 150.." << endl;
             BT.Delete(150);
-            cout << BT.getPreOrder(true) << endl;
+            cout << "Preorder: " << BT.getPreOrder(true);
+            cout << endl;
 
-            cout << "Searching Node 125.." << endl;
+            cout << "Searching Node 125..";
             BinaryTreeNode* node125 = BT.Search(125);
             if(node125 != nullptr)
                 cout << "Found Node with 125: " << node125;
@@ -344,13 +348,13 @@ int main()
             cout << "Generated Tree Preorder: " << BTFromInandLevel.getPreOrder(true);
             cout << endl; 
 
-
+            /*
             in = BT.getInorder();
             cout << "All possible BTs from given Inorder: " << endl;
             BT.AllPossibleBinaryTreeForInorder(in);
             BT.printAllBTsForInorder();
             cout << endl;
-
+            */
             
 
             break;
@@ -431,5 +435,4 @@ int main()
             break;
         }
     }
-    return 0;
 }

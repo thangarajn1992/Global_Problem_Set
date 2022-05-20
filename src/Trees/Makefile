@@ -1,5 +1,7 @@
 HERE=.
-INCLUDES= -I.
+INCLUDES= -I. \
+		  -I../../include \
+		  -I../Linked_List
 
 SRC_FILES= \
 $(HERE)/Binary_Tree.cc \

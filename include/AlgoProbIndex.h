@@ -1,6 +1,6 @@
 #ifndef ALGORITHM_PROBLEM_INDEX_H
 #define ALGORITHM_PROBLEM_INDEX_H
-#include "all_lib.h"
+#include "Stls.h"
 #include "common.h"
 
 class AlgoProbIndex{

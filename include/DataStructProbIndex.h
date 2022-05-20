@@ -1,6 +1,6 @@
 #ifndef DATASTRUCT_PROBLEM_INDEX_H
 #define DATASTRUCT_PROBLEM_INDEX_H
-#include "all_lib.h"
+#include "Stls.h"
 #include "common.h"
 
 class DataStructProbIndex{

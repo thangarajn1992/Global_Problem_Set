@@ -16,6 +16,7 @@ Binary Tree Operations:
     Delete Node with value in Binary Tree
     Search a Node with given value in Binary Tree
     Create Binary Tree from Parent Array Representation
+    Create Binary Tree from Linked List Representation
 
 Tree Traversals:
     Preorder Recursive
@@ -118,6 +119,7 @@ private:
 
 public:
     BinaryTree() : root(nullptr) {}
+    BinaryTree(SinglyLinkedList linkedListRep);
 
     BinaryTreeNode *getRoot() { return root; }
     void setRoot(BinaryTreeNode* node) { root = node; }
