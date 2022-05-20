@@ -79,6 +79,13 @@ void treesMain()
             BTParentArray.createBTFromParentArray(parentArray);
             cout << BTParentArray.getPreOrder(true) << endl;
 
+            vector<int> levelorderArray = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+            cout << "Creating Complete BT from Level order Array: " << levelorderArray << endl;
+            BinaryTree BTComplete;
+            BTComplete.createCompleteBTFromLevelOrderArray(levelorderArray);
+            cout << BTComplete.getPreOrder(true) << endl; 
+            cout << endl;
+
             BinaryTree BTSymmetric;
             BTSymmetric.Insert(100);
             BTSymmetric.Insert(50);

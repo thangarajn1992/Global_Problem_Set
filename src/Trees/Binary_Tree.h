@@ -17,6 +17,7 @@ Binary Tree Operations:
     Search a Node with given value in Binary Tree
     Create Binary Tree from Parent Array Representation
     Create Binary Tree from Linked List Representation
+    Create Complete Binary Tree from Level order Array
 
 Tree Traversals:
     Preorder Recursive
@@ -296,6 +297,10 @@ public:
     void createNode(int nodeNum, 
                     vector<BinaryTreeNode*> &createdNodes, 
                     vector<int> &parentArray);
+
+    void createCompleteBTFromLevelOrderArray(vector<int> &levelorderArray);
+    BinaryTreeNode* createCompleteBTFromLevelOrderArrayUtil(vector<int> &levelorderArray, 
+                                                            int index);
 
     /* Tree Traversals - Recursive */
     void preorderRecurisve(BinaryTreeNode *node);
