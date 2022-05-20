@@ -1220,20 +1220,23 @@ BinaryTree::getPostfromPreAndInUtil(vector<int> &pre, vector<int> &in,
 bool 
 BinaryTree::isSymmetric()
 {
-    return isMirror(root, root);   
+    return isSymmetricUtil(root, root);   
 }    
 
 bool 
-BinaryTree::isMirror(BinaryTreeNode *node1, BinaryTreeNode *node2)
+BinaryTree::isSymmetricUtil(BinaryTreeNode *node1, BinaryTreeNode *node2)
 {
     if(node1 == nullptr && node2 == nullptr)                
         return true;
     
-    if(node1->data == node2->data &&
-        isMirror(node1->left, node2->right) &&
-        isMirror(node1->right, node2->left))
-            return true;
-        
+    if(node1 != nullptr && node2 != nullptr && 
+       node1->data == node2->data &&
+       isSymmetricUtil(node1->left, node2->right) &&
+       isSymmetricUtil(node1->right, node2->left))
+    {
+        return true;
+    }
+
     return false;
 }
 
@@ -1263,6 +1266,22 @@ BinaryTree::findHeightAndSize(BinaryTreeNode *node, int &size)
 
     return max(findHeightAndSize(node->left, size), 
                 findHeightAndSize(node->right, size)) + 1;
+}
+
+/* Check whether any path has sum of all nodes in that path equal to given target */
+bool
+BinaryTree::hasPathSum(BinaryTreeNode* node, int target)
+{
+    if(node == nullptr)
+        return false;
+    
+    if(node->left == nullptr && node->right == nullptr)
+    {
+       return node->data == target;
+    }
+
+    return  hasPathSum(node->left, target - node->data) ||
+            hasPathSum(node->right, target - node->data);
 }
 
 

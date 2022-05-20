@@ -256,6 +256,14 @@ void treesMain()
             cout << "Density of Binary Tree: " << BT.density() << endl;
             cout << endl;
 
+            /* Has Path Sum */
+            cout << "Preorder: " << BT.getPreOrder(true) << endl;
+            int target1 = 325, target2 = 45;
+            cout << "Does any path has given sum (325): " << BT.hasPathSum(BT.getRoot(), target1) << endl;
+            cout << "Does any path has given sum (45): " << BT.hasPathSum(BT.getRoot(), target2) << endl;
+            cout << endl;
+
+
             /* Tree Transformations */
 
             /* Convert to Sum Tree */

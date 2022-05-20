@@ -52,6 +52,7 @@ Tree Traversals:
 Tree Properties:
     Is Symmetric Tree (Mirror Image)
     Find Height, Size and Density of Binary Tree
+    Has Path with given target Sum
 
 Tree Transformations:
     Convert to its sumTree
@@ -346,10 +347,16 @@ public:
     
     /* Tree Properties or Conditions */
     bool isSymmetric();
-    bool isMirror(BinaryTreeNode *node1, 
-                  BinaryTreeNode *node2);
+    bool isSymmetricUtil(BinaryTreeNode *node1, 
+                         BinaryTreeNode *node2);
+    
     float density();
     int findHeightAndSize(BinaryTreeNode *node, int &size);
+
+    bool hasPathSum(BinaryTreeNode* node, int target);
+
+
+
 
     /* Tree Transformations */
     int toSumTree(BinaryTreeNode *node);
