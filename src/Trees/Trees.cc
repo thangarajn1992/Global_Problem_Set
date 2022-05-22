@@ -64,6 +64,30 @@ void treesMain()
             }
 
             {
+            BinaryTree BTFull;
+            cout << "Creating Full Binary Tree with Preorder and PreLN Array(Recursive): " << endl;
+            vector<int> pre = {1, 2, 4, 8, 9, 5, 3, 6, 7, 10, 11};
+            vector<char> preLN = {'N', 'N', 'N', 'L', 'L', 'L', 'N', 'L', 'N', 'L', 'L'};
+            cout << "Given preorder: " << pre;
+            cout << "Given preLN Array: " << preLN;
+            BTFull.createFullBTFromPreandPreLNArrayRecursive(pre, preLN);
+            cout << "New Preorder: " << BTFull.getPreOrder(true);
+            cout << endl;
+            }
+
+            {
+            BinaryTree BTFull;
+            cout << "Creating Full Binary Tree with Preorder and PreLN Array(Iterative): " << endl;
+            vector<int> pre = {1, 2, 4, 8, 9, 5, 3, 6, 7, 10, 11};
+            vector<char> preLN = {'N', 'N', 'N', 'L', 'L', 'L', 'N', 'L', 'N', 'L', 'L'};
+            cout << "Given preorder: " << pre;
+            cout << "Given preLN Array: " << preLN;
+            BTFull.createFullBTFromPreandPreLNArrayIterative(pre, preLN);
+            cout << "New Preorder: " << BTFull.getPreOrder(true);
+            cout << endl;
+            }
+
+            {
             vector<int> parentArray = {-1, 0, 0, 1, 1, 3, 5};
             cout << "Creating BT from Parent Array: " << parentArray;
             BinaryTree BTParentArray;
