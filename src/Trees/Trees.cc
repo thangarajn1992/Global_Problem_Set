@@ -39,6 +39,16 @@ void treesMain()
             cout << "Preorder : " << BTList.getPreOrder(true);
             cout << endl;
 
+            BinaryTree BTFull;
+            cout << "Creating Full Binary Tree with Pre and Postorder: " << endl;
+            vector<int> pre = {1, 2, 4, 5, 3, 6, 7};
+            vector<int> post = {4, 5, 2, 6, 7, 3, 1};
+            cout << "Given Preorder: " << pre << endl;
+            cout << "Given Postorder: " << post << endl;
+            BTFull.createFullBTfromPreAndPostorder(pre, post);
+            cout << "New Preorder: " << BTFull.getPreOrder(true);
+            cout << endl; 
+
             BinaryTree BT;
             /* BT Operations */
             BT.Insert(100);
