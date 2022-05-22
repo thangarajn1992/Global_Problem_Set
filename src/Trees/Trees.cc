@@ -39,15 +39,47 @@ void treesMain()
             cout << "Preorder : " << BTList.getPreOrder(true);
             cout << endl;
 
+            {
             BinaryTree BTFull;
             cout << "Creating Full Binary Tree with Pre and Postorder: " << endl;
             vector<int> pre = {1, 2, 4, 5, 3, 6, 7};
             vector<int> post = {4, 5, 2, 6, 7, 3, 1};
-            cout << "Given Preorder: " << pre << endl;
-            cout << "Given Postorder: " << post << endl;
+            cout << "Given Preorder: " << pre;
+            cout << "Given Postorder: " << post;
             BTFull.createFullBTfromPreAndPostorder(pre, post);
             cout << "New Preorder: " << BTFull.getPreOrder(true);
             cout << endl; 
+            }
+
+            {
+            BinaryTree BTFull;
+            cout << "Creating Full Binary Tree with Preorder and Preorder Mirror: " << endl;
+            vector<int> pre = {1, 2, 4, 5, 3, 6, 7};
+            vector<int> preMirror = {1, 3, 7, 6, 2, 5, 4};
+            cout << "Given Preorder: " << pre;
+            cout << "Given Preorder Mirror: " << preMirror;
+            BTFull.createFullBTFromPreandMirrorPreorder(pre, preMirror);
+            cout << "New Preorder: " << BTFull.getPreOrder(true);
+            cout << endl; 
+            }
+
+            {
+            vector<int> parentArray = {-1, 0, 0, 1, 1, 3, 5};
+            cout << "Creating BT from Parent Array: " << parentArray;
+            BinaryTree BTParentArray;
+            BTParentArray.createBTFromParentArray(parentArray);
+            cout << "Preorder: " << BTParentArray.getPreOrder(true);
+            cout << endl;
+            }
+
+            {
+            vector<int> levelorderArray = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+            cout << "Creating Complete BT from Level order Array: " << levelorderArray;
+            BinaryTree BTComplete;
+            BTComplete.createCompleteBTFromLevelOrderArray(levelorderArray);
+            cout << BTComplete.getPreOrder(true); 
+            cout << endl;
+            }
 
             BinaryTree BT;
             /* BT Operations */
@@ -81,19 +113,6 @@ void treesMain()
                 cout << "Found Node with 560: " << node560;
             else   
                 cout << "Node not Found..";
-            cout << endl;
-
-            vector<int> parentArray = {-1, 0, 0, 1, 1, 3, 5};
-            cout << "Creating BT from Parent Array: " << parentArray << endl;
-            BinaryTree BTParentArray;
-            BTParentArray.createBTFromParentArray(parentArray);
-            cout << BTParentArray.getPreOrder(true) << endl;
-
-            vector<int> levelorderArray = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
-            cout << "Creating Complete BT from Level order Array: " << levelorderArray << endl;
-            BinaryTree BTComplete;
-            BTComplete.createCompleteBTFromLevelOrderArray(levelorderArray);
-            cout << BTComplete.getPreOrder(true) << endl; 
             cout << endl;
 
             BinaryTree BTSymmetric;

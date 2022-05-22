@@ -15,12 +15,13 @@ Binary Tree Operations:
     Insert New node into Binary Tree
     Delete Node with value in Binary Tree
     Search a Node with given value in Binary Tree
-    Create Binary Tree from Parent Array Representation
-    Create Binary Tree from Linked List Representation
+    Construct Binary Tree from Parent Array Representation
+    Construct Binary Tree from Linked List Representation
     Construct Binary Tree from given inorder and preorder
     Construct Binary Tree from given inorder and Levelorder
-    Create Complete Binary Tree from Level order Array
-    Create Full Binary Tree from preorder and postorder 
+    Construct Complete Binary Tree from Level order Array
+    Construct Full Binary Tree from preorder and postorder
+    Construct Full Binary Tree from preorder and preorder of Mirror Tree 
 
 Tree Traversals:
     Preorder Recursive
@@ -310,7 +311,15 @@ public:
                                                         unordered_map<int,int> &postIndexMap,
                                                         int &preIndex,
                                                         int postStartIndex,
-                                                        int postEndIndex);
+                                                        int postEndInd);
+
+    
+    void createFullBTFromPreandMirrorPreorder(vector<int> &pre, vector<int> &preMirror);
+    BinaryTreeNode* createFullBTFromPreandMirrorPreorderUtil(vector<int> &pre,
+                                                             unordered_map<int,int> &preMirrorIndexMap,
+                                                             int &preIndex,
+                                                             int preMirrorStartIndex,
+                                                             int preMirrorEndIndex);
 
     /* Tree Traversals - Recursive */
     void preorderRecurisve(BinaryTreeNode *node);
