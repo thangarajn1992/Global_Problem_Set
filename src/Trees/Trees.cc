@@ -88,6 +88,29 @@ void treesMain()
             }
 
             {
+            /*
+            https://www.geeksforgeeks.org/construct-tree-from-ancestor-matrix/
+            */
+            BinaryTree BTAncestor;
+            cout << "Creating One of Possible Binary Tree from Ancestor Matrix: " << endl;
+            vector<vector<int>> ancestor = {
+                {0, 0, 0, 0, 0, 0},
+                {1, 0, 0, 0, 1, 0},
+                {0, 0, 0, 1, 0, 0},
+                {0, 0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0, 0},
+                {1, 1, 1, 1, 1, 0}
+            };
+            cout << "Given Ancestor Matrix: " << endl;
+            for(int i = 0; i < ancestor.size(); i++)
+                cout << ancestor[i];
+            
+            BTAncestor.createBTFromAncestorMatrix(ancestor);
+            cout << "New Preorder: " << BTAncestor.getPreOrder(true);
+            cout << endl;
+            }
+
+            {
             vector<int> parentArray = {-1, 0, 0, 1, 1, 3, 5};
             cout << "Creating BT from Parent Array: " << parentArray;
             BinaryTree BTParentArray;

@@ -24,6 +24,7 @@ Binary Tree Operations:
     Construct Full Binary Tree from preorder and preorder of Mirror Tree 
     Construct Full Binary Tree from preorder and preLN array (Recursive)
     Construct Full Binary Tree from preorder and preLN array (Iterative)
+    Construct One of Possible Binary Tree from Ancestor Matrix
 
 
 Tree Traversals:
@@ -332,6 +333,7 @@ public:
     
     void createFullBTFromPreandPreLNArrayIterative(vector<int> &pre, vector<char> &preLN);
 
+    void createBTFromAncestorMatrix(vector<vector<int>> &ancestor);
 
     /* Tree Traversals - Recursive */
     void preorderRecurisve(BinaryTreeNode *node);
