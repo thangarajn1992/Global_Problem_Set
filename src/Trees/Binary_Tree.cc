@@ -312,14 +312,13 @@ BinaryTree::createFullBTfromPreAndPostorderUtil(vector<int> &pre,
     if(postStartIndex > postEndIndex)
         return nullptr;
     
-    int currValue = pre[preIndex];
-    BinaryTreeNode* node = new BinaryTreeNode(currValue);
+    BinaryTreeNode* node = new BinaryTreeNode(pre[preIndex]);
     preIndex++;
 
     if(postStartIndex == postEndIndex) // Only one node in sub-tree, return this node
         return node;
     
-    int postIndex = postIndexMap[currValue];
+    int postIndex = postIndexMap[pre[preIndex]];
 
     if(postIndex >= postStartIndex && postIndex <= postEndIndex)
     {
