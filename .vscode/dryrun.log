@@ -1,5 +1,71 @@
-make.exe --dry-run --keep-going --print-directory
+make.exe --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/cygdrive/c/Users/thang/Github/Global_Problem_Set'
+echo "g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/main.cc -o src/main.o"
+g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/main.cc -o src/main.o
+echo "g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/AlgoProbIndex.cc -o src/AlgoProbIndex.o"
+g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/AlgoProbIndex.cc -o src/AlgoProbIndex.o
+echo "g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/DataStructProbIndex.cc -o src/DataStructProbIndex.o"
+g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/DataStructProbIndex.cc -o src/DataStructProbIndex.o
+ 
+echo "g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/utils/dumps.cc -o src/utils/dumps.o"
+g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/utils/dumps.cc -o src/utils/dumps.o
+ 
+echo "g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/algorithm_problem_index/back_tracking_problem_index.cc -o src/algorithm_problem_index/back_tracking_problem_index.o"
+g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/algorithm_problem_index/back_tracking_problem_index.cc -o src/algorithm_problem_index/back_tracking_problem_index.o
+ 
+echo "g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/algorithm_problem_index/binary_search_problem_index.cc -o src/algorithm_problem_index/binary_search_problem_index.o"
+g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/algorithm_problem_index/binary_search_problem_index.cc -o src/algorithm_problem_index/binary_search_problem_index.o
+ 
+echo "g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/algorithm_problem_index/dynamic_programming_problem_index.cc -o src/algorithm_problem_index/dynamic_programming_problem_index.o"
+g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/algorithm_problem_index/dynamic_programming_problem_index.cc -o src/algorithm_problem_index/dynamic_programming_problem_index.o
+ 
+echo "g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/algorithm_problem_index/greedy_problem_index.cc -o src/algorithm_problem_index/greedy_problem_index.o"
+g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/algorithm_problem_index/greedy_problem_index.cc -o src/algorithm_problem_index/greedy_problem_index.o
+ 
+echo "g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/data_struct_problem_index/array_problem_index.cc -o src/data_struct_problem_index/array_problem_index.o"
+g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/data_struct_problem_index/array_problem_index.cc -o src/data_struct_problem_index/array_problem_index.o
+ 
+echo "g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/data_struct_problem_index/bit_manipulation_problem_index.cc -o src/data_struct_problem_index/bit_manipulation_problem_index.o"
+g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/data_struct_problem_index/bit_manipulation_problem_index.cc -o src/data_struct_problem_index/bit_manipulation_problem_index.o
+ 
+echo "g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/data_struct_problem_index/graph_problem_index.cc -o src/data_struct_problem_index/graph_problem_index.o"
+g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/data_struct_problem_index/graph_problem_index.cc -o src/data_struct_problem_index/graph_problem_index.o
+ 
+echo "g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/data_struct_problem_index/linked_list_problem_index.cc -o src/data_struct_problem_index/linked_list_problem_index.o"
+g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/data_struct_problem_index/linked_list_problem_index.cc -o src/data_struct_problem_index/linked_list_problem_index.o
+ 
+echo "g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/data_struct_problem_index/mathematics_problem_index.cc -o src/data_struct_problem_index/mathematics_problem_index.o"
+g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/data_struct_problem_index/mathematics_problem_index.cc -o src/data_struct_problem_index/mathematics_problem_index.o
+ 
+echo "g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/data_struct_problem_index/ndarray_problem_index.cc -o src/data_struct_problem_index/ndarray_problem_index.o"
+ 
+g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/data_struct_problem_index/ndarray_problem_index.cc -o src/data_struct_problem_index/ndarray_problem_index.o
+echo "g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/data_struct_problem_index/queue_problem_index.cc -o src/data_struct_problem_index/queue_problem_index.o"
+g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/data_struct_problem_index/queue_problem_index.cc -o src/data_struct_problem_index/queue_problem_index.o
+ 
+echo "g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/data_struct_problem_index/stack_problem_index.cc -o src/data_struct_problem_index/stack_problem_index.o"
+g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/data_struct_problem_index/stack_problem_index.cc -o src/data_struct_problem_index/stack_problem_index.o
+ 
+echo "g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/data_struct_problem_index/string_problem_index.cc -o src/data_struct_problem_index/string_problem_index.o"
+g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/data_struct_problem_index/string_problem_index.cc -o src/data_struct_problem_index/string_problem_index.o
+ 
+echo "g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/data_struct_problem_index/tree_problem_index.cc -o src/data_struct_problem_index/tree_problem_index.o"
+g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/data_struct_problem_index/tree_problem_index.cc -o src/data_struct_problem_index/tree_problem_index.o
+ 
+echo "g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/Linked_List/Linked_List.cc -o src/Linked_List/Linked_List.o"
+g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/Linked_List/Linked_List.cc -o src/Linked_List/Linked_List.o
+ 
+echo "g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/Linked_List/Singly_Linked_List.cc -o src/Linked_List/Singly_Linked_List.o"
+g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/Linked_List/Singly_Linked_List.cc -o src/Linked_List/Singly_Linked_List.o
+ 
+echo "g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/Trees/Trees.cc -o src/Trees/Trees.o"
+g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/Trees/Trees.cc -o src/Trees/Trees.o
+ 
+echo "g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/Trees/Binary_Tree.cc -o src/Trees/Binary_Tree.o"
+g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/Trees/Binary_Tree.cc -o src/Trees/Binary_Tree.o
+echo "g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/Trees/Binary_Search_Tree.cc -o src/Trees/Binary_Search_Tree.o"
+g++ -c -I. -I./include -I./include/utils -I./src/Linked_List -I./src/Trees src/Trees/Binary_Search_Tree.cc -o src/Trees/Binary_Search_Tree.o
+ 
 echo "===== Building Global Problem Set Binary"
 g++ ./src/main.o ./src/AlgoProbIndex.o ./src/DataStructProbIndex.o ./src/utils/dumps.o ./src/algorithm_problem_index/back_tracking_problem_index.o ./src/algorithm_problem_index/binary_search_problem_index.o ./src/algorithm_problem_index/dynamic_programming_problem_index.o ./src/algorithm_problem_index/greedy_problem_index.o ./src/data_struct_problem_index/array_problem_index.o ./src/data_struct_problem_index/bit_manipulation_problem_index.o ./src/data_struct_problem_index/graph_problem_index.o ./src/data_struct_problem_index/linked_list_problem_index.o ./src/data_struct_problem_index/mathematics_problem_index.o ./src/data_struct_problem_index/ndarray_problem_index.o ./src/data_struct_problem_index/queue_problem_index.o ./src/data_struct_problem_index/stack_problem_index.o ./src/data_struct_problem_index/string_problem_index.o ./src/data_struct_problem_index/tree_problem_index.o ./src/Linked_List/Linked_List.o ./src/Linked_List/Singly_Linked_List.o ./src/Trees/Trees.o ./src/Trees/Binary_Tree.o ./src/Trees/Binary_Search_Tree.o -o global_problem_set
 make: Leaving directory '/cygdrive/c/Users/thang/Github/Global_Problem_Set'

@@ -58,9 +58,12 @@ Tree Traversals:
     Postorder from Preorder and Inorder
 
 Tree Properties:
+    Get Total Nodes in the Binary Tree
     Is Symmetric Tree (Mirror Image)
     Find Height, Size and Density of Binary Tree
     Has Path with given target Sum
+    Get Ancestor Matrix for Binary Tree (BackTracking)
+    Get Ancestor Matrix for Binary Tree (Transitive Closure)
 
 Tree Transformations:
     Convert to its sumTree
@@ -110,6 +113,7 @@ class BinaryTree {
 private:
     BinaryTreeNode *root;
     /* Will be used whenever needed */
+    int totalNodes;
     vector<int> preorder; 
     vector<int> inorder;
     vector<int> postorder;
@@ -121,6 +125,7 @@ private:
     vector<int> spiral;
     vector<int> diagonal;
     vector<int> boundary;
+    vector<vector<int>> ancestorMatrix;
 
     /* Used for generating all possible BTs from inorder */
     vector<BinaryTreeNode*> allBTsForInorder;
@@ -378,6 +383,8 @@ public:
                                  vector<int> &post);
     
     /* Tree Properties or Conditions */
+    int getTotalNodes(BinaryTreeNode *node);
+
     bool isSymmetric();
     bool isSymmetricUtil(BinaryTreeNode *node1, 
                          BinaryTreeNode *node2);
@@ -387,7 +394,13 @@ public:
 
     bool hasPathSum(BinaryTreeNode* node, int target);
 
+    vector<vector<int>> getAncestorMatrixBacktracking();
+    void getAncestorMatrixBacktrackingUtil(BinaryTreeNode* node,
+                                           vector<int> &ancestors);
 
+    vector<vector<int>> getAncestorMatrixTransitiveClosure();
+    void getAncestorMatrixTransitiveClosureAdjFill(BinaryTreeNode *node,
+                                               int parentValue);
 
 
     /* Tree Transformations */

@@ -102,12 +102,20 @@ void treesMain()
                 {1, 1, 1, 1, 1, 0}
             };
             cout << "Given Ancestor Matrix: " << endl;
-            for(int i = 0; i < ancestor.size(); i++)
-                cout << ancestor[i];
+            cout << ancestor;
             
             BTAncestor.createBTFromAncestorMatrix(ancestor);
             cout << "New Preorder: " << BTAncestor.getPreOrder(true);
             cout << endl;
+
+            /* Get Ancestor Matrix */
+            cout << "Preorder: " << BTAncestor.getPreOrder(true);
+            cout << "Ancestor Matrix(Backtracking): " << endl;
+            cout << BTAncestor.getAncestorMatrixBacktracking();
+            cout << "Ancestor Matrix(Transitive Closure): " << endl;
+            cout << BTAncestor.getAncestorMatrixTransitiveClosure();
+            cout << endl;
+
             }
 
             {
@@ -333,12 +341,11 @@ void treesMain()
             cout << endl;
 
             /* Has Path Sum */
-            cout << "Preorder: " << BT.getPreOrder(true) << endl;
+            cout << "Preorder: " << BT.getPreOrder(true);
             int target1 = 325, target2 = 45;
             cout << "Does any path has given sum (325): " << BT.hasPathSum(BT.getRoot(), target1) << endl;
             cout << "Does any path has given sum (45): " << BT.hasPathSum(BT.getRoot(), target2) << endl;
             cout << endl;
-
 
             /* Tree Transformations */
 
