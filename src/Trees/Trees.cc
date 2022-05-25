@@ -136,6 +136,15 @@ void treesMain()
             cout << endl;
             }
 
+            {
+            vector<int> in = {1, 5, 10, 40, 30, 15, 28, 20};
+            cout << "Creating Special BT(Parent > its children) from Inorder: " << endl;
+            cout << "Given Inorder: " << in;
+            BinaryTree BTSplGreaterParent;
+            BTSplGreaterParent.createSplBTGreaterParent(in);
+            cout << "New Preorder: " << BTSplGreaterParent.getPreOrder(true);
+            cout << endl;
+            }
             BinaryTree BT;
             /* BT Operations */
             BT.Insert(100);
