@@ -39,6 +39,24 @@ void treesMain()
             cout << "Preorder : " << BTList.getPreOrder(true);
             cout << endl;
 
+            cout << "Creating Binary Tree with Left-Child Right-Sibling Representation: " << endl;
+            BinaryTreeLChildRSibling BTLChildRSibling;
+            BinaryTreeNode *root = BTLChildRSibling.addNewNode(10);
+            BinaryTreeNode *n1  = BTLChildRSibling.addChild(root, 2);
+            BinaryTreeNode *n2  = BTLChildRSibling.addChild(root, 3);
+            BinaryTreeNode *n3  = BTLChildRSibling.addChild(root, 4);
+            BinaryTreeNode *n4  = BTLChildRSibling.addChild(n3, 6);
+            BinaryTreeNode *n5  = BTLChildRSibling.addChild(root, 5);
+            BinaryTreeNode *n6  = BTLChildRSibling.addChild(n5, 7);
+            BinaryTreeNode *n7  = BTLChildRSibling.addChild(n5, 8);
+            BinaryTreeNode *n8  = BTLChildRSibling.addChild(n5, 9);
+
+            BTLChildRSibling.depthFirstSearch(BTLChildRSibling.getRoot());
+            cout << "Depth First Traversal: " << BTLChildRSibling.getDFS();
+            BTLChildRSibling.breadthFirstSearch();
+            cout << "Breadth First Traversal: " << BTLChildRSibling.getBFS();
+            cout << endl;
+
             {
             BinaryTree BTFull;
             cout << "Creating Full Binary Tree with Pre and Postorder: " << endl;
@@ -471,7 +489,7 @@ void treesMain()
             cout << "Generated Tree Preorder: " << BTFromInandPostIterative.getPreOrder(true);
             cout << endl;
             }
-            
+
             /* Generating Binary Tree from Inorder and Levelorder */
             cout << "Generating Binary Tree from Inorder and Levelorder: " << endl;
             cout << "Inorder: " << PerfectBinaryTree.getInorder(true);
