@@ -18,6 +18,8 @@ Binary Tree Operations:
     Construct Binary Tree from Parent Array Representation
     Construct Binary Tree from Linked List Representation
     Construct Binary Tree from given inorder and preorder
+    Construct Binary Tree from given inorder and postorder (Recursive)
+    Construct Binary Tree from given inorder and postorder (Iterative)
     Construct Binary Tree from given inorder and Levelorder
     Construct Complete Binary Tree from Level order Array
     Construct Full Binary Tree from preorder and postorder
@@ -300,6 +302,14 @@ public:
                                                   int inStart,
                                                   int inEnd,
                                                   int &preIndex);
+
+    void createBTFromInandPostorderRecursive();
+    BinaryTreeNode* createBTFromInandPostorderRecursiveUtil(unordered_map<int,int> &inorderIndexMap,
+                                                            int inStart,
+                                                            int inEnd,
+                                                            int &postIndex);
+
+    void createBTFromInandPostorderIterative();
 
     void createBTFromInandLevelorder();
     BinaryTreeNode* createBTFromInandLevelorderUtil(unordered_map<int,int> &levelIndex, 

@@ -229,6 +229,160 @@ BinaryTree::createNode(int nodeNum, vector<BinaryTreeNode*> &createdNodes, vecto
         createdNodes[parentArray[nodeNum]]->right = createdNodes[nodeNum];
 }
 
+/*  Creating Binary Tree from given Inorder and Preorder
+    Similar Logic can be used to get Postorder from In and Preorder */
+void 
+BinaryTree::createBTFromInandPreorder()
+{
+    int preIndex = 0;
+    unordered_map<int,int> inorderIndexMap;
+    for(int i = 0; i < inorder.size(); i++)
+        inorderIndexMap[inorder[i]] = i;
+
+    root = createBTFromInandPreorderUtil(inorderIndexMap, 0, preorder.size()-1, preIndex);
+}
+
+BinaryTreeNode* 
+BinaryTree::createBTFromInandPreorderUtil(unordered_map<int,int> &inorderIndexMap,
+                                          int inStart,
+                                          int inEnd,
+                                          int &preIndex)
+{
+    if(inStart > inEnd)
+        return nullptr;
+
+    int rootIndex = inorderIndexMap[preorder[preIndex++]];
+
+    BinaryTreeNode *node = new BinaryTreeNode(inorder[rootIndex]);
+
+    node->left = createBTFromInandPreorderUtil(inorderIndexMap, inStart, rootIndex-1, preIndex);
+    node->right = createBTFromInandPreorderUtil(inorderIndexMap, rootIndex+1, inEnd, preIndex);
+
+    return node;
+}
+
+void 
+BinaryTree::createBTFromInandPostorderRecursive()
+{
+    int totalNodes = postorder.size();
+    if(totalNodes == 0)
+        return;
+
+    unordered_map<int,int> inorderIndexMap;
+    int postIndex = totalNodes - 1;
+    for(int inIndex = 0; inIndex < totalNodes; inIndex++)
+    {
+        inorderIndexMap[inorder[inIndex]] = inIndex;
+    }
+
+    root = createBTFromInandPostorderRecursiveUtil(inorderIndexMap, 0, totalNodes-1, postIndex);
+}
+
+BinaryTreeNode* 
+BinaryTree::createBTFromInandPostorderRecursiveUtil(unordered_map<int,int> &inorderIndexMap,
+                                                    int inStart,
+                                                    int inEnd,
+                                                    int &postIndex)
+{
+    if(inStart > inEnd)
+        return nullptr;
+    
+    int inIndex = inorderIndexMap[postorder[postIndex]];
+    postIndex--;
+
+    BinaryTreeNode* node = new BinaryTreeNode(inorder[inIndex]);
+
+    node->right = createBTFromInandPostorderRecursiveUtil(inorderIndexMap, inIndex+1, inEnd, postIndex);
+    node->left = createBTFromInandPostorderRecursiveUtil(inorderIndexMap, inStart, inIndex-1, postIndex);
+
+    return node;
+}
+
+void 
+BinaryTree::createBTFromInandPostorderIterative()
+{
+    int inIndex = inorder.size()-1, postIndex = postorder.size()-1;
+    BinaryTreeNode *prev = nullptr;
+    stack<BinaryTreeNode*> nodeStack;
+    bool left = false;
+
+    if(postorder.size() == 0)
+        return;
+    
+    prev = root = new BinaryTreeNode(postorder[postIndex]);
+    postIndex--;
+    nodeStack.push(root);
+
+    while(postIndex >= 0)
+    {
+        if(nodeStack.empty() == false && inorder[inIndex] == nodeStack.top()->data)
+        {
+            prev = nodeStack.top();
+            nodeStack.pop();
+            inIndex--;
+            left = true;
+        }
+        else
+        {
+            BinaryTreeNode* node = new BinaryTreeNode(postorder[postIndex]);
+            postIndex--;
+            nodeStack.push(node);
+            if(left == true)
+            {
+                prev->left = node;
+                prev = prev->left;
+                left = false;
+            }
+            else
+            {
+                prev->right = node;
+                prev = prev->right;
+            }
+        }
+    }
+}
+
+
+
+void
+BinaryTree::createBTFromInandLevelorder()
+{
+    unordered_map<int,int> levelIndexMap;
+    for(int i = 0; i < levelorder.size(); i++)
+        levelIndexMap[levelorder[i]] = i;
+    
+    root = createBTFromInandLevelorderUtil(levelIndexMap, 0, levelorder.size()-1);
+}
+
+BinaryTreeNode*
+BinaryTree::createBTFromInandLevelorderUtil(unordered_map<int,int> &levelIndexMap, 
+                                            int inStart,
+                                            int inEnd)
+{
+    if(inStart > inEnd)
+        return nullptr;
+    
+    /*  Find the element in the given inorder range, which has
+        least index in levelorder */
+    int leastLevelIndex = INT_MAX;
+    int inIndexWithLeastLevelIndex = inStart;
+    for(int i = inStart; i <= inEnd; i++)
+    {
+        int currLevelIndex = levelIndexMap[inorder[i]];
+        if(currLevelIndex < leastLevelIndex)
+        {
+            leastLevelIndex = currLevelIndex;
+            inIndexWithLeastLevelIndex = i;
+        }
+    }
+    
+    BinaryTreeNode *node = new BinaryTreeNode(inorder[inIndexWithLeastLevelIndex]);
+
+    node->left = createBTFromInandLevelorderUtil(levelIndexMap, inStart, inIndexWithLeastLevelIndex-1);
+    node->right = createBTFromInandLevelorderUtil(levelIndexMap, inIndexWithLeastLevelIndex+1, inEnd);
+    
+    return node;
+}
 
 void 
 BinaryTree::createCompleteBTFromLevelOrderArray(vector<int> &levelorderArray)
@@ -1929,77 +2083,7 @@ BinaryTree::NumberOfFullBinaryTreeWithNPlus1Leaves(int n)
 /* Tree Construction or Generation */
 
 
-/*  Creating Binary Tree from given Inorder and Preorder
-    Similar Logic can be used to get Postorder from In and Preorder */
-void 
-BinaryTree::createBTFromInandPreorder()
-{
-    int preIndex = 0;
-    unordered_map<int,int> inorderIndexMap;
-    for(int i = 0; i < inorder.size(); i++)
-        inorderIndexMap[inorder[i]] = i;
 
-    root = createBTFromInandPreorderUtil(inorderIndexMap, 0, preorder.size()-1, preIndex);
-}
-
-BinaryTreeNode* 
-BinaryTree::createBTFromInandPreorderUtil(unordered_map<int,int> &inorderIndexMap,
-                                          int inStart,
-                                          int inEnd,
-                                          int &preIndex)
-{
-    if(inStart > inEnd)
-        return nullptr;
-
-    int rootIndex = inorderIndexMap[preorder[preIndex++]];
-
-    BinaryTreeNode *node = new BinaryTreeNode(inorder[rootIndex]);
-
-    node->left = createBTFromInandPreorderUtil(inorderIndexMap, inStart, rootIndex-1, preIndex);
-    node->right = createBTFromInandPreorderUtil(inorderIndexMap, rootIndex+1, inEnd, preIndex);
-
-    return node;
-}
-
-void
-BinaryTree::createBTFromInandLevelorder()
-{
-    unordered_map<int,int> levelIndexMap;
-    for(int i = 0; i < levelorder.size(); i++)
-        levelIndexMap[levelorder[i]] = i;
-    
-    root = createBTFromInandLevelorderUtil(levelIndexMap, 0, levelorder.size()-1);
-}
-
-BinaryTreeNode*
-BinaryTree::createBTFromInandLevelorderUtil(unordered_map<int,int> &levelIndexMap, 
-                                            int inStart,
-                                            int inEnd)
-{
-    if(inStart > inEnd)
-        return nullptr;
-    
-    /*  Find the element in the given inorder range, which has
-        least index in levelorder */
-    int leastLevelIndex = INT_MAX;
-    int inIndexWithLeastLevelIndex = inStart;
-    for(int i = inStart; i <= inEnd; i++)
-    {
-        int currLevelIndex = levelIndexMap[inorder[i]];
-        if(currLevelIndex < leastLevelIndex)
-        {
-            leastLevelIndex = currLevelIndex;
-            inIndexWithLeastLevelIndex = i;
-        }
-    }
-    
-    BinaryTreeNode *node = new BinaryTreeNode(inorder[inIndexWithLeastLevelIndex]);
-
-    node->left = createBTFromInandLevelorderUtil(levelIndexMap, inStart, inIndexWithLeastLevelIndex-1);
-    node->right = createBTFromInandLevelorderUtil(levelIndexMap, inIndexWithLeastLevelIndex+1, inEnd);
-    
-    return node;
-}
 
 void 
 BinaryTree::AllPossibleBinaryTreeForInorder(vector<int> &in)

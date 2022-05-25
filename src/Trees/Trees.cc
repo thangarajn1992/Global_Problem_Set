@@ -444,6 +444,34 @@ void treesMain()
             cout << "Generated Tree Preorder: " << BTFromInAndPre.getPreOrder(true);
             cout << endl;
 
+            {
+            /* Generating Binary Tree from Inorder and Postorder (Recursive) */
+            cout << "Generating Binary Tree from Inorder and Postorder (Recursive): " << endl;
+            vector<int> in = {4, 8, 2, 5, 1, 6, 3, 7};
+            vector<int> post = {8, 4, 5, 2, 6, 7, 3, 1};
+            cout << "Inorder: " << in << "Postorder: " << post;
+            BinaryTree BTFromInandPostRecursive;
+            BTFromInandPostRecursive.setInorder(in);
+            BTFromInandPostRecursive.setPostorder(post);
+            BTFromInandPostRecursive.createBTFromInandPostorderRecursive();
+            cout << "Generated Tree Preorder: " << BTFromInandPostRecursive.getPreOrder(true);
+            cout << endl;
+            }
+
+            {
+            /* Generating Binary Tree from Inorder and Postorder (Iterative) */
+            cout << "Generating Binary Tree from Inorder and Postorder (Iterative): " << endl;
+            vector<int> in = {4, 8, 2, 5, 1, 6, 3, 7};
+            vector<int> post = {8, 4, 5, 2, 6, 7, 3, 1};
+            cout << "Inorder: " << in << "Postorder: " << post;
+            BinaryTree BTFromInandPostIterative;
+            BTFromInandPostIterative.setInorder(in);
+            BTFromInandPostIterative.setPostorder(post);
+            BTFromInandPostIterative.createBTFromInandPostorderIterative();
+            cout << "Generated Tree Preorder: " << BTFromInandPostIterative.getPreOrder(true);
+            cout << endl;
+            }
+            
             /* Generating Binary Tree from Inorder and Levelorder */
             cout << "Generating Binary Tree from Inorder and Levelorder: " << endl;
             cout << "Inorder: " << PerfectBinaryTree.getInorder(true);
