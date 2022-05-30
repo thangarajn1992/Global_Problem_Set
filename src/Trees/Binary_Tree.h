@@ -16,6 +16,7 @@ Binary Tree:
         Inserting child
         Depth First Traversal
         Breadth First Traversal
+        Convert Left-Right Representation to LChild and RSibling Representation
 
 Binary Tree Operations:
     Insert New node into Binary Tree
@@ -71,6 +72,7 @@ Tree Properties:
     Is Symmetric Tree (Mirror Image)
     Find Height, Size and Density of Binary Tree
     Has Path with given target Sum
+    Has Children Sum Property
     Get Ancestor Matrix for Binary Tree (BackTracking)
     Get Ancestor Matrix for Binary Tree (Transitive Closure)
 
@@ -80,6 +82,7 @@ Tree Transformations:
     Convert to its Mirror Image - Iterative
     Right Flip 
     Convert All nodes with value of sum of its inorder predecessor and successor
+    Convert BT to a tree which holds Children Sum Property
     Populate all nodes with their inorder successor
     Get Inorder Successor for a particular node
     Reverse the Path till the node specified in Binary Tree
@@ -522,6 +525,9 @@ public:
     void toMirrorRecursive(BinaryTreeNode *node);
     void toMirrorIterative();
     BinaryTreeNode* toRightFlip(BinaryTreeNode *node);
+
+    void convertBTToChildSumBT(BinaryTreeNode *node);
+    void convertBTToChildSumBTIncrement(BinaryTreeNode *node, int increment_value);
 
     void toInorderPredecessorSuccessor(BinaryTreeNode *node);
     void toInorderPredecessorSuccessorUtil(BinaryTreeNode *node,

@@ -419,7 +419,22 @@ void treesMain()
             cout << "Sum of Inorder Predecessor & Sucessor: " << BTSymmetric.getPreOrder(true);
             cout << endl;
 
-            /* Popualte Inorder Sucessor for all nodes in Binary Tree */
+            {
+                /* Convert BT to Tree with Children Sum Property */
+                cout << "Converting BT To Tree with Children Sum Property: " << endl;
+                vector<int> pre = {50, 7, 3, 5, 2, 1, 30};
+                vector<int> in = {3, 7, 5, 50, 1, 2, 30};
+                BinaryTree BTConvertToChildSum;
+                BTConvertToChildSum.setPreorder(pre);
+                BTConvertToChildSum.setInorder(in);
+                BTConvertToChildSum.createBTFromInandPreorder();
+                cout << "Given Preorder: " << BTConvertToChildSum.getPreOrder(true);
+                BTConvertToChildSum.convertBTToChildSumBT(BTConvertToChildSum.getRoot());
+                cout << "Converted Preorder: " << BTConvertToChildSum.getPreOrder(true);
+                cout << endl;
+            }
+            
+            /* Popualte Inorder Successor for all nodes in Binary Tree */
             BT.populateInorderSuccessor(BT.getRoot());
             cout << "Inorder Traversal: " << BT.getInorder(true);
             cout << "Inorder Using Sucessor Pointer: ";
