@@ -505,6 +505,8 @@ public:
     int findHeightAndSize(BinaryTreeNode *node, int &size);
 
     bool hasPathSum(BinaryTreeNode* node, int target);
+    
+    bool hasChildrenSumProperty(BinaryTreeNode* node);
 
     vector<vector<int>> getAncestorMatrixBacktracking();
     void getAncestorMatrixBacktrackingUtil(BinaryTreeNode* node,

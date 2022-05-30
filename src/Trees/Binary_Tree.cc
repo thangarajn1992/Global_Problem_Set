@@ -239,7 +239,7 @@ BinaryTree::createBTFromInandPreorder()
     for(int i = 0; i < inorder.size(); i++)
         inorderIndexMap[inorder[i]] = i;
 
-    root = createBTFromInandPreorderUtil(inorderIndexMap, 0, preorder.size()-1, preIndex);
+    root = createBTFromInandPreorderUtil(inorderIndexMap, 0, preorder.size() - 1, preIndex);
 }
 
 BinaryTreeNode* 
@@ -1673,6 +1673,34 @@ BinaryTree::hasPathSum(BinaryTreeNode* node, int target)
     return  hasPathSum(node->left, target - node->data) ||
             hasPathSum(node->right, target - node->data);
 }
+
+/* 
+    Check whether Tree has Children Sum Property:
+    For every node, data value must be equal to sum of data values in left and right children. 
+    Consider data value as 0 for NULL children.
+*/
+bool
+BinaryTree::hasChildrenSumProperty(BinaryTreeNode *node)
+{
+    /* To take care of root itself is nullptr */
+    if(node == nullptr) 
+        return true;
+    
+    /* Leaf Node is always has this property */
+    if(node->left == nullptr && node->right == nullptr)
+        return true;
+
+    int sum = 0;
+    if(node->left != nullptr)
+        sum += node->left->data;
+    if(node->right != nullptr)
+        sum += node->right->data;
+    
+    return (sum == node->data &&
+            hasChildrenSumProperty(node->left) &&
+            hasChildrenSumProperty(node->right));
+}
+
 
 vector<vector<int>>
 BinaryTree::getAncestorMatrixBacktracking()

@@ -378,6 +378,21 @@ void treesMain()
             cout << "Does any path has given sum (45): " << BT.hasPathSum(BT.getRoot(), target2) << endl;
             cout << endl;
 
+            {
+            /* is Children Sum Tree */
+            cout << "Preorder: " << BT.getPreOrder(true);
+            cout << "Is Children Sum Tree: " << BT.hasChildrenSumProperty(BT.getRoot()) << endl;
+            vector<int> pre = {13, 8, 6, 2, 5, 4, 1};
+            vector<int> in = {6, 8, 2, 13, 4, 5, 1};
+            BinaryTree BTChildSum;
+            BTChildSum.setPreorder(pre);
+            BTChildSum.setInorder(in);
+            BTChildSum.createBTFromInandPreorder();
+            cout << "Preorder: " << pre;
+            cout << "Is Children Sum Tree: " << BTChildSum.hasChildrenSumProperty(BTChildSum.getRoot()) << endl;
+            cout << endl;
+            }
+
             /* Tree Transformations */
 
             /* Convert to Sum Tree */
