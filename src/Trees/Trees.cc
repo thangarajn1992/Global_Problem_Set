@@ -30,7 +30,8 @@ void treesMain()
             BTArray.addRightNode(1, 6);
 
             cout << BTArray.getArray() << endl;
-
+            
+            {
             cout << "Creating Binary Tree with Linked List Representation: " << endl;
             SinglyLinkedList SLL;
             SLL.Insert(10); SLL.Insert(20); SLL.Insert(30); SLL.Insert(40); SLL.Insert(50);
@@ -38,7 +39,9 @@ void treesMain()
             BinaryTree BTList(SLL);
             cout << "Preorder : " << BTList.getPreOrder(true);
             cout << endl;
+            }
 
+            {
             cout << "Creating Binary Tree with Left-Child Right-Sibling Representation: " << endl;
             BinaryTreeLChildRSibling BTLChildRSibling;
             BinaryTreeNode *root = BTLChildRSibling.addNewNode(10);
@@ -56,6 +59,7 @@ void treesMain()
             BTLChildRSibling.breadthFirstSearch();
             cout << "Breadth First Traversal: " << BTLChildRSibling.getBFS();
             cout << endl;
+            }
 
             {
             BinaryTree BTFull;
@@ -500,6 +504,18 @@ void treesMain()
             BTFromInandLevel.createBTFromInandLevelorder();
             cout << "Generated Tree Preorder: " << BTFromInandLevel.getPreOrder(true);
             cout << endl; 
+
+            cout << "Convert Left-Right Representation to LChild-RSibling Representation in-place: " << endl;
+            cout << "Given Preorder: " << PerfectBinaryTree.getPreOrder(true);
+            BinaryTreeLChildRSibling BTLChildRSiblingFromBT;
+            BTLChildRSiblingFromBT.setRoot(PerfectBinaryTree.getRoot());
+            BTLChildRSiblingFromBT.convertToLChildRSibling(BTLChildRSiblingFromBT.getRoot());
+            BTLChildRSiblingFromBT.breadthFirstSearch(); 
+            BTLChildRSiblingFromBT.depthFirstSearch(BTLChildRSiblingFromBT.getRoot());
+            cout << "LChild RSibling BFS: " << BTLChildRSiblingFromBT.getBFS();
+            cout << "LChild RSibling DFS: " << BTLChildRSiblingFromBT.getDFS();
+            cout << endl;   
+           
 
             /*
             in = BT.getInorder();

@@ -129,6 +129,7 @@ private:
     vector<int> bfs;
 public:
     BinaryTreeNode* getRoot() { return root; }
+    void setRoot(BinaryTreeNode *node) { root = node; }
     vector<int> getDFS() { return dfs; }
     vector<int> getBFS() { return bfs; }
 
@@ -185,6 +186,25 @@ public:
                 curr = curr->right;
             }
         }
+    }
+
+    void convertToLChildRSibling(BinaryTreeNode *node)
+    {
+        if(node == nullptr)
+            return;
+        
+        convertToLChildRSibling(node->left);
+        convertToLChildRSibling(node->right);
+        
+        if(node->left == nullptr)
+        {
+            node->left = node->right;
+        }
+        else
+        {
+            node->left->right = node->right;
+        }
+        node->right = nullptr;
     }
 };
 
