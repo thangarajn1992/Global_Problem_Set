@@ -1790,6 +1790,21 @@ BinaryTree::toSumTree(BinaryTreeNode *node)
     return node->data + old_value;
 }
 
+int
+BinaryTree::toLeftSumTree(BinaryTreeNode *node)
+{
+    if(node == nullptr)
+        return 0;
+    
+    int leftSum = toLeftSumTree(node->left);
+    int rightSum = toLeftSumTree(node->right);
+
+    node->data += leftSum;
+
+    return node->data + rightSum;
+}
+
+
 /* Convert to its Mirror Image - Recursive */
 void 
 BinaryTree::toMirrorRecursive(BinaryTreeNode *node)

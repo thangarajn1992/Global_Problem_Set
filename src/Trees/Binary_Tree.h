@@ -78,6 +78,7 @@ Tree Properties:
 
 Tree Transformations:
     Convert to its sumTree
+    Convert to its left subtree Sum (Node = node + left sub-tree)
     Convert to its Mirror Image - Recursive
     Convert to its Mirror Image - Iterative
     Right Flip 
@@ -522,6 +523,7 @@ public:
 
     /* Tree Transformations */
     int toSumTree(BinaryTreeNode *node);
+    int toLeftSumTree(BinaryTreeNode *node);
     void toMirrorRecursive(BinaryTreeNode *node);
     void toMirrorIterative();
     BinaryTreeNode* toRightFlip(BinaryTreeNode *node);

@@ -401,6 +401,20 @@ void treesMain()
             cout << "Sum Tree: " << BTSumTree.getPreOrder(true);
             cout << endl;
 
+            /*Convert to Left Subtree Sum Tree */
+            {
+                BinaryTree BTLeftSumTree;
+                vector<int> pre = {1, 2, 4, 5, 3, 6};
+                vector<int> in = {4, 2, 5, 1, 3, 6};
+                BTLeftSumTree.setPreorder(pre);
+                BTLeftSumTree.setInorder(in);
+                BTLeftSumTree.createBTFromInandPreorder();
+                cout << "Given Preorder: " << BTLeftSumTree.getPreOrder(true);
+                BTLeftSumTree.toLeftSumTree(BTLeftSumTree.getRoot());
+                cout << "Left Subtree Sum Tree: " << BTLeftSumTree.getPreOrder(true);
+                cout << endl;
+            }
+            
             /* Convert to Mirror Tree */
             BTSumTree.toMirrorRecursive(BTSumTree.getRoot());
             cout << "Mirror Tree - Recurisve: " << BTSumTree.getPreOrder(true);
@@ -433,7 +447,7 @@ void treesMain()
                 cout << "Converted Preorder: " << BTConvertToChildSum.getPreOrder(true);
                 cout << endl;
             }
-            
+
             /* Popualte Inorder Successor for all nodes in Binary Tree */
             BT.populateInorderSuccessor(BT.getRoot());
             cout << "Inorder Traversal: " << BT.getInorder(true);
