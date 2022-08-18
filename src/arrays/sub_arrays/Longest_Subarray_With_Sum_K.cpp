@@ -5,7 +5,16 @@ Find the length of the longest Sub-Array with the sum of the elements equal to t
 */
 
 /*
-Algorithm:
+Algorithm 
+
+Without -ve numbers:
+    Without -ve numbers, we can use sliding window method.
+    1. Use start, end pointers both initialized to 0. Sum = 0
+    2. For end < N, 
+       if Sum == target, result = max (result, end - start + 1)
+       if sum > target, remove the first element and decrement the sum.
+
+With -ve Numbers:
  Since we can negative numbers, we can't use sliding window method.
  1. Use unordered_map to store the running_sum with the index. 
  2. If running_sum is not present in MAP already, then we insert it. 
@@ -20,6 +29,32 @@ using namespace std;
 
 class Solution{
     public:
+    int lenOfLongSubarrNonNegative(int A[], int N, int target)
+    {
+        int start = 0, end = 0, sum = 0;
+        int result = 0;
+        while(end < N)
+        {
+            sum += A[end];
+            if(sum == target)
+            {
+                result = max(result, end - start + 1);
+            }
+            else if(sum > target)
+            {
+                while(sum > target)
+                {
+                    sum -= A[start];
+                    start++;
+                }
+            }
+            end++;
+        }
+        return result;
+    }
+
+
+    /* With Negative Numbers */
     int lenOfLongSubarr(int A[],  int N, int target) 
     { 
         int result = 0;
