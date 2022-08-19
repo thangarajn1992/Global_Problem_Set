@@ -24,4 +24,5 @@ void addQueueProblems();
 void addStackProblems();
 void addStringProblems();
 void addTreeProblems();
+std::string getDSType(dataStructType_t ds_type);
 #endif

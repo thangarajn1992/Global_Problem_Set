@@ -11,4 +11,6 @@ addArrayProblems()
     dsProblemDB.add_dsProblem(DSTYPE_ARRAY, "Rotate_Array_Clockwise");
     dsProblemDB.add_dsProblem(DSTYPE_ARRAY, "Rotate_Array_Counter_Clockwise");
     dsProblemDB.add_dsProblem(DSTYPE_ARRAY, "Smallest_Non_Constructible_Value");
+    dsProblemDB.add_dsProblem(DSTYPE_ARRAY, "Longest_Subarray_With_Given_Sum");
+    dsProblemDB.add_dsProblem(DSTYPE_ARRAY, "Can_Split_Into_Consecutive_Subsequence");
 }

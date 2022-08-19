@@ -25,3 +25,15 @@ addAlgoProblems(){
     addDynamicProgrammingProblems();
     addGreedyProblems();
 }
+
+std::string getAlgoType(algorithmType_t algo_type)
+{
+    switch(algo_type)
+    {
+        case ALGO_BACK_TRACKING: return "BACK_TRACKING";
+        case ALGO_BINARY_SEARCH: return "BINARY_SEARCH";
+        case ALGO_DYNAMIC_PROGRAMMING: return "DYNAMIC_PROGRAMMING";
+        case ALGO_GREEDY: return "GREEDY";
+        default: return "INVALID";
+    }
+}

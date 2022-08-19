@@ -3,5 +3,5 @@
 void
 addGreedyProblems()
 {
-    algoProblemDB.add_algoProblem(ALGO_GREEDY, "Greedy");
+    algoProblemDB.add_algoProblem(ALGO_GREEDY, "Can_Split_Into_Consecutive_Subsequence");
 }

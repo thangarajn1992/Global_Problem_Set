@@ -19,5 +19,5 @@ void addBackTrackingProblems();
 void addBinarySearchProblems();
 void addDynamicProgrammingProblems();
 void addGreedyProblems();
-
+std::string getAlgoType(algorithmType_t algo_type);
 #endif

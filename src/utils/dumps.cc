@@ -5,8 +5,9 @@ printDSProblems()
 {
     for(int dsType = DSTYPE_ARRAY; dsType < DSTYPE_MAX; dsType++)
     {
-        // TODO: Add utility to convert enum to string
-        // std::cout << dsType << std::endl;
+        std::cout << "===================================" << std::endl;
+        std::cout << getDSType(static_cast<dataStructType_t>(dsType)) << std::endl;
+        std::cout << "===================================" << std::endl;
         unsigned int size = dsProblemDB.get_dsProblemCount(static_cast<dataStructType_t>(dsType));
         for(unsigned int probNum = 0; probNum < size; probNum++)
         {
@@ -21,8 +22,9 @@ printAlgoProblems()
 {
     for(int algoType = ALGO_BACK_TRACKING; algoType < ALGO_MAX; algoType++)
     {
-        // TODO: Add utility to convert enum to string
-        // std::cout << algoType << std::endl;
+        std::cout << "===================================" << std::endl;
+        std::cout << getAlgoType(static_cast<algorithmType_t>(algoType)) << std::endl;
+        std::cout << "===================================" << std::endl;
         unsigned int size = algoProblemDB.get_algoProblemCount(static_cast<algorithmType_t>(algoType));
         for(unsigned int probNum = 0; probNum < size; probNum++)
         {

@@ -5,8 +5,7 @@ Find the length of the longest Sub-Array with the sum of the elements equal to t
 */
 
 /*
-Algorithm 
-
+Algorithm:
 Without -ve numbers:
     Without -ve numbers, we can use sliding window method.
     1. Use start, end pointers both initialized to 0. Sum = 0
@@ -24,6 +23,10 @@ With -ve Numbers:
         result = max(result, index - map[running_sum - target])
 */
 
+/*
+Problem/Solution Links:
+    * https://practice.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1
+*/
 using namespace std;
 #include <unordered_map>
 
