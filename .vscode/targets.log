@@ -3,15 +3,16 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # Built for x86_64-pc-cygwin
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+ 
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Mon May 30 18:57:38 2022
+# Make data base, printed on Fri Aug 19 21:54:42 2022
 
 # Variables
- 
 
+ 
 # environment
 SYSTEMDRIVE = C:
 # makefile (from 'Makefile', line 58)
@@ -25,7 +26,7 @@ USERPROFILE = C:\Users\thang
 # environment
 LOCALAPPDATA = C:\Users\thang\AppData\Local
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-7746f091-e074-4d15-ab75-5a8bc7ac2930-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-4924ff0a-c960-4f8f-b8de-6217280b6b69-sock
 # makefile (from 'Makefile', line 17)
 ALGO_INDEX_PATH = $(HERE)/src/algorithm_problem_index
 # environment
@@ -36,21 +37,18 @@ SYSTEMROOT = C:\WINDOWS
 PROCESSOR_LEVEL = 6
 # environment
 PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
- 
 # default
- 
 MAKE_COMMAND := make
 # makefile (from 'Makefile', line 43)
 LINKED_LIST_PATH = $(HERE)/src/Linked_List
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_19760_OJUPQVVEETRZPDKG
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_20444_AQEKCBVVKTYDYJWN
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
 .VARIABLES := 
- 
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # makefile (from 'Makefile', line 25)
@@ -76,14 +74,14 @@ MAKEFLAGS = pqrR
 # environment
 ONEDRIVE = C:\Users\thang\OneDrive
 # makefile (from 'Makefile', line 61)
+ 
 DEP := ./src/main.d ./src/AlgoProbIndex.d ./src/DataStructProbIndex.d ./src/utils/dumps.d ./src/algorithm_problem_index/back_tracking_problem_index.d ./src/algorithm_problem_index/binary_search_problem_index.d ./src/algorithm_problem_index/dynamic_programming_problem_index.d ./src/algorithm_problem_index/greedy_problem_index.d ./src/data_struct_problem_index/array_problem_index.d ./src/data_struct_problem_index/bit_manipulation_problem_index.d ./src/data_struct_problem_index/graph_problem_index.d ./src/data_struct_problem_index/linked_list_problem_index.d ./src/data_struct_problem_index/mathematics_problem_index.d ./src/data_struct_problem_index/ndarray_problem_index.d ./src/data_struct_problem_index/queue_problem_index.d ./src/data_struct_problem_index/stack_problem_index.d ./src/data_struct_problem_index/string_problem_index.d ./src/data_struct_problem_index/tree_problem_index.d
 # makefile
- 
 CURDIR := /cygdrive/c/Users/thang/Github/Global_Problem_Set
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
@@ -105,7 +103,7 @@ MAKEFILE_LIST := Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 19760
+VSCODE_PID = 20444
 # makefile (from 'Makefile', line 18)
 ALGO_INDEX_SRC_FILES = $(ALGO_INDEX_PATH)/back_tracking_problem_index.cc $(ALGO_INDEX_PATH)/binary_search_problem_index.cc $(ALGO_INDEX_PATH)/dynamic_programming_problem_index.cc $(ALGO_INDEX_PATH)/greedy_problem_index.cc
 # automatic
@@ -133,7 +131,6 @@ HOMEPATH = \Users\thang
 # default
 MAKECMDGOALS := all
 # environment
- 
 DRIVERDATA = C:\Windows\System32\Drivers\DriverData
 # environment
 COMSPEC = C:\WINDOWS\system32\cmd.exe
@@ -172,6 +169,7 @@ COMMONPROGRAMFILES = C:\Program Files\Common Files
 # environment
 PROGRAMW6432 = C:\Program Files
 # makefile (from 'Makefile', line 24)
+ 
 ALGO_INDEX_OBJ_FILES = $(ALGO_INDEX_SRC_FILES:%.cc=%.o)
 # environment
 PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
@@ -207,7 +205,6 @@ USERDOMAIN_ROAMINGPROFILE = LAPTOP-3PLH6OA8
 NUMBER_OF_PROCESSORS = 8
 # environment
 PUBLIC = C:\Users\Public
- 
 # makefile (from 'Makefile', line 15)
 DEP_FILES = $(SRC_FILES:%.cc=%.d)
 # makefile (from 'Makefile', line 40)
@@ -255,8 +252,7 @@ DATASTRUCT_INDEX_SRC_FILES = $(DATASTRUCT_INDEX_PATH)/array_problem_index.cc $(D
 # environment
 PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 140 Stepping 1, GenuineIntel
 # variable set hash-table stats:
- 
-# Load=118/1024=12%, Rehash=0, Collisions=15/302=5%
+# Load=118/1024=12%, Rehash=0, Collisions=15/289=5%
 
 # Pattern-specific Variable Values
 
@@ -268,6 +264,7 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 140 Stepping 1, GenuineIntel
 # src/algorithm_problem_index (device 2326820001, inode 1970324837296177): 9 files, no impossibilities so far.
 # src (device 2326820001, inode 75435293758465554): 12 files, no impossibilities so far.
 # src/Linked_List (device 2326820001, inode 8162774324644412): 10 files, no impossibilities so far.
+ 
 # . (device 2326820001, inode 1407374884506831): 11 files, no impossibilities.
 # src/utils (device 2326820001, inode 5629499534222780): 3 files, no impossibilities so far.
 # src/Trees (device 2326820001, inode 2251799814083528): 13 files, no impossibilities so far.
@@ -287,7 +284,7 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 140 Stepping 1, GenuineIntel
 src/Linked_List/Linked_List.o: src/Linked_List/Linked_List.cc
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/Linked_List/Linked_List'
-#  Last modified 2022-05-25 23:27:47.079103
+#  Last modified 2022-05-30 20:21:07.9074086
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 75):
@@ -297,7 +294,7 @@ src/Linked_List/Linked_List.o: src/Linked_List/Linked_List.cc
 src/data_struct_problem_index/stack_problem_index.o: src/data_struct_problem_index/stack_problem_index.cc
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/data_struct_problem_index/stack_problem_index'
-#  Last modified 2022-05-25 23:27:43.2658309
+#  Last modified 2022-05-30 20:21:04.4482716
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 75):
@@ -319,13 +316,19 @@ src/algorithm_problem_index/greedy_problem_index.cc:
 #  Successfully updated.
 
 # Not a target:
+src/Trees/Binary_Search_Tree.cc:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-05 17:03:17.1446272
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
 src/algorithm_problem_index/binary_search_problem_index.cc:
 #  Implicit rule search has been done.
 #  Last modified 2022-04-18 19:02:20.1408318
 #  File has been updated.
 #  Successfully updated.
 
- 
 # Not a target:
 src/data_struct_problem_index/string_problem_index.cc:
 #  Implicit rule search has been done.
@@ -335,8 +338,9 @@ src/data_struct_problem_index/string_problem_index.cc:
 
 src/algorithm_problem_index/greedy_problem_index.o: src/algorithm_problem_index/greedy_problem_index.cc
 #  Implicit rule search has been done.
+ 
 #  Implicit/static pattern stem: 'src/algorithm_problem_index/greedy_problem_index'
-#  Last modified 2022-05-25 23:27:33.2983051
+#  Last modified 2022-05-30 20:20:55.322632
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 75):
@@ -346,7 +350,7 @@ src/algorithm_problem_index/greedy_problem_index.o: src/algorithm_problem_index/
 src/algorithm_problem_index/dynamic_programming_problem_index.o: src/algorithm_problem_index/dynamic_programming_problem_index.cc
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/algorithm_problem_index/dynamic_programming_problem_index'
-#  Last modified 2022-05-25 23:27:31.9492034
+#  Last modified 2022-05-30 20:20:54.1946156
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 75):
@@ -356,7 +360,7 @@ src/algorithm_problem_index/dynamic_programming_problem_index.o: src/algorithm_p
 src/algorithm_problem_index/back_tracking_problem_index.o: src/algorithm_problem_index/back_tracking_problem_index.cc
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/algorithm_problem_index/back_tracking_problem_index'
-#  Last modified 2022-05-25 23:27:29.5175667
+#  Last modified 2022-05-30 20:20:51.947272
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 75):
@@ -366,17 +370,24 @@ src/algorithm_problem_index/back_tracking_problem_index.o: src/algorithm_problem
 src/data_struct_problem_index/graph_problem_index.o: src/data_struct_problem_index/graph_problem_index.cc
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/data_struct_problem_index/graph_problem_index'
-#  Last modified 2022-05-25 23:27:37.1434462
+#  Last modified 2022-05-30 20:20:58.7478296
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 75):
 	@echo "g++ -c $(INCLUDES) $< -o $@"
 	@g++ -c $(INCLUDES) $< -o $@
 
+# Not a target:
+src/Trees/Binary_Tree.cc:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-01 12:57:26.7784404
+#  File has been updated.
+#  Successfully updated.
+
 src/algorithm_problem_index/binary_search_problem_index.o: src/algorithm_problem_index/binary_search_problem_index.cc
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/algorithm_problem_index/binary_search_problem_index'
-#  Last modified 2022-05-25 23:27:30.7438927
+#  Last modified 2022-05-30 20:20:53.0702575
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 75):
@@ -400,7 +411,7 @@ src/algorithm_problem_index/dynamic_programming_problem_index.cc:
 src/utils/dumps.o: src/utils/dumps.cc
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/utils/dumps'
-#  Last modified 2022-05-25 23:27:28.2574143
+#  Last modified 2022-05-30 20:20:50.6751378
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 75):
@@ -417,33 +428,36 @@ src/data_struct_problem_index/stack_problem_index.cc:
 # Not a target:
 src/Trees/Trees.cc:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-30 18:56:44.1700815
+#  Last modified 2022-06-01 13:01:54.0738557
 #  File has been updated.
 #  Successfully updated.
 
 src/AlgoProbIndex.o: src/AlgoProbIndex.cc
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/AlgoProbIndex'
-#  Last modified 2022-05-25 23:27:25.5832243
+#  Last modified 2022-05-30 20:20:48.2393562
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 75):
 	@echo "g++ -c $(INCLUDES) $< -o $@"
 	@g++ -c $(INCLUDES) $< -o $@
 
-# Not a target:
-src/Trees/Binary_Search_Tree.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+src/Trees/Binary_Search_Tree.o: src/Trees/Binary_Search_Tree.cc
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/Trees/Binary_Search_Tree'
+#  Last modified 2022-05-30 20:21:14.9958948
+#  File has been updated.
+#  Successfully updated.
+ 
+#  recipe to execute (from 'Makefile', line 75):
+	@echo "g++ -c $(INCLUDES) $< -o $@"
+	@g++ -c $(INCLUDES) $< -o $@
 
 global_problem_set: src/main.o src/AlgoProbIndex.o src/DataStructProbIndex.o src/utils/dumps.o src/algorithm_problem_index/back_tracking_problem_index.o src/algorithm_problem_index/binary_search_problem_index.o src/algorithm_problem_index/dynamic_programming_problem_index.o src/algorithm_problem_index/greedy_problem_index.o src/data_struct_problem_index/array_problem_index.o src/data_struct_problem_index/bit_manipulation_problem_index.o src/data_struct_problem_index/graph_problem_index.o src/data_struct_problem_index/linked_list_problem_index.o src/data_struct_problem_index/mathematics_problem_index.o src/data_struct_problem_index/ndarray_problem_index.o src/data_struct_problem_index/queue_problem_index.o src/data_struct_problem_index/stack_problem_index.o src/data_struct_problem_index/string_problem_index.o src/data_struct_problem_index/tree_problem_index.o src/Linked_List/Linked_List.o src/Linked_List/Singly_Linked_List.o src/Trees/Trees.o src/Trees/Binary_Tree.o src/Trees/Binary_Search_Tree.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-05-25 23:27:56.7595412
+#  Last modified 2022-06-01 13:02:36.1541658
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/13=0%
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 71):
 	@echo "===== Building Global Problem Set Binary"
 	@g++ $(OBJ) -o $(GLOBAL_PROBLEM_SET)
@@ -475,7 +489,7 @@ src/data_struct_problem_index/linked_list_problem_index.cc:
 src/data_struct_problem_index/linked_list_problem_index.o: src/data_struct_problem_index/linked_list_problem_index.cc
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/data_struct_problem_index/linked_list_problem_index'
-#  Last modified 2022-05-25 23:27:38.3532557
+#  Last modified 2022-05-30 20:20:59.8793721
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 75):
@@ -485,27 +499,9 @@ src/data_struct_problem_index/linked_list_problem_index.o: src/data_struct_probl
 src/Trees/Trees.o: src/Trees/Trees.cc
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/Trees/Trees'
-#  Last modified 2022-05-25 23:27:50.8793905
+#  Last modified 2022-06-01 13:02:32.7952789
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := src/Trees/Trees.o
-# automatic
-# * := src/Trees/Trees
-# automatic
-# < := src/Trees/Trees.cc
-# automatic
-# + := src/Trees/Trees.cc
-# automatic
-# % := 
-# automatic
-# ^ := src/Trees/Trees.cc
-# automatic
-# ? := src/Trees/Trees.cc
-# automatic
-# | := 
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=9/25=36%
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 75):
 	@echo "g++ -c $(INCLUDES) $< -o $@"
 	@g++ -c $(INCLUDES) $< -o $@
@@ -513,7 +509,7 @@ src/Trees/Trees.o: src/Trees/Trees.cc
 src/data_struct_problem_index/bit_manipulation_problem_index.o: src/data_struct_problem_index/bit_manipulation_problem_index.cc
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/data_struct_problem_index/bit_manipulation_problem_index'
-#  Last modified 2022-05-25 23:27:35.924811
+#  Last modified 2022-05-30 20:20:57.6393834
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 75):
@@ -537,7 +533,7 @@ src/DataStructProbIndex.cc:
 src/Linked_List/Singly_Linked_List.o: src/Linked_List/Singly_Linked_List.cc
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/Linked_List/Singly_Linked_List'
-#  Last modified 2022-05-25 23:27:48.4071473
+#  Last modified 2022-05-30 20:21:09.0439726
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 75):
@@ -547,9 +543,11 @@ src/Linked_List/Singly_Linked_List.o: src/Linked_List/Singly_Linked_List.cc
 src/main.o: src/main.cc
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/main'
-#  Last modified 2022-05-25 23:27:24.3170589
+#  Last modified 2022-05-30 20:20:47.0653586
 #  File has been updated.
+ 
 #  Successfully updated.
+ 
 #  recipe to execute (from 'Makefile', line 75):
 	@echo "g++ -c $(INCLUDES) $< -o $@"
 	@g++ -c $(INCLUDES) $< -o $@
@@ -564,18 +562,22 @@ src/algorithm_problem_index/back_tracking_problem_index.cc:
 src/data_struct_problem_index/mathematics_problem_index.o: src/data_struct_problem_index/mathematics_problem_index.cc
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/data_struct_problem_index/mathematics_problem_index'
-#  Last modified 2022-05-25 23:27:39.5601161
+#  Last modified 2022-05-30 20:21:01.0116904
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 75):
 	@echo "g++ -c $(INCLUDES) $< -o $@"
 	@g++ -c $(INCLUDES) $< -o $@
 
-# Not a target:
-src/Trees/Binary_Tree.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+src/Trees/Binary_Tree.o: src/Trees/Binary_Tree.cc
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/Trees/Binary_Tree'
+#  Last modified 2022-06-01 13:02:35.4530605
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 75):
+	@echo "g++ -c $(INCLUDES) $< -o $@"
+	@g++ -c $(INCLUDES) $< -o $@
 
 # Not a target:
 src/utils/dumps.cc:
@@ -593,7 +595,7 @@ src/utils/dumps.cc:
 src/data_struct_problem_index/queue_problem_index.o: src/data_struct_problem_index/queue_problem_index.cc
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/data_struct_problem_index/queue_problem_index'
-#  Last modified 2022-05-25 23:27:42.013479
+#  Last modified 2022-05-30 20:21:03.3355339
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 75):
@@ -612,15 +614,13 @@ all: global_problem_set
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
- 
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/13=0%
+#  Successfully updated.
 
 # Not a target:
 src/AlgoProbIndex.cc:
 #  Implicit rule search has been done.
 #  Last modified 2022-04-18 19:19:07.2457217
+ 
 #  File has been updated.
 #  Successfully updated.
 
@@ -630,12 +630,11 @@ src/data_struct_problem_index/graph_problem_index.cc:
 #  Last modified 2022-04-18 19:46:42.8344625
 #  File has been updated.
 #  Successfully updated.
- 
 
 src/data_struct_problem_index/ndarray_problem_index.o: src/data_struct_problem_index/ndarray_problem_index.cc
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/data_struct_problem_index/ndarray_problem_index'
-#  Last modified 2022-05-25 23:27:40.7775355
+#  Last modified 2022-05-30 20:21:02.2066565
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 75):
@@ -645,7 +644,7 @@ src/data_struct_problem_index/ndarray_problem_index.o: src/data_struct_problem_i
 src/DataStructProbIndex.o: src/DataStructProbIndex.cc
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/DataStructProbIndex'
-#  Last modified 2022-05-25 23:27:26.8925507
+#  Last modified 2022-05-30 20:20:49.4409364
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 75):
@@ -655,7 +654,7 @@ src/DataStructProbIndex.o: src/DataStructProbIndex.cc
 src/data_struct_problem_index/array_problem_index.o: src/data_struct_problem_index/array_problem_index.cc
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/data_struct_problem_index/array_problem_index'
-#  Last modified 2022-05-25 23:27:34.6771605
+#  Last modified 2022-05-30 20:20:56.4929489
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 75):
@@ -671,6 +670,7 @@ src/data_struct_problem_index/array_problem_index.cc:
 
 # Not a target:
 src/data_struct_problem_index/tree_problem_index.cc:
+ 
 #  Implicit rule search has been done.
 #  Last modified 2022-04-18 18:52:48.7137728
 #  File has been updated.
@@ -693,7 +693,7 @@ src/Linked_List/Singly_Linked_List.cc:
 src/data_struct_problem_index/tree_problem_index.o: src/data_struct_problem_index/tree_problem_index.cc
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/data_struct_problem_index/tree_problem_index'
-#  Last modified 2022-05-25 23:27:45.7567827
+#  Last modified 2022-05-30 20:21:06.7661351
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 75):
@@ -710,7 +710,7 @@ src/data_struct_problem_index/queue_problem_index.cc:
 src/data_struct_problem_index/string_problem_index.o: src/data_struct_problem_index/string_problem_index.cc
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/data_struct_problem_index/string_problem_index'
-#  Last modified 2022-05-25 23:27:44.5295127
+#  Last modified 2022-05-30 20:21:05.5799986
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 75):
@@ -718,19 +718,20 @@ src/data_struct_problem_index/string_problem_index.o: src/data_struct_problem_in
 	@g++ -c $(INCLUDES) $< -o $@
 
 # files hash-table stats:
-# Load=50/1024=5%, Rehash=0, Collisions=3/149=2%
+# Load=52/1024=5%, Rehash=0, Collisions=3/157=2%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 143 / storage = 4269 B / avg = 29 B
-# current buf: size = 8162 B / used = 4269 B / count = 143 / avg = 29 B
+# strcache buffers: 1 (0) / strings = 147 / storage = 4377 B / avg = 29 B
+# current buf: size = 8162 B / used = 4377 B / count = 147 / avg = 29 B
 
-# strcache performance: lookups = 188 / hit rate = 23%
+# strcache performance: lookups = 194 / hit rate = 24%
 # hash-table stats:
-# Load=143/8192=2%, Rehash=0, Collisions=3/188=2%
-# Finished Make data base on Mon May 30 18:57:38 2022
+# Load=147/8192=2%, Rehash=0, Collisions=3/194=2%
+# Finished Make data base on Fri Aug 19 21:54:42 2022
+ 
 
  

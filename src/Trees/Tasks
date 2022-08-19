@@ -1,6 +1,12 @@
-Binary Tree:
+Binary Tree: 
 ============
 Construct Binary Tree from String with Bracket Representation [  https://www.geeksforgeeks.org/construct-binary-tree-string-bracket-representation/ ]
+
+Convert a Binary Tree into Doubly linked list in spiral fashion [ https://www.geeksforgeeks.org/convert-a-binary-tree-into-doubly-linked-list-in-spiral-fashion/ ]
+
+Convert a Binary Tree into a Circular Doubly Linked list [ https://www.geeksforgeeks.org/convert-a-binary-tree-to-a-circular-doubly-link-list/ ]
+
+Convert a Tree to forest of even nodes [ https://www.geeksforgeeks.org/convert-tree-forest-even-nodes/ ]
 
 
 
