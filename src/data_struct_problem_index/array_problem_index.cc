@@ -13,4 +13,5 @@ addArrayProblems()
     dsProblemDB.add_dsProblem(DSTYPE_ARRAY, "Smallest_Non_Constructible_Value");
     dsProblemDB.add_dsProblem(DSTYPE_ARRAY, "Longest_Subarray_With_Given_Sum");
     dsProblemDB.add_dsProblem(DSTYPE_ARRAY, "Can_Split_Into_Consecutive_Subsequence");
+    dsProblemDB.add_dsProblem(DSTYPE_ARRAY, "Minimum_Number_Of_Refueling_Stops");
 }
