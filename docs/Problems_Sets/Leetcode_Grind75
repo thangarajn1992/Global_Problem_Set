@@ -1,33 +1,160 @@
 /*
-https://www.techinterviewhandbook.org/grind75
+https://www.techinterviewhandbook.org/grind75?hours=10&weeks=16
 */
 
-* Week1: ( 13 Problems )
-    * Two Sum
-    * Valid Parentheses
-    * Merge Two Sorted Lists
-    * Best Time to Buy and Sell Stock
-    * Valid Palindrome
-    * Invert Binary Tree
-    * Valid Anagram
-    * Flood Fill
-    * Maximum Subarray
-    * Lowest Common Ancestor
-    * Balanced Binary Tree
-    * Linked List Cycle
+This plan is for 15 Weeks with 10 hours each week ( 169 Problems )
+* Week1: ( 17 Problems )
+    * Two Sum                           [ https://leetcode.com/problems/two-sum/ ]
+    * Valid Parentheses                 [ https://leetcode.com/problems/valid-parentheses ]           
+    * Merge Two Sorted Lists            [ https://leetcode.com/problems/merge-two-sorted-lists ]
+    * Best Time to Buy and Sell Stock   [ https://leetcode.com/problems/best-time-to-buy-and-sell-stock ]
+    * Valid Palindrome                  [ https://leetcode.com/problems/valid-palindrome ]
+    * Invert Binary Tree                [ https://leetcode.com/problems/invert-binary-tree ]
+    * Valid Anagram                     [ https://leetcode.com/problems/valid-anagram ]
+    * Flood Fill                        [ https://leetcode.com/problems/flood-fill ]
+    * Maximum Subarray                  [ https://leetcode.com/problems/maximum-subarray ]
+    * Lowest Common Ancestor of BST     [ https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree ]
+    * Balanced Binary Tree              [ https://leetcode.com/problems/balanced-binary-tree]
+    * Linked List Cycle                 [ https://leetcode.com/problems/linked-list-cycle ]
+    * Implement Queue Using Stacks      [ https://leetcode.com/problems/implement-queue-using-stacks ]
+    * First Bad Version                 [ https://leetcode.com/problems/first-bad-version ]
+    * Ransom Note                       [ https://leetcode.com/problems/ransom-note ]
+    * Climbing Stairs                   [ https://leetcode.com/problems/climbing-stairs ]
 
-* Week2: ( 12 Problems )
-    * Implement Queue Using Stacks4
-    * First Bad Version
-    * Ransom Note
-    * Climbing Stairs
-    * Longest Palindrome
-    * Reverse Linked List
-    * Majority Element
-    * Add Binary
-    * Diameter of Binary Tree
-    * Middle of the Linked List
-    * Maximum Depth of Binary Tree
-    * Contains Duplicates
+* Week2 [ 16 Problems ]
+    * Longest Palindrome                [ https://leetcode.com/problems/longest-palindrome ]
+    * Reverse Linked List               [ https://leetcode.com/problems/reverse-linked-list ]
+    * Majority Element                  [ https://leetcode.com/problems/majority-element ]
+    * Add Binary                        [ https://leetcode.com/problems/add-binary ]
+    * Diameter of Binary Tree           [ https://leetcode.com/problems/diameter-of-binary-tree ]
+    * Middle of the Linked List         [ https://leetcode.com/problems/middle-of-the-linked-list ]
+    * Maximum Depth of Binary Tree      [ https://leetcode.com/problems/maximum-depth-of-binary-tree ]
+    * Contains Duplicates               [ https://leetcode.com/problems/contains-duplicate ]
+    * Meeting Rooms                     [ https://leetcode.com/problems/meeting-rooms ]
+    * Roman to Integer                  [ https://leetcode.com/problems/roman-to-integer ]
+    * Backspace String Compare          [ https://leetcode.com/problems/backspace-string-compare ]
+    * Counting Bits                     [ https://leetcode.com/problems/counting-bits ]
+    * Same Tree                         [ https://leetcode.com/problems/same-tree ]
+    * Number of 1 Bits                  [ https://leetcode.com/problems/number-of-1-bits ]
+    * Longest Common Prefix             [ https://leetcode.com/problems/longest-common-prefix ]
+    * Single Number                     [ https://leetcode.com/problems/single-number ]
 
+* Week3 ( 13 Problems )
+    * Palindrome Linked List            [ https://leetcode.com/problems/palindrome-linked-list ]
+    * Move Zeroes                       [ https://leetcode.com/problems/move-zeroes ]
+    * Symmetric Tree                    [ https://leetcode.com/problems/symmetric-tree ]
+    * Missing Number                    [ https://leetcode.com/problems/missing-number ]
+    * Palindrome Number                 [ https://leetcode.com/problems/palindrome-number ]
+    * Convert Sorted Array to BST       [ https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree]
+    * Reverse Bits                      [ https://leetcode.com/problems/reverse-bits ]
+    * Subtree of Another Tree           [ https://leetcode.com/problems/subtree-of-another-tree ]
+    * Squares of Sorted Array           [ https://leetcode.com/problems/squares-of-a-sorted-array ]
+    * Insert Interval                   [ https://leetcode.com/problems/insert-interval ]
+    * 01 Matrix                         [ https://leetcode.com/problems/01-matrix ]
+    * K Closest Points to Origin        [ https://leetcode.com/problems/k-closest-points-to-origin ]
+    * Longest Substring without Repeating Characters [ https://leetcode.com/problems/longest-substring-without-repeating-characters ]
+    
+* Week4 ( 11 Problems )
+    * 3Sum                              [ https://leetcode.com/problems/3sum ]
+    * Binary Tree Level Order Traversal [ https://leetcode.com/problems/binary-tree-level-order-traversal ]
+    * Clone Graph                       [ https://leetcode.com/problems/clone-graph ]
+    * Evaluate Reverse Polish Notation  [ https://leetcode.com/problems/evaluate-reverse-polish-notation ]
+    * Course Schedule                   [ https://leetcode.com/problems/course-schedule ]
+    * Implement Trie                    [ https://leetcode.com/problems/implement-trie-prefix-tree ]
+    * Coin Change                       [ https://leetcode.com/problems/coin-change ]
+    * Product of Array Except Self      [ https://leetcode.com/problems/product-of-array-except-self ]
+    * Min Stack                         [ https://leetcode.com/problems/min-stack ]
+    * Validate Binary Search Tree       [ https://leetcode.com/problems/validate-binary-search-tree ]
+    * Number of Islands                 [ https://leetcode.com/problems/number-of-islands ]
 
+* Week5 ( 10 Problems )
+    * Rotten Oranges                    [ https://leetcode.com/problems/rotting-oranges ]
+    * Search in Rotated Sorted Array    [ https://leetcode.com/problems/search-in-rotated-sorted-array ]
+    * Combination Sum                   [ https://leetcode.com/problems/combination-sum ]
+    * Permutations                      [ https://leetcode.com/problems/permutations ]
+    * Merge Intervals                   [ https://leetcode.com/problems/merge-intervals ]
+    * Lowest Common Ancestor of BT      [ https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree]
+    * Time Based Key-Value Store        [ https://leetcode.com/problems/time-based-key-value-store ]
+    * Accounts Merge                    [ https://leetcode.com/problems/accounts-merge ]
+    * Sort Colors                       [ https://leetcode.com/problems/sort-colors ]
+    * Word Break                        [ https://leetcode.com/problems/word-break ]
+
+* Week6 ( 11 Problems )
+    * Partition Equal Subset Sum        [ https://leetcode.com/problems/partition-equal-subset-sum ]
+    * String to Integer (atoi)          [ https://leetcode.com/problems/string-to-integer-atoi ]
+    * Spiral Matrix                     [ https://leetcode.com/problems/spiral-matrix ]
+    * Subsets                           [ https://leetcode.com/problems/subsets ]
+    * Binary Tree Right Side View       [ https://leetcode.com/problems/binary-tree-right-side-view ]
+    * Longest Palindromic Substring     [ https://leetcode.com/problems/longest-palindromic-substring ]
+    * Unique Paths                      [ https://leetcode.com/problems/unique-paths ]
+    * Construct BT From pre and Inorder [ https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal]
+    * Container With Most Water         [ https://leetcode.com/problems/container-with-most-water ]
+    * Letter Combinations of a Phone No [ https://leetcode.com/problems/letter-combinations-of-a-phone-number ]
+    * Word Search                       [ https://leetcode.com/problems/word-search ]
+
+* Week7 (10 Problems)
+    * Find All Anagrams in a String     [ https://leetcode.com/problems/find-all-anagrams-in-a-string ]
+    * Minimum Height Trees              [ https://leetcode.com/problems/minimum-height-trees ]
+    * Task Scheduler                    [ https://leetcode.com/problems/task-scheduler ]
+    * LRU Cache                         [ https://leetcode.com/problems/lru-cache ]
+    * Kth Smallest Element in a BST     [ https://leetcode.com/problems/kth-smallest-element-in-a-bst ]
+    * Daily Temperatures                [ https://leetcode.com/problems/daily-temperatures ]
+    * House Robber                      [ https://leetcode.com/problems/house-robber ]
+    * Gas Station                       [ https://leetcode.com/problems/gas-station ]
+    * Next Permutation                  [ https://leetcode.com/problems/next-permutation ]
+    * Valid Sudoku                      [ https://leetcode.com/problems/valid-sudoku ]
+
+* Week8 (10 Problems)
+    * Group Anagrams                    [ https://leetcode.com/problems/group-anagrams ]
+    * Maximum Product Subarray          [ https://leetcode.com/problems/maximum-product-subarray ]
+    * Design Add and Search Words Data Structure [ https://leetcode.com/problems/design-add-and-search-words-data-structure ]
+    * Pacific Atlantic Water Flow       [ https://leetcode.com/problems/pacific-atlantic-water-flow ]
+    * Remove Nth Node From End of List  [ https://leetcode.com/problems/remove-nth-node-from-end-of-list ]
+    * Shortest Path to Get Food         [ https://leetcode.com/problems/shortest-path-to-get-food ]
+    * Find the Duplicate Number         [ https://leetcode.com/problems/find-the-duplicate-number ]
+    * Top K Frequent Words              [ https://leetcode.com/problems/top-k-frequent-words ]
+    * Longest Increasing Subsequence    [ https://leetcode.com/problems/longest-increasing-subsequence ]
+    * Graph Valid Tree                  [ https://leetcode.com/problems/graph-valid-tree ]
+
+* Week 9 (11 Problems)
+    * Course Schedule II                [ https://leetcode.com/problems/course-schedule-ii ]
+    * Swap Nodes in Pairs               [ https://leetcode.com/problems/swap-nodes-in-pairs ]
+    * Path Sum II                       [ https://leetcode.com/problems/path-sum-ii ]
+    * Longest Consecutive Sequence      [ https://leetcode.com/problems/longest-consecutive-sequence ]
+    * Rotate Array                      [ https://leetcode.com/problems/rotate-array ]
+    * Odd Even Linked List              [ https://leetcode.com/problems/odd-even-linked-list ]
+    * Decode String                     [ https://leetcode.com/problems/decode-string ]
+    * Contiguous Array                  [ https://leetcode.com/problems/contiguous-array ]
+    * Maximum Width of Binary Tree      [ https://leetcode.com/problems/maximum-width-of-binary-tree ]
+    * Find K Closest Elements           [ https://leetcode.com/problems/find-k-closest-elements ]
+    * Longest Repeating Character Replacement [ https://leetcode.com/problems/longest-repeating-character-replacement ]
+
+* Week10 ( 10 Problems )
+    * Inorder Successor in BST          [ https://leetcode.com/problems/inorder-successor-in-bst ]
+    * Jump Game                         [ https://leetcode.com/problems/jump-game ]
+    * Add Two Numbers                   [ https://leetcode.com/problems/add-two-numbers ]
+    * Generate Parentheses              [ https://leetcode.com/problems/generate-parentheses ]
+    * Sort List                         [ https://leetcode.com/problems/sort-list ]
+    * Number of Connected Components in an Undirected Graph [ https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph ]
+    * Minimum Knight Moves              [ https://leetcode.com/problems/minimum-knight-moves ]
+    * Subarray Sum Equals K             [ https://leetcode.com/problems/subarray-sum-equals-k ]
+    * Asteroid Collision                [ https://leetcode.com/problems/asteroid-collision ]
+    * Random Pick With Weight           [ https://leetcode.com/problems/random-pick-with-weight ]
+
+* Week11 ( 11 Problems )
+    * Kth Largest Element in an Array   [ https://leetcode.com/problems/kth-largest-element-in-an-array ]
+    * Maximal Square                    [ https://leetcode.com/problems/maximal-square ]
+    * Rotate Image                      [ https://leetcode.com/problems/rotate-image ]
+    * Binary Tree ZigZag Level Order Traversal [ https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal ]
+    * Design Hit Counter                [ https://leetcode.com/problems/design-hit-counter ]
+    * Path Sum III                      [ https://leetcode.com/problems/path-sum-iii ]
+    * Pow(x, n)                         [ https://leetcode.com/problems/powx-n ]
+    * Search a 2D Matrix                [ https://leetcode.com/problems/search-a-2d-matrix ]
+    * Largest Number                    [ https://leetcode.com/problems/largest-number ]
+    * Decode Ways                       [ https://leetcode.com/problems/decode-ways ]
+    * Meeting Rooms II                  [ https://leetcode.com/problems/meeting-rooms-ii ]
+
+* Week12 ( 10 Problems )
+    * Reverse Integer                   [ https://leetcode.com/problems/reverse-integer ]
+    * Set Matrix Zeroes                 [ https://leetcode.com/problems/set-matrix-zeroes ]
+    
