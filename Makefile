@@ -72,8 +72,8 @@ $(GLOBAL_PROBLEM_SET): 	$(OBJ_FILES) $(ALGO_INDEX_OBJ_FILES) $(DATASTRUCT_INDEX_
 	@g++ $(OBJ) -o $(GLOBAL_PROBLEM_SET)
 
 %.o: %.cc
-	@echo "g++ -c $(INCLUDES) $< -o $@"
-	@g++ -c $(INCLUDES) $< -o $@
+	@echo "g++ -std=c++17 -c $(INCLUDES) $< -o $@"
+	@g++ -std=c++17 -c $(INCLUDES) $< -o $@
 
 clean:
 	rm -f $(OBJ)

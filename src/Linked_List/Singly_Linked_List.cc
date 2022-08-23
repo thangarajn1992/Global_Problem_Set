@@ -15,6 +15,25 @@ SinglyLinkedList::print()
     cout << "]" << endl;
 }
 
+SinglyLinkedList::SinglyLinkedList(SinglyLinkedListNode *node)
+{
+    if(node == nullptr)
+    {
+        head = nullptr;
+        return;
+    }
+    
+    head = new SinglyLinkedListNode(node->data);
+    SinglyLinkedListNode *curr = head;
+
+    while(node->next != nullptr)
+    {
+        node = node->next;
+        curr->next = new SinglyLinkedListNode(node->data);
+        curr = curr->next;
+    }
+}
+
 void
 SinglyLinkedList::Insert(int value)
 {

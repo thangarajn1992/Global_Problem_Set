@@ -17,6 +17,7 @@ private:
 
 public:
     SinglyLinkedList() {head = nullptr;}
+    SinglyLinkedList(SinglyLinkedListNode *node);
 
     SinglyLinkedListNode *getHead() { return head; }
     void setHead(SinglyLinkedListNode *listNode) { head = listNode; }

@@ -17,8 +17,8 @@ $(LINKED_LIST_EXEC_FILE): $(OBJ_FILES)
 	@g++ $(OBJ_FILES) -o $(LINKED_LIST_EXEC_FILE)
 
 %.o: %.cc
-	@echo "g++ -c $(INCLUDES) $< -o $@"
-	@g++ -c $(INCLUDES) $< -o $@
+	@echo "g++ -std=c++17 -c $(INCLUDES) $< -o $@"
+	@g++ -std=c++17 -c $(INCLUDES) $< -o $@
 
 clean:
 	rm -f $(OBJ_FILES)

@@ -47,7 +47,7 @@ int main()
             cout << "10. Tree" << endl;
             cin >> dsType;
 
-            switch(static_cast<operatingMode_t>(dsType))
+            switch(static_cast<dataStructType_t>(dsType))
             {
                 case DSTYPE_ARRAY:
                 {
@@ -97,6 +97,11 @@ int main()
                 case DSTYPE_TREE:
                 {
                     treesMain();
+                    break;
+                }
+                default:
+                {
+                    cout << "Invalid Data Structure Type " << endl;
                     break;
                 }
             }

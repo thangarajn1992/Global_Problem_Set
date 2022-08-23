@@ -119,7 +119,7 @@ BinaryTree::Delete(int value)
         if(root->data == value)
         {
             delete(root);
-            root == nullptr;
+            root = nullptr;
         }
         return;
     }

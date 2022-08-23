@@ -29,8 +29,16 @@ void linkedListMain()
             SLL.Insert(50);
             SLL.Insert(60);
             SLL.Insert(70);
-            cout << "Head: " << SLL.getHead()->data << endl;
+            cout << "Head Loc: " << SLL.getHead() << endl;
             SLL.print();
+            cout << endl;
+
+            cout << "Copying One List to Another List: " << endl;
+            SinglyLinkedList SLLCopy(SLL.getHead());
+            cout << "Head Loc: " << SLLCopy.getHead() << endl;
+            SLLCopy.print();
+            cout << endl;
+            
             break;
         }
         case LINKED_LIST_DOUBLE:

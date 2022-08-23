@@ -1,9 +1,9 @@
 #ifndef LINKED_LIST_H
 #define LINKED_LIST_H
 
-using namespace std;
+#include "../../include/Stls.h"
 
-#include "Stls.h"
+using namespace std;
 
 void linkedListMain();
 
