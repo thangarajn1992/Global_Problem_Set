@@ -29,30 +29,38 @@ void linkedListMain()
             SLL.Insert(50);
             SLL.Insert(60);
             SLL.Insert(70);
-            cout << "Head Loc: " << SLL.getHead() << endl;
-            SLL.print();
+            cout << SLL.print();
             cout << endl;
 
             cout << "Copying One List to Another List: " << endl;
             SinglyLinkedList SLLCopy(SLL.getHead());
-            cout << "Head Loc: " << SLLCopy.getHead() << endl;
-            SLLCopy.print();
+            cout << "Old List Head Loc: " << SLL.getHead() << endl;
+            cout << "New List Head Loc: " << SLLCopy.getHead() << endl;
+            cout << SLLCopy.print();
             cout << endl;
 
             int data1= 30, data2 = 10;
             SLLCopy.print();
             cout << "Delete Node " << data1 << endl;
             SLLCopy.Delete(data1);
-            SLLCopy.print();
+            cout << "List After deleting Node " << data1 << " is " << SLLCopy.print();
             cout << "Delete Head Node " << data2 << endl;
             SLLCopy.Delete(data2);
-            SLLCopy.print();
+            cout << "List After deleting Head Node " << data2 << "is " << SLLCopy.print();
             cout << endl;
 
             vector<int> data_vec = {100, 200, 300, 400, 500, 600};
             cout << "Creating Linked List with vector " << data_vec << endl;
             SinglyLinkedList SLLVector(data_vec);
-            SLLVector.print();
+            cout << "Created List " << SLLVector.print();
+            cout << endl;
+
+            cout << "Reverse a Linked List" << endl;
+            cout << "Given List: " << SLLVector.print();
+            SLLVector.reverseIterative();
+            cout << "Reversed List (Iterative): " << SLLVector.print();
+            SLLVector.setHead(SLLVector.reverseRecursive(SLLVector.getHead()));
+            cout << "Again Reversed List(Recursive): " << SLLVector.print();
             cout << endl;
 
             break;

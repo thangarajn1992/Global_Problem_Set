@@ -3,6 +3,7 @@ INCLUDES= -I. \
 -I$(HERE)/include \
 -I$(HERE)/include/utils \
 -I$(HERE)/src/Linked_List \
+-I$(HERE)/src/Linked_List/singly_linked_list \
 -I$(HERE)/src/Trees
 
 SRC_FILES= \
@@ -43,7 +44,8 @@ DATASTRUCT_INDEX_DEP_FILES= $(DATASTRUCT_INDEX_SRC_FILES:%.cc=%.d)
 LINKED_LIST_PATH= $(HERE)/src/Linked_List
 LINKED_LIST_SRC_FILES= \
 $(LINKED_LIST_PATH)/Linked_List.cc \
-$(LINKED_LIST_PATH)/Singly_Linked_List.cc
+$(LINKED_LIST_PATH)/singly_linked_list/Singly_Linked_List.cc \
+$(LINKED_LIST_PATH)/singly_linked_list/Reverse_Linked_List.cc \
 
 LINKED_LIST_OBJ_FILES = $(LINKED_LIST_SRC_FILES:%.cc=%.o)
 

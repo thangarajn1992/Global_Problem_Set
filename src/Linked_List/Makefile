@@ -1,10 +1,13 @@
 HERE=.
 INCLUDES= -I. \
-		  -I../../include
+		  -I../../include \
+		  -I./singly_linked_list
 
 SRC_FILES= \
-$(HERE)/Singly_Linked_List.cc \
-$(HERE)/Linked_List.cc
+$(HERE)/Linked_List_Main.cc \
+$(HERE)/Linked_List.cc \
+$(HERE)/singly_linked_list/Singly_Linked_List.cc \
+$(HERE)/singly_linked_list/Reverse_Linked_List.cc
 
 OBJ_FILES= $(SRC_FILES:%.cc=%.o)
 

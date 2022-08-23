@@ -2,17 +2,17 @@
 
 using namespace std;
 
-void
+vector<int>
 SinglyLinkedList::print()
 {
     SinglyLinkedListNode *curr = head;
-    cout << "[ ";
+    vector<int> result;
     while(curr != nullptr)
     {
-        cout << curr->data << " ";
+        result.push_back(curr->data);
         curr = curr->next;
     }
-    cout << "]" << endl;
+    return result;
 }
 
 SinglyLinkedList::SinglyLinkedList(SinglyLinkedListNode *node)

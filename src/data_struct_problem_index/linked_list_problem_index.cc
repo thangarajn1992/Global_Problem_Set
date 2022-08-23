@@ -3,5 +3,5 @@
 void
 addLinkedListProblems()
 {
-    dsProblemDB.add_dsProblem(DSTYPE_LINKED_LIST, "Linked_Lists");
+    dsProblemDB.add_dsProblem(DSTYPE_LINKED_LIST, "Reverse_Linked_List");
 }

@@ -24,10 +24,12 @@ public:
     void setHead(SinglyLinkedListNode *listNode) { head = listNode; }
 
     // Utils
-    void print();
+    vector<int> print();
 
     // Operations
     void Insert(int value);
     void Delete(int value);
+    void reverseIterative();
+    SinglyLinkedListNode* reverseRecursive(SinglyLinkedListNode *node);
 };
 #endif
