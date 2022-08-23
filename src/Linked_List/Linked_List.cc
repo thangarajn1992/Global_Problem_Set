@@ -47,6 +47,14 @@ void linkedListMain()
             cout << "Delete Head Node " << data2 << endl;
             SLLCopy.Delete(data2);
             SLLCopy.print();
+            cout << endl;
+
+            vector<int> data_vec = {100, 200, 300, 400, 500, 600};
+            cout << "Creating Linked List with vector " << data_vec << endl;
+            SinglyLinkedList SLLVector(data_vec);
+            SLLVector.print();
+            cout << endl;
+
             break;
         }
         case LINKED_LIST_DOUBLE:

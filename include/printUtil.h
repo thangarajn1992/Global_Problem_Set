@@ -1,6 +1,8 @@
 #ifndef PRINT_UTIL_H
 #define PRINT_UTIL_H
 
+#include<iostream>
+
 /* Overloading cout to print vector of any type */
 template <typename T>
 std::ostream & operator << (std::ostream & os, const std::vector<T> & vec)
@@ -16,7 +18,7 @@ std::ostream & operator << (std::ostream & os, const std::vector<T> & vec)
 
 /* Overloading cout to print vector of any type */
 template <typename T>
-std::ostream & operator << (std::ostream & os, const std::vector<vector<T>> & vec)
+std::ostream & operator << (std::ostream & os, const std::vector<std::vector<T>> & vec)
 {
     for(auto row : vec)
     {

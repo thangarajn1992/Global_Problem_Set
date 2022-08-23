@@ -34,6 +34,23 @@ SinglyLinkedList::SinglyLinkedList(SinglyLinkedListNode *node)
     }
 }
 
+SinglyLinkedList::SinglyLinkedList(vector<int> data)
+{
+    if(data.size() == 0)
+    {
+        head = nullptr;
+        return;
+    }
+    head = new SinglyLinkedListNode(data[0]);
+    SinglyLinkedListNode *curr = head;
+    for(int index = 1; index < data.size(); index++)
+    {
+        curr->next = new SinglyLinkedListNode(data[index]);
+        curr = curr->next;
+    }
+}
+
+
 void
 SinglyLinkedList::Insert(int data)
 {
