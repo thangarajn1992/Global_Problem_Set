@@ -27,5 +27,6 @@ public:
 
     // Operations
     void Insert(int value);
+    void Delete(int value);
 };
 #endif

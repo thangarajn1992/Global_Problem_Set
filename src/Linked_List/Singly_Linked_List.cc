@@ -35,11 +35,11 @@ SinglyLinkedList::SinglyLinkedList(SinglyLinkedListNode *node)
 }
 
 void
-SinglyLinkedList::Insert(int value)
+SinglyLinkedList::Insert(int data)
 {
     if(head == nullptr)
     {
-        head = new SinglyLinkedListNode(value);
+        head = new SinglyLinkedListNode(data);
     }
     else
     {
@@ -47,6 +47,38 @@ SinglyLinkedList::Insert(int value)
         while(curr->next != nullptr)
             curr = curr->next;
         
-        curr->next = new SinglyLinkedListNode(value);
+        curr->next = new SinglyLinkedListNode(data);
+    }
+}
+
+void
+SinglyLinkedList::Delete(int data)
+{
+    if(head == nullptr)
+    {
+        cout << "Error: List is Empty" << endl;
+        return;
+    }
+
+    SinglyLinkedListNode *prev = nullptr, *curr = head;
+    while(curr != nullptr)
+    {
+        if(curr->data == data)
+        {
+            /* If head is to be deleted */
+            if(prev == nullptr)
+            {
+                head = curr->next;
+            }
+            else
+            {
+                prev->next = curr->next;
+            }
+            cout << "Deleted " << curr->data << endl;
+            delete(curr);
+            return;
+        }
+        prev = curr;
+        curr = curr->next;
     }
 }

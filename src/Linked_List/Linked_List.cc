@@ -38,7 +38,15 @@ void linkedListMain()
             cout << "Head Loc: " << SLLCopy.getHead() << endl;
             SLLCopy.print();
             cout << endl;
-            
+
+            int data1= 30, data2 = 10;
+            SLLCopy.print();
+            cout << "Delete Node " << data1 << endl;
+            SLLCopy.Delete(data1);
+            SLLCopy.print();
+            cout << "Delete Head Node " << data2 << endl;
+            SLLCopy.Delete(data2);
+            SLLCopy.print();
             break;
         }
         case LINKED_LIST_DOUBLE:
