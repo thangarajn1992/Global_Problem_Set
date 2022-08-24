@@ -27,8 +27,12 @@ public:
     vector<int> print();
 
     // Operations
-    void Insert(int value);
-    void Delete(int value);
+    void Insert(int data);
+    void InsertAtHead(int data);
+    void InsertAtIndex(int index, int data);
+    void Delete(int data);
+    void DeleteAtIndex(int index);
+    int getNthNode(int index);
 
     // Reverse given Linked List
     void reverseIterative();
@@ -38,6 +42,6 @@ public:
     bool is_PalindromeIterative();
     bool is_PalindromeRecursive();
     bool is_PalindromeRecursiveUtil(SinglyLinkedListNode **left, SinglyLinkedListNode *right);
-    
+
 };
 #endif

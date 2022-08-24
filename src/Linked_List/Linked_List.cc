@@ -19,6 +19,7 @@ void linkedListMain()
     {
         case LINKED_LIST_SINGLE:
         {
+
             SinglyLinkedList SLL;
             cout << "Inserting data into Linked List: " << endl;
             cout << "Inserting 10, 20, 30, 40, 50, 60, 70.." << endl;
@@ -31,7 +32,20 @@ void linkedListMain()
             SLL.Insert(70);
             cout << SLL.print();
             cout << endl;
+            
+            cout << "Inserting 5 at Index 0" << endl;
+            SLL.InsertAtHead(5);
+            cout << SLL.print();
+            cout << "Inserting 65 at Index 7" << endl;
+            SLL.InsertAtIndex(7, 65);
+            cout << SLL.print();
+            cout << endl;
 
+            cout << "Deleting at Index 5" << endl;
+            SLL.DeleteAtIndex(5);
+            cout << SLL.print();
+            cout << endl;
+            
             cout << "Copying One List to Another List: " << endl;
             SinglyLinkedList SLLCopy(SLL.getHead());
             cout << "Old List Head Loc: " << SLL.getHead() << endl;

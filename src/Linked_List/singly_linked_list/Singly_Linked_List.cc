@@ -38,6 +38,7 @@ SinglyLinkedList::SinglyLinkedList(vector<int> data)
 }
 
 
+/* This function inserts the node at the tail end of the list */
 void
 SinglyLinkedList::Insert(int data)
 {
@@ -52,6 +53,37 @@ SinglyLinkedList::Insert(int data)
             curr = curr->next;
         
         curr->next = new SinglyLinkedListNode(data);
+    }
+}
+
+void
+SinglyLinkedList::InsertAtHead(int data)
+{
+    SinglyLinkedListNode *node = new SinglyLinkedListNode(data);
+    node->next = head;
+    head = node;
+}
+
+void
+SinglyLinkedList::InsertAtIndex(int index, int data)
+{
+    if(index == 0)
+    {
+        InsertAtHead(data);
+    }
+    else
+    {
+        SinglyLinkedListNode *prev = head;
+        for(int currIndex = 0; currIndex < index-1 && prev != nullptr; currIndex++)
+        {
+            prev = prev->next;
+        }
+        if(prev != nullptr)
+        {
+            SinglyLinkedListNode *node = new SinglyLinkedListNode(data);
+            node->next = prev->next;
+            prev->next = node;   
+        }
     }
 }
 
@@ -86,6 +118,49 @@ SinglyLinkedList::Delete(int data)
         curr = curr->next;
     }
 }
+
+void
+SinglyLinkedList::DeleteAtIndex(int index)
+{
+    if(head == nullptr)
+        return;
+    
+    if(index == 0)
+    {
+        SinglyLinkedListNode *temp = head;
+        head = head->next;
+        delete(temp);
+    }
+    else
+    {
+        SinglyLinkedListNode *prev = head;
+        for(int currIndex = 0; currIndex < index - 1 && prev != nullptr; currIndex++)
+        {
+            prev = prev->next;
+        }
+        if(prev != nullptr && prev->next != nullptr)
+        {
+            SinglyLinkedListNode *temp = prev->next;
+            prev->next = prev->next->next;
+            delete(temp);
+        }
+
+    }
+}
+
+int
+SinglyLinkedList::getNthNode(int n)
+{
+    SinglyLinkedListNode *curr = head;
+
+    for(int index = 0; index < n && curr != nullptr; index++)
+    {
+        curr = curr->next;
+    }
+
+    return (curr != nullptr) ? curr->data: -1;
+}
+
 
 vector<int>
 SinglyLinkedList::print()
