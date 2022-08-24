@@ -49,19 +49,41 @@ void linkedListMain()
             cout << "List After deleting Head Node " << data2 << "is " << SLLCopy.print();
             cout << endl;
 
+            {
             vector<int> data_vec = {100, 200, 300, 400, 500, 600};
             cout << "Creating Linked List with vector " << data_vec << endl;
             SinglyLinkedList SLLVector(data_vec);
             cout << "Created List " << SLLVector.print();
             cout << endl;
+            }
 
+            {
             cout << "Reverse a Linked List" << endl;
+            vector<int> data_vec = {100, 200, 300, 400, 500, 600};
+            SinglyLinkedList SLLVector(data_vec); 
             cout << "Given List: " << SLLVector.print();
+            
             SLLVector.reverseIterative();
             cout << "Reversed List (Iterative): " << SLLVector.print();
             SLLVector.setHead(SLLVector.reverseRecursive(SLLVector.getHead()));
             cout << "Again Reversed List(Recursive): " << SLLVector.print();
             cout << endl;
+            }
+            
+            {
+            cout << "Check whether Linked List is Palindrome or not" << endl;
+            vector<int> pal_data = {156, 45, 43, 45, 156};
+            vector<int> nopal_data = {15, 34, 24, 22, 15};
+            SinglyLinkedList SLLPalindrome(pal_data);
+            SinglyLinkedList SLLNoPalindrome(nopal_data);
+
+            cout << "Linked List: " << SLLPalindrome.print();
+            cout << "Is Palindrome (Iterative): " << SLLPalindrome.is_PalindromeIterative() << endl;
+            cout << "Linked List: " << SLLNoPalindrome.print();
+            cout << "Is Palindrome (Recursive): " << SLLNoPalindrome.is_PalindromeRecursive() << endl;
+            cout << endl;
+            }
+
 
             break;
         }

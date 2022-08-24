@@ -33,5 +33,11 @@ public:
     // Reverse given Linked List
     void reverseIterative();
     SinglyLinkedListNode* reverseRecursive(SinglyLinkedListNode *node);
+
+    // Check if Linked List is Palindrome
+    bool is_PalindromeIterative();
+    bool is_PalindromeRecursive();
+    bool is_PalindromeRecursiveUtil(SinglyLinkedListNode **left, SinglyLinkedListNode *right);
+    
 };
 #endif
