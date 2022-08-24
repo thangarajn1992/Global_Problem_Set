@@ -4,7 +4,9 @@ INCLUDES= -I. \
 -I$(HERE)/include/utils \
 -I$(HERE)/src/Linked_List \
 -I$(HERE)/src/Linked_List/singly_linked_list \
--I$(HERE)/src/Trees
+-I$(HERE)/src/Trees \
+-I$(HERE)/src/Trees/binary_tree \
+-I$(HERE)/src/Trees/binary_tree/binary_search_tree
 
 SRC_FILES= \
 $(HERE)/src/main.cc \
@@ -52,8 +54,50 @@ LINKED_LIST_OBJ_FILES = $(LINKED_LIST_SRC_FILES:%.cc=%.o)
 TREES_PATH= $(HERE)/src/Trees
 TREES_SRC_FILES= \
 $(TREES_PATH)/Trees.cc \
-$(TREES_PATH)/Binary_Tree.cc \
-$(TREES_PATH)/Binary_Search_Tree.cc 
+$(TREES_PATH)/binary_tree/Binary_Tree.cc \
+$(TREES_PATH)/binary_tree/Binary_Tree_Array.cc \
+$(TREES_PATH)/binary_tree/binary_search_tree/Binary_Search_Tree.cc \
+$(TREES_PATH)/binary_tree/binary_search_tree/Construct_BST_From_Preorder.cc \
+$(TREES_PATH)/binary_tree/binary_search_tree/Inorder_Successor_For_Node.cc \
+$(TREES_PATH)/binary_tree/binary_search_tree/Postorder_From_Preorder.cc \
+$(TREES_PATH)/binary_tree/complete_binary_tree/In_And_Levelorder_Array.cc \
+$(TREES_PATH)/binary_tree/full_binary_tree/Pre_And_Mirror_Preorder.cc \
+$(TREES_PATH)/binary_tree/full_binary_tree/Pre_And_Postorder.cc \
+$(TREES_PATH)/binary_tree/full_binary_tree/Pre_And_PreLNArray.cc \
+$(TREES_PATH)/binary_tree/perfect_binary_tree/Reverse_Nodes_In_Alternate_Level.cc \
+$(TREES_PATH)/binary_tree/tree_creation/Ancestor_Matrix.cc \
+$(TREES_PATH)/binary_tree/tree_creation/Greater_Parent_BT_From_Inorder.cc \
+$(TREES_PATH)/binary_tree/tree_creation/In_And_Levelorder.cc \
+$(TREES_PATH)/binary_tree/tree_creation/In_And_Postorder.cc \
+$(TREES_PATH)/binary_tree/tree_creation/In_And_Preorder.cc \
+$(TREES_PATH)/binary_tree/tree_creation/Linked_List.cc \
+$(TREES_PATH)/binary_tree/tree_creation/Parent_Array.cc \
+$(TREES_PATH)/binary_tree/tree_generation/All_BT_For_Inorder.cc \
+$(TREES_PATH)/binary_tree/tree_properties/Ancestor_Matrix.cc \
+$(TREES_PATH)/binary_tree/tree_properties/Children_Sum_Property.cc \
+$(TREES_PATH)/binary_tree/tree_properties/Density.cc \
+$(TREES_PATH)/binary_tree/tree_properties/Inorder_Successor.cc \
+$(TREES_PATH)/binary_tree/tree_properties/Is_Symmetric.cc \
+$(TREES_PATH)/binary_tree/tree_properties/Path_Sum.cc \
+$(TREES_PATH)/binary_tree/tree_properties/Total_Nodes.cc \
+$(TREES_PATH)/binary_tree/tree_transformations/Children_Sum_Tree.cc \
+$(TREES_PATH)/binary_tree/tree_transformations/Inorder_Predecessor_Successor_Sum.cc \
+$(TREES_PATH)/binary_tree/tree_transformations/Left_Sum_Tree.cc \
+$(TREES_PATH)/binary_tree/tree_transformations/Mirror_Image.cc \
+$(TREES_PATH)/binary_tree/tree_transformations/Populate_Inorder_Successor.cc \
+$(TREES_PATH)/binary_tree/tree_transformations/Preorder_Through_Right_Pointers.cc \
+$(TREES_PATH)/binary_tree/tree_transformations/Reverse_Path_To_Node.cc \
+$(TREES_PATH)/binary_tree/tree_transformations/Right_Flip.cc \
+$(TREES_PATH)/binary_tree/tree_transformations/Sum_Tree.cc \
+$(TREES_PATH)/binary_tree/tree_traversals/Boundary.cc \
+$(TREES_PATH)/binary_tree/tree_traversals/Diagonal.cc \
+$(TREES_PATH)/binary_tree/tree_traversals/Inorder.cc \
+$(TREES_PATH)/binary_tree/tree_traversals/Level_Order.cc \
+$(TREES_PATH)/binary_tree/tree_traversals/Postorder.cc \
+$(TREES_PATH)/binary_tree/tree_traversals/Pre_Post_Inorder.cc \
+$(TREES_PATH)/binary_tree/tree_traversals/Preorder.cc \
+$(TREES_PATH)/binary_tree/tree_traversals/Spiral.cc \
+$(TREES_PATH)/binary_tree/tree_traversals/Zigzag.cc
 
 TREES_OBJ_FILES= $(TREES_SRC_FILES:%.cc=%.o)
 

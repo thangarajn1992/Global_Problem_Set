@@ -2,19 +2,6 @@
 
 using namespace std;
 
-vector<int>
-SinglyLinkedList::print()
-{
-    SinglyLinkedListNode *curr = head;
-    vector<int> result;
-    while(curr != nullptr)
-    {
-        result.push_back(curr->data);
-        curr = curr->next;
-    }
-    return result;
-}
-
 SinglyLinkedList::SinglyLinkedList(SinglyLinkedListNode *node)
 {
     if(node == nullptr)
@@ -98,4 +85,17 @@ SinglyLinkedList::Delete(int data)
         prev = curr;
         curr = curr->next;
     }
+}
+
+vector<int>
+SinglyLinkedList::print()
+{
+    SinglyLinkedListNode *curr = head;
+    vector<int> result;
+    while(curr != nullptr)
+    {
+        result.push_back(curr->data);
+        curr = curr->next;
+    }
+    return result;
 }

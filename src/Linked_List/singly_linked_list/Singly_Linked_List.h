@@ -29,6 +29,8 @@ public:
     // Operations
     void Insert(int value);
     void Delete(int value);
+
+    // Reverse given Linked List
     void reverseIterative();
     SinglyLinkedListNode* reverseRecursive(SinglyLinkedListNode *node);
 };

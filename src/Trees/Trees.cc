@@ -345,7 +345,7 @@ void treesMain()
             cout << endl;
 
             BT.boundaryTraversal();
-            cout << "Boundary Traversal : " << BT.getBounary();
+            cout << "Boundary Traversal : " << BT.getBoundary();
             cout << endl;
 
             cout << "Get Postorder from Pre and In order: " << endl;

@@ -3,19 +3,6 @@
 
 #include "Trees.h"
 using namespace std;
-/*
-Binary Search Tree Operations:
-    Insert New node into Binary Search Tree
-    Search Binary Search Tree for given key
-
-Traversals:
-    Generate Postorder from preorder
-    Find Inorder Sucessor node for a given node
-
-Tree Construction:
-    Construct BST from preorder
-
-*/
 
 class BinarySearchTreeNode
 {
@@ -39,24 +26,23 @@ public:
     void Insert(int data);
     BinarySearchTreeNode* Search(int key);
 
+    /* Traversals */
     void preorderRecurisve(BinarySearchTreeNode *node, vector<int> &preorder);
     void inorderRecursive(BinarySearchTreeNode *node, vector<int> &inorder);
     void postorderRecursive(BinarySearchTreeNode *node, vector<int> &postorder);
-
-    void constructBSTFromPreorderRecursive(vector<int> &pre);
-    BinarySearchTreeNode *BSTFromPreUtil(vector<int> &pre, int &preIndex,
-                                         int start, int end);
-    void constructBSTFromPreorderIterative(vector<int> &pre);
 
     vector<int> BSTPostorderFromPreorder(vector<int> &pre);
     void BSTPostorderFromPreorderUtil(vector<int> &pre, int &preIndex,
                                      int rangeStart, int rangeEnd, vector<int> &post);
 
     BinarySearchTreeNode* getInorderSucessor(BinarySearchTreeNode *node);
+    
+    /* BST Construction */
+    void constructBSTFromPreorderRecursive(vector<int> &pre);
+    BinarySearchTreeNode *BSTFromPreUtil(vector<int> &pre, int &preIndex,
+                                         int start, int end);
+    void constructBSTFromPreorderIterative(vector<int> &pre);
 
-    int NumberOfBSTsForNkeys(int n);
+
 };
-
-
-
 #endif
