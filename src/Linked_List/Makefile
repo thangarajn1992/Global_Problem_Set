@@ -8,7 +8,8 @@ $(HERE)/Linked_List_Main.cc \
 $(HERE)/Linked_List.cc \
 $(HERE)/singly_linked_list/Singly_Linked_List.cc \
 $(HERE)/singly_linked_list/Reverse_Linked_List.cc \
-$(HERE)/singly_linked_list/Is_Palindrome.cc
+$(HERE)/singly_linked_list/Is_Palindrome.cc \
+$(HERE)/singly_linked_list/Linked_List_Cycle.cc
 
 OBJ_FILES= $(SRC_FILES:%.cc=%.o)
 

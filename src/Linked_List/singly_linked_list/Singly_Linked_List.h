@@ -43,5 +43,11 @@ public:
     bool is_PalindromeRecursive();
     bool is_PalindromeRecursiveUtil(SinglyLinkedListNode **left, SinglyLinkedListNode *right);
 
+    // Check if Linked List has a Cycle
+    bool has_cycle();
+
+    // Find the Node where cycle begins
+    SinglyLinkedListNode* cycle_StartNode();
+
 };
 #endif

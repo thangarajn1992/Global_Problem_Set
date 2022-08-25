@@ -64,40 +64,85 @@ void linkedListMain()
             cout << endl;
 
             {
-            vector<int> data_vec = {100, 200, 300, 400, 500, 600};
-            cout << "Creating Linked List with vector " << data_vec << endl;
-            SinglyLinkedList SLLVector(data_vec);
-            cout << "Created List " << SLLVector.print();
-            cout << endl;
+                vector<int> data_vec = {100, 200, 300, 400, 500, 600};
+                cout << "Creating Linked List with vector " << data_vec << endl;
+                SinglyLinkedList SLLVector(data_vec);
+                cout << "Created List " << SLLVector.print();
+                cout << endl;
             }
 
             {
-            cout << "Reverse a Linked List" << endl;
-            vector<int> data_vec = {100, 200, 300, 400, 500, 600};
-            SinglyLinkedList SLLVector(data_vec); 
-            cout << "Given List: " << SLLVector.print();
-            
-            SLLVector.reverseIterative();
-            cout << "Reversed List (Iterative): " << SLLVector.print();
-            SLLVector.setHead(SLLVector.reverseRecursive(SLLVector.getHead()));
-            cout << "Again Reversed List(Recursive): " << SLLVector.print();
-            cout << endl;
+                cout << "Reverse a Linked List" << endl;
+                vector<int> data_vec = {100, 200, 300, 400, 500, 600};
+                SinglyLinkedList SLLVector(data_vec); 
+                cout << "Given List: " << SLLVector.print();
+                
+                SLLVector.reverseIterative();
+                cout << "Reversed List (Iterative): " << SLLVector.print();
+                SLLVector.setHead(SLLVector.reverseRecursive(SLLVector.getHead()));
+                cout << "Again Reversed List(Recursive): " << SLLVector.print();
+                cout << endl;
             }
             
             {
-            cout << "Check whether Linked List is Palindrome or not" << endl;
-            vector<int> pal_data = {156, 45, 43, 45, 156};
-            vector<int> nopal_data = {15, 34, 24, 22, 15};
-            SinglyLinkedList SLLPalindrome(pal_data);
-            SinglyLinkedList SLLNoPalindrome(nopal_data);
+                cout << "Check whether Linked List is Palindrome or not" << endl;
+                vector<int> pal_data = {156, 45, 43, 45, 156};
+                vector<int> nopal_data = {15, 34, 24, 22, 15};
+                SinglyLinkedList SLLPalindrome(pal_data);
+                SinglyLinkedList SLLNoPalindrome(nopal_data);
 
-            cout << "Linked List: " << SLLPalindrome.print();
-            cout << "Is Palindrome (Iterative): " << SLLPalindrome.is_PalindromeIterative() << endl;
-            cout << "Linked List: " << SLLNoPalindrome.print();
-            cout << "Is Palindrome (Recursive): " << SLLNoPalindrome.is_PalindromeRecursive() << endl;
-            cout << endl;
+                cout << "Linked List: " << SLLPalindrome.print();
+                cout << "Is Palindrome (Iterative): " << SLLPalindrome.is_PalindromeIterative() << endl;
+                cout << "Linked List: " << SLLNoPalindrome.print();
+                cout << "Is Palindrome (Recursive): " << SLLNoPalindrome.is_PalindromeRecursive() << endl;
+                cout << endl;
             }
 
+            {
+                cout << "Check Whether Linked List has cycle" << endl;
+                vector<int> cycle_data = {14, 54, 22, 52, 11};
+                SinglyLinkedList SLLNoCycle(cycle_data);
+                /* Creating cycle in linked list at index 1*/
+                SinglyLinkedList SLLCycle(cycle_data);
+                SinglyLinkedListNode *temp = SLLCycle.getHead();
+                temp = temp->next; // moving to index 1 to get its address
+                SinglyLinkedListNode *curr;
+                for( curr = SLLCycle.getHead(); curr->next != nullptr; curr = curr->next);
+                curr->next = temp; // creating a cycle from tail to index 1 node.
+                cout << "Has Cycle: " << SLLCycle.has_cycle() << endl;
+
+                cout << "Linked List: " << SLLNoCycle.print();
+                cout << "Has Cycle: " << SLLNoCycle.has_cycle() << endl;
+                cout << endl;
+            }
+
+            {
+                cout << "Find the starting node of cycle in linked list if it exists" << endl;
+                vector<int> cycle_data = {14, 54, 22, 52, 11};
+                SinglyLinkedList SLLNoCycle(cycle_data);
+                /* Creating cycle in linked list at index 1*/
+                SinglyLinkedList SLLCycle(cycle_data);
+                SinglyLinkedListNode *temp = SLLCycle.getHead();
+                temp = temp->next; // moving to index 1 to get its address
+                SinglyLinkedListNode *curr;
+                for(curr = SLLCycle.getHead(); curr->next != nullptr; curr = curr->next);
+                curr->next = temp; // creating a cycle from tail to index 1 node.
+
+                SinglyLinkedListNode *startNode = SLLCycle.cycle_StartNode();
+                cout << "Cycle Start Node: ";
+                if(startNode != nullptr)
+                    cout << startNode->data << endl;
+                else
+                    cout << "nullptr" << endl;
+
+                startNode = SLLNoCycle.cycle_StartNode();
+                cout << "Cycle Start Node: ";
+                if(startNode != nullptr)
+                    cout << startNode->data << endl;
+                else
+                    cout << "nullptr" << endl;
+
+            }
 
             break;
         }

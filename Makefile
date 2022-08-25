@@ -48,7 +48,8 @@ LINKED_LIST_SRC_FILES= \
 $(LINKED_LIST_PATH)/Linked_List.cc \
 $(LINKED_LIST_PATH)/singly_linked_list/Singly_Linked_List.cc \
 $(LINKED_LIST_PATH)/singly_linked_list/Reverse_Linked_List.cc \
-$(LINKED_LIST_PATH)/singly_linked_list/Is_Palindrome.cc
+$(LINKED_LIST_PATH)/singly_linked_list/Is_Palindrome.cc \
+$(LINKED_LIST_PATH)/singly_linked_list/Linked_List_Cycle.cc
 
 LINKED_LIST_OBJ_FILES = $(LINKED_LIST_SRC_FILES:%.cc=%.o)
 
