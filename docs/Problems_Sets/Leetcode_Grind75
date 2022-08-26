@@ -157,4 +157,48 @@ This plan is for 15 Weeks with 10 hours each week ( 169 Problems )
 * Week12 ( 10 Problems )
     * Reverse Integer                   [ https://leetcode.com/problems/reverse-integer ]
     * Set Matrix Zeroes                 [ https://leetcode.com/problems/set-matrix-zeroes ]
-    
+    * Reorder List                      [ https://leetcode.com/problems/reorder-list ]
+    * Encode and Decode Strings         [ https://leetcode.com/problems/encode-and-decode-strings ]  
+    * Cheapest Flights Within K Stops   [ https://leetcode.com/problems/cheapest-flights-within-k-stops ]
+    * All Nodes Distance K in BT        [ https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree ]
+    * 3Sum Closest                      [ https://leetcode.com/problems/3sum-closest ]
+    * Rotate List                       [ https://leetcode.com/problems/rotate-list ]
+    * Find Minimum in Rotated Sorted Array  [ https://leetcode.com/problems/find-minimum-in-rotated-sorted-array ]
+    * Basic Calculator II               [ https://leetcode.com/problems/basic-calculator-ii ]
+
+* Week13 ( 9 Problems )
+    * Combination Sum IV                [ https://leetcode.com/problems/combination-sum-iv ]
+    * Insert Delete GetRandom O(1)      [ https://leetcode.com/problems/insert-delete-getrandom-o1 ]
+    * Non-Overlapping Intervals         [ https://leetcode.com/problems/non-overlapping-intervals ]
+    * Minimum Window Substring          [ https://leetcode.com/problems/minimum-window-substring ]
+    * Serialize and Deserialize BT      [ https://leetcode.com/problems/serialize-and-deserialize-binary-tree ]
+    * Trapping Rain Water               [ https://leetcode.com/problems/trapping-rain-water ]
+    * Find Median from Data Stream      [ https://leetcode.com/problems/find-median-from-data-stream ]
+    * Word Ladder                       [ https://leetcode.com/problems/word-ladder ]
+    * Basic Calculator                  [ https://leetcode.com/problems/basic-calculator ]
+
+* Week14 ( 8 Problems )
+    * Maximum Profit in Job Scheduling  [ https://leetcode.com/problems/maximum-profit-in-job-scheduling ]
+    * Merge K Sorted Lists              [ https://leetcode.com/problems/merge-k-sorted-lists ]
+    * Largest Rectangle in Histogram    [ https://leetcode.com/problems/largest-rectangle-in-histogram ]
+    * Binary Tree Maximum Path Sum      [ https://leetcode.com/problems/binary-tree-maximum-path-sum ]
+    * Maximum Frequency Stack           [ https://leetcode.com/problems/maximum-frequency-stack ]
+    * Median of Two Sorted Arrays       [ https://leetcode.com/problems/median-of-two-sorted-arrays ]
+    * Longest Increasing Path in a Matrix [ https://leetcode.com/problems/longest-increasing-path-in-a-matrix ]
+    * Longest Valid Parentheses         [ https://leetcode.com/problems/longest-valid-parentheses ]
+
+* Week15 ( 7 Problems )
+    * Design In-Memory File System      [ https://leetcode.com/problems/design-in-memory-file-system ]
+    * Employee Free Time                [ https://leetcode.com/problems/employee-free-time ]
+    * Word Search II                    [ https://leetcode.com/problems/word-search-ii ]
+    * Alien Dictionary                  [ https://leetcode.com/problems/alien-dictionary ]
+    * Bus Routes                        [ https://leetcode.com/problems/bus-routes ]
+    * Sliding Window Maximum            [ https://leetcode.com/problems/sliding-window-maximum ]
+    * Palindrome Pairs                  [ https://leetcode.com/problems/palindrome-pairs ]
+
+* Week16 ( 5 Problems )
+    * Reverse Nodes In K-Group          [ https://leetcode.com/problems/reverse-nodes-in-k-group ]
+    * Sudoku Solver                     [ https://leetcode.com/problems/sudoku-solver ]
+    * First Missing Positive            [ https://leetcode.com/problems/first-missing-positive ]
+    * N-Queens                          [ https://leetcode.com/problems/n-queens ]
+    * Smallest Range Convering Elements from K Lists [ https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists ]
